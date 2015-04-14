@@ -5,7 +5,7 @@
 # Fixme: run test
 
 include_directories(
-  ${CMAKE_SOURCE_DIR}/simavr/sim
+  ${CMAKE_SOURCE_DIR}/simavr/include
   )
 
 file(GLOB TEST_EXECUTABLE_SOURCES test_*.c)
@@ -25,7 +25,7 @@ foreach(EXECUTABLE_SRC ${FIRMWARE_SOURCES})
   list(APPEND FIRMWARES ${FIRMWARE})
   add_custom_command(OUTPUT ${FIRMWARE} COMMAND
     ${AVR_GCC} ${AVR_GCC_CFLAGS} -mmcu=${PART}
-    -I${CMAKE_SOURCE_DIR}/simavr/sim/avr
+    -I${CMAKE_SOURCE_DIR}/simavr/include/avr
     ${EXECUTABLE_SRC} -o ${FIRMWARE}
     MAIN_DEPENDENCY ${EXECUTABLE_SRC})
   # avr-size .axf|sed '1d'
