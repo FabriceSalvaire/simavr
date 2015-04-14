@@ -3,7 +3,6 @@ This will emulate an arduino. Right now it loads the bootloader, then wait on it
 (a pseudo tty) until someone programs it... eventualy it timesout and run the previous
 app that was programmed.
 
-
 Once that bridge is setup, launch simduino:
 
 % ./simduino
