@@ -3,13 +3,13 @@
 #################################################################################
 
 include_directories(
-  ${CMAKE_SOURCE_DIR}/simavr/sim
+  ${CMAKE_SOURCE_DIR}/simavr/include
   ${CMAKE_SOURCE_DIR}/examples/parts
   )
 
 add_custom_command(OUTPUT atmega328p_dummy_blinky.axf COMMAND
   ${AVR_GCC} ${AVR_GCC_CFLAGS} -mmcu=atmega48
-  -I${CMAKE_SOURCE_DIR}/simavr/sim/avr
+  -I${CMAKE_SOURCE_DIR}/simavr/include/avr
   ${CMAKE_CURRENT_SOURCE_DIR}/atmega328p_dummy_blinky.c -o atmega328p_dummy_blinky.axf
   MAIN_DEPENDENCY atmega328p_dummy_blinky.c)
 add_custom_command(OUTPUT atmega328p_dummy_blinky.hex COMMAND

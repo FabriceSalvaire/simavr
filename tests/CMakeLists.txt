@@ -20,18 +20,17 @@ endforeach(EXECUTABLE_SRC)
 file(GLOB FIRMWARE_SOURCES at*.c)
 foreach(EXECUTABLE_SRC ${FIRMWARE_SOURCES})
   get_filename_component(FILENAME ${EXECUTABLE_SRC} NAME_WE)
-  STRING(REGEX REPLACE "_.*$" "" PART ${FILENAME})
-  STRING(CONCAT FIRMWARE ${FILENAME} ".axf")
+  string(REGEX REPLACE "_.*$" "" PART ${FILENAME})
+  string(CONCAT FIRMWARE ${FILENAME} ".axf")
   list(APPEND FIRMWARES ${FIRMWARE})
   add_custom_command(OUTPUT ${FIRMWARE} COMMAND
     ${AVR_GCC} ${AVR_GCC_CFLAGS} -mmcu=${PART}
     -I${CMAKE_SOURCE_DIR}/simavr/include/avr
     ${EXECUTABLE_SRC} -o ${FIRMWARE}
     MAIN_DEPENDENCY ${EXECUTABLE_SRC})
-  # avr-size .axf|sed '1d'
 endforeach(EXECUTABLE_SRC)
 
-add_custom_target(firmwares ALL
+add_custom_target(tests_firmwares ALL
     DEPENDS ${FIRMWARES})
 
 ####################################################################################################
