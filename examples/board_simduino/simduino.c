@@ -47,7 +47,7 @@ uart_pty_t uart_pty;
 int do_button_press = 0;
 avr_t *avr = NULL;
 avr_vcd_t vcd_file;
-uint8_t pin_state = 0;    // current port B
+uint8_t pin_state = 0;   // current port B
 
 float pixsize = 64;
 int window;
@@ -69,8 +69,8 @@ displayCB (void)
   glClear (GL_COLOR_BUFFER_BIT);
 
   // Set up modelview matrix
-  glMatrixMode (GL_MODELVIEW);    // Select modelview matrix
-  glLoadIdentity ();    // Start with an identity matrix
+  glMatrixMode (GL_MODELVIEW);   // Select modelview matrix
+  glLoadIdentity ();   // Start with an identity matrix
 
   // float grid = pixsize;
   // float size = grid * 0.8;
@@ -106,11 +106,11 @@ keyCB (unsigned char key, int x, int y) /* called on key press */
   switch (key)
     {
     case 'q':
-    case 0x1f:                 // escape
+    case 0x1f:   // escape
       exit (0);
       break;
     case ' ':
-      do_button_press++;    // pass the message to the AVR thread
+      do_button_press++;   // pass the message to the AVR thread
       break;
     case 'r':
       printf ("Starting VCD trace\n");
@@ -215,6 +215,7 @@ main (int argc, char *argv[])
       fprintf (stderr, "%s: Error creating the AVR core\n", argv[0]);
       exit (1);
     }
+
   // snprintf(avr_flash_path, sizeof(avr_flash_path), "%s/%s", pwd, "simduino_flash.bin");
   strcpy (flash_data.avr_flash_path, "simduino_flash.bin");
   flash_data.avr_flash_fd = 0;
