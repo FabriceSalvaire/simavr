@@ -26,7 +26,7 @@
 
 #define _AVR_IO_H_
 #define __ASSEMBLER__
-#include "avr/iom324.h"
+#include "avr/iom324pa.h" // a p pa ?
 // instantiate the new core
 #include "sim_megax4.h"
 
