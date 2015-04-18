@@ -91,6 +91,26 @@ set(AVR_GCC_CFLAGS
 # include_directories()
 
 ####################################################################################################
+
+# file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/firmwares)
+# execute_process(
+#   COMMAND cmake ${CMAKE_CURRENT_SOURCE_DIR}/firmwares
+#   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/firmwares)
+# execute_process(
+#   COMMAND make
+#   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/firmwares)
+
+# drawback: make once
+include(ExternalProject)
+ExternalProject_add(firmwares
+  PREFIX ${CMAKE_BINARY_DIR}/firmwares-project
+  SOURCE_DIR ${CMAKE_SOURCE_DIR}/firmwares
+  CMAKE_ARGS -DSIMAVR_BINARY_DIR:PATH=${CMAKE_BINARY_DIR}
+  # BUILD_ALWAYS 1 # purpse ?
+  # INSTALL_COMMAND "" # hack to disable the install
+  )
+
+####################################################################################################
 #
 # Sub directories
 #
