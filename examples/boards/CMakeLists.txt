@@ -5,8 +5,8 @@
 # Sub directories
 #
 
-add_subdirectory(boards)
-add_subdirectory(featured)
+add_subdirectory(board_ledramp)
+add_subdirectory(board_simduino)
 
 ####################################################################################################
 #
