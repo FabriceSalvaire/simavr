@@ -14,10 +14,10 @@ add_custom_command(OUTPUT atmega48_ledramp.axf COMMAND
   MAIN_DEPENDENCY atmega48_ledramp.c)
 add_custom_target(ledramp.axf ALL DEPENDS atmega48_ledramp.axf) # Fixme
 
-add_executable(ledramp-gl ledramp-gl.c ../parts/button.c)
+add_executable(ledramp-gl ledramp-gl.c ${CMAKE_SOURCE_DIR}/examples/parts/button.c)
 target_link_libraries(ledramp-gl simavr GL glut pthread)
 
-add_executable(ledramp ledramp.c ../parts/button.c)
+add_executable(ledramp ledramp.c ${CMAKE_SOURCE_DIR}/examples/parts/button.c)
 target_link_libraries(ledramp simavr pthread)
 
 ####################################################################################################

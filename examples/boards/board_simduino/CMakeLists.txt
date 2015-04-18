@@ -5,6 +5,7 @@
 include_directories(
   ${CMAKE_SOURCE_DIR}/simavr/include
   ${CMAKE_SOURCE_DIR}/examples/parts
+  ${CMAKE_SOURCE_DIR}/examples/parts/bus
   )
 
 add_custom_command(OUTPUT atmega328p_dummy_blinky.axf COMMAND
@@ -18,7 +19,9 @@ add_custom_command(OUTPUT atmega328p_dummy_blinky.hex COMMAND
   MAIN_DEPENDENCY atmega328p_dummy_blinky.axf)
 add_custom_target(simduino.axf ALL DEPENDS atmega328p_dummy_blinky.hex) # Fixme
 
-add_executable(simduino simduino.c ../parts/button.c ../parts/uart_pty.c)
+add_executable(simduino simduino.c
+  ${CMAKE_SOURCE_DIR}/examples/parts/button.c
+  ${CMAKE_SOURCE_DIR}/examples/parts/bus/uart_pty.c)
 target_link_libraries(simduino simavr GL glut pthread util)
 
 ####################################################################################################
