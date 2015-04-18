@@ -19,14 +19,18 @@ TODO: wipe this repository and rebuild a clean one so as to facilitate cherry pi
 * apply cosmetic on sources: could introduce bugs ... 
 * add stuffs
 
-= Motivations =
+=============
+ Motivations
+=============
 
-== CMake ==
+CMake
+~~~~~
 
 CMake is a powerful build system which improves dramatically the maintainability and portability of
 the building process.
 
-== Code reindentation, coding homogenisation and reorganisation ==
+Code reindentation, coding homogenisation and reorganisation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Despite it is bad idea to change the coding of a source code since it is subjective, will make
 difficult the tracking of posterior modifications in the sources, and potentially introduce
