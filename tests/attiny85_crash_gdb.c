@@ -11,18 +11,15 @@
 
 AVR_MCU(F_CPU, "attiny85");
 
-
 int main()
 {
+  /*
+   * this is not much, but that crashed the core, and should activate the gdb server properly, so
+   * you can see it stopped, here
+   */
 
-	/*
-	 * this is not much, but that crashed the core, and should activate
-	 * the gdb server properly, so you can see it stopped, here
-	 */
+  *((uint8_t*)0xdead) = 0x55;
 
-	*((uint8_t*)0xdead) = 0x55;
-
-	// should never reach here !
-
-	sleep_mode();
+  // should never reach here !
+  sleep_mode();
 }
