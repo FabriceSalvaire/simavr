@@ -1,0 +1,47 @@
+./simduino 
+avr_interrupt_reset
+read_ihex_file: ATmegaBOOT_168_atmega328.ihex, unsupported check type 03
+Booloader 7800: 1950
+uart_pty_init bridge on port *** /dev/pts/2 ***
+uart_pty_connect: /tmp/simavr-uart0 now points to /dev/pts/2
+note: export SIMAVR_UART_XTERM=1 and install picocom to get a terminal
+CORE: *** Invalid write address PC=00fe SP=08e4 O=c093 Address ffff=88 out of ram
+avr_sadly_crashed
+avr_gdb_init listening on port 1234
+
+>avrdude -p m328p -c arduino -P /tmp/simavr-uart0 -U flash:w:atmega328p_dummy_blinky.hex
+ioctl("TIOCMGET"): Invalid argument
+ioctl("TIOCMGET"): Invalid argument
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e950f
+avrdude: NOTE: "flash" memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file "atmega328p_dummy_blinky.hex"
+avrdude: input file atmega328p_dummy_blinky.hex auto detected as Intel Hex
+avrdude: writing flash (326 bytes):
+
+Writing | ################################################## | 100% 0.02s
+
+avrdude: 326 bytes of flash written
+avrdude: verifying flash memory against atmega328p_dummy_blinky.hex:
+avrdude: load data flash data from input file atmega328p_dummy_blinky.hex:
+avrdude: input file atmega328p_dummy_blinky.hex auto detected as Intel Hex
+avrdude: input file atmega328p_dummy_blinky.hex contains 326 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.03s
+
+avrdude: verifying ...
+avrdude: verification error, first mismatch at byte 0x0000
+         0xff != 0x19
+avrdude: verification error; content mismatch
+
+avrdude: safemode: Fuses OK (E:00, H:00, L:00)
+ioctl("TIOCMGET"): Invalid argument
+
+avrdude done.  Thank you.
