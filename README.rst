@@ -32,7 +32,7 @@ the building process.
 Code reindentation, coding homogenisation and reorganisation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Despite it is bad idea to change the coding of a source code since it is subjective, will make
+Despite it is a bad idea to change the coding of a source code since it is subjective, will make
 difficult the tracking of posterior modifications in the sources, and potentially introduce
 bugs. The usage of tabs for indentation is evil, since the space's size is not universally
 defined. Any serious editor must indent code using spaces only. Moreover it is always a good
