@@ -68,10 +68,8 @@ _avr_vcd_notify (struct avr_irq_t *irq, uint32_t value, void *param)
       AVR_LOG (vcd->avr, LOG_TRACE, "%s trace buffer resized to %d\n",
                __func__, (int) vcd->logsize);
       if ((vcd->logsize / AVR_VCD_LOG_CHUNK_SIZE) == 5)
-        {
           AVR_LOG (vcd->avr, LOG_WARNING, "%s log size runnaway (%d) flush problem?\n",
                    __func__, (int) vcd->logsize);
-        }
       if (!vcd->log)
         {
           AVR_LOG (vcd->avr, LOG_ERROR, "%s log resizing, out of memory (%d)!\n",
@@ -80,6 +78,7 @@ _avr_vcd_notify (struct avr_irq_t *irq, uint32_t value, void *param)
           return;
         }
     }
+
   avr_vcd_signal_t *s = (avr_vcd_signal_t *) irq;
   avr_vcd_log_t *l = &vcd->log[vcd->logindex++];
   l->signal = s;
@@ -129,13 +128,13 @@ avr_vcd_flush_log (avr_vcd_t * vcd)
 #else
   uint32_t seen = 0;
 #endif
+
   uint64_t oldbase = 0;   // make sure it's different
   char out[48];
 
   if (!vcd->logindex)
     return;
   // printf("avr_vcd_flush_log %d\n", vcd->logindex);
-
 
   for (uint32_t li = 0; li < vcd->logindex; li++)
     {
@@ -158,6 +157,7 @@ avr_vcd_flush_log (avr_vcd_t * vcd)
       seen |= (1 << l->signal->irq.irq);   // mark this trace as seen for this timestamp
       fprintf (vcd->output, "%s\n", _avr_vcd_get_signal_text (l->signal, out, l->value));
     }
+
   vcd->logindex = 0;
 }
 
@@ -174,6 +174,7 @@ avr_vcd_add_signal (avr_vcd_t * vcd, avr_irq_t * signal_irq, int signal_bit_size
 {
   if (vcd->signal_count == AVR_VCD_MAX_SIGNALS)
     return -1;
+
   int index = vcd->signal_count++;
   avr_vcd_signal_t *s = &vcd->signal[index];
   strncpy (s->name, name, sizeof (s->name));
@@ -191,8 +192,8 @@ avr_vcd_add_signal (avr_vcd_t * vcd, avr_irq_t * signal_irq, int signal_bit_size
   const char *names[1] = { iname };
   avr_init_irq (&vcd->avr->irq_pool, &s->irq, index, 1, names);
   avr_irq_register_notify (&s->irq, _avr_vcd_notify, vcd);
-
   avr_connect_irq (signal_irq, &s->irq);
+
   return 0;
 }
 
@@ -201,6 +202,7 @@ avr_vcd_start (avr_vcd_t * vcd)
 {
   if (vcd->output)
     avr_vcd_stop (vcd);
+
   vcd->output = fopen (vcd->filename, "w");
   if (vcd->output == NULL)
     {
@@ -225,9 +227,12 @@ avr_vcd_start (avr_vcd_t * vcd)
       char out[48];
       fprintf (vcd->output, "%s\n", _avr_vcd_get_float_signal_text (s, out));
     }
+
   fprintf (vcd->output, "$end\n");
+
   vcd->start = vcd->avr->cycle;
   avr_cycle_timer_register (vcd->avr, vcd->period, _avr_vcd_timer, vcd);
+
   return 0;
 }
 
@@ -235,11 +240,10 @@ int
 avr_vcd_stop (avr_vcd_t * vcd)
 {
   avr_cycle_timer_cancel (vcd->avr, _avr_vcd_timer, vcd);
-
   avr_vcd_flush_log (vcd);
-
   if (vcd->output)
     fclose (vcd->output);
   vcd->output = NULL;
+
   return 0;
 }

@@ -72,7 +72,7 @@ avr_ioport_write (struct avr_t *avr, avr_io_addr_t addr, uint8_t v, void *param)
 
 /*
  * This is a reasonably new behaviour for the io-ports. Writing 1's to the PIN register toggles the
- * PORT equivalent bit (regardless of direction
+ * PORT equivalent bit (regardless of direction)
  */
 static void
 avr_ioport_pin_write (struct avr_t *avr, avr_io_addr_t addr, uint8_t v, void *param)

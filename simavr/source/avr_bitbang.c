@@ -31,9 +31,9 @@ extern "C"
 
 #include "avr_bitbang.h"
 
-#include "sim_regbit.h"
-#include "sim_core.h"
 #include "avr_ioport.h"
+#include "sim_core.h"
+#include "sim_regbit.h"
 
   ///@todo refactor SPI to bitbang
 
@@ -59,23 +59,16 @@ extern "C"
         bit = (iostate.pin >> p->p_in.pin) & 1;
 
         if (p->data_order)
-          {
-	    // data order: shift right
-            p->data = (p->data >> 1) | (bit << (p->buffer_size - 1));
-          }
+	  // data order: shift right
+          p->data = (p->data >> 1) | (bit << (p->buffer_size - 1));
         else
-          {
-	    // data order: shift left
-            p->data = (p->data << 1) | bit;
-          }
-
+	  // data order: shift left
+          p->data = (p->data << 1) | bit;
       }
 
     // module callback
     if (p->callback_bit_read)
-      {
-        p->callback_bit_read (bit, p->callback_param);
-      }
+      p->callback_bit_read (bit, p->callback_param);
 
     // data sanitary
     p->data = p->data & ~(BITBANG_MASK << p->buffer_size);
@@ -94,30 +87,21 @@ extern "C"
       return;
 
     if (p->data_order)
-      {
-	// data order: shift right
-        bit = p->data & 1;
-      }
+      // data order: shift right
+      bit = p->data & 1;
     else
-      {
-	// data order: shift left
-        bit = (p->data >> (p->buffer_size - 1)) & 1;
-      }
+      // data order: shift left
+      bit = (p->data >> (p->buffer_size - 1)) & 1;
 
     // output to HW pin
     if (p->p_out.port)
-      {
-        avr_raise_irq (avr_io_getirq
-                       (p->avr, AVR_IOCTL_IOPORT_GETIRQ (p->p_out.port), p->p_out.pin), bit);
-      }
+      avr_raise_irq (avr_io_getirq (p->avr, AVR_IOCTL_IOPORT_GETIRQ (p->p_out.port), p->p_out.pin),
+		     bit);
 
     // module callback
     if (p->callback_bit_write)
-      {
-        p->callback_bit_write (bit, p->callback_param);
-      }
+      p->callback_bit_write (bit, p->callback_param);
   }
-
 
   /**
    * process clock edges (both: positive and negative edges)
@@ -140,36 +124,26 @@ extern "C"
 
     // generate clock output on HW pin
     if (p->clk_generate && p->p_clk.port)
-      {
-        avr_raise_irq (avr_io_getirq
-                       (p->avr, AVR_IOCTL_IOPORT_GETIRQ (p->p_clk.port), p->p_clk.pin), clk);
-      }
+      avr_raise_irq (avr_io_getirq (p->avr, AVR_IOCTL_IOPORT_GETIRQ (p->p_clk.port), p->p_clk.pin),
+		     clk);
 
     if (phase)
-      {
-	// read data in
-        avr_bitbang_read_bit (p);
-
-      }
+      // read data in
+      avr_bitbang_read_bit (p);
     else
-      {
-	// write data out
-        avr_bitbang_write_bit (p);
-      }
+      // write data out
+      avr_bitbang_write_bit (p);
 
     if (p->clk_count >= (p->buffer_size * 2))
       {
 	// transfer finished
         if (p->callback_transfer_finished)
-          {
-            p->data = p->callback_transfer_finished (p->data, p->callback_param);
-          }
+	  p->data = p->callback_transfer_finished (p->data, p->callback_param);
         p->clk_count = 0;
       }
   }
 
-  static avr_cycle_count_t avr_bitbang_clk_timer (struct avr_t *avr, avr_cycle_count_t when,
-                                                  void *param)
+  static avr_cycle_count_t avr_bitbang_clk_timer (struct avr_t *avr, avr_cycle_count_t when, void *param)
   {
     avr_bitbang_t *p = (avr_bitbang_t *) param;
 
@@ -248,9 +222,7 @@ extern "C"
                                  (p->avr, AVR_IOCTL_IOPORT_GETIRQ (p->p_clk.port), p->p_clk.pin),
                                  avr_bitbang_clk_hook, p);
       }
-
   }
-
 
   /**
    * stop bitbang transfer
@@ -261,11 +233,9 @@ extern "C"
    */
   void avr_bitbang_stop (avr_bitbang_t * p)
   {
-
     p->enabled = 0;
     avr_cycle_timer_cancel (p->avr, avr_bitbang_clk_timer, p);
-    avr_irq_unregister_notify (avr_io_getirq
-                               (p->avr, AVR_IOCTL_IOPORT_GETIRQ (p->p_clk.port), p->p_clk.pin),
+    avr_irq_unregister_notify (avr_io_getirq (p->avr, AVR_IOCTL_IOPORT_GETIRQ (p->p_clk.port), p->p_clk.pin),
                                avr_bitbang_clk_hook, p);
   }
 

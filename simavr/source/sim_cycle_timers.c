@@ -29,12 +29,14 @@
     (__e)->next = (__q);                        \
     (__q) = __e;                                \
   }
+
 #define DETACH(__q, __l, __e) {                 \
     if (__l)                                    \
       (__l)->next = (__e)->next;                \
     else                                        \
       (__q) = (__e)->next;                      \
   }
+
 #define INSERT(__q, __l, __e) {                 \
     if (__l) {                                  \
       (__e)->next = (__l)->next;                \
@@ -82,11 +84,13 @@ avr_cycle_timer_reset_sleep_run_cycles_limited (avr_t * avr)
   avr_cycle_count_t sleep_cycle_count = DEFAULT_SLEEP_CYCLES;
 
   if (pool->timer)
-    if (pool->timer->when > avr->cycle)
-      sleep_cycle_count = pool->timer->when - avr->cycle;
-    else
-      sleep_cycle_count = 0;
-
+    {
+      if (pool->timer->when > avr->cycle)
+	sleep_cycle_count = pool->timer->when - avr->cycle;
+      else
+	sleep_cycle_count = 0;
+    }
+  
   avr_cycle_timer_return_sleep_run_cycles_limited (avr, sleep_cycle_count);
 }
 
@@ -169,8 +173,8 @@ avr_cycle_timer_cancel (avr_t * avr, avr_cycle_timer_t timer, void *param)
 }
 
 /*
- * Check to see if a timer is present, if so, return the number (+1) of
- * cycles left for it to fire, and if not present, return zero
+ * Check to see if a timer is present, if so, return the number (+1) of cycles left for it to fire,
+ * and if not present, return zero
  */
 avr_cycle_count_t
 avr_cycle_timer_status (avr_t * avr, avr_cycle_timer_t timer, void *param)
@@ -189,9 +193,8 @@ avr_cycle_timer_status (avr_t * avr, avr_cycle_timer_t timer, void *param)
 }
 
 /*
- * run through all the timers, call the ones that needs it,
- * clear the ones that wants it, and calculate the next
- * potential cycle we could sleep for...
+ * run through all the timers, call the ones that needs it, clear the ones that wants it, and
+ * calculate the next potential cycle we could sleep for...
  */
 avr_cycle_count_t
 avr_cycle_timer_process (avr_t * avr)

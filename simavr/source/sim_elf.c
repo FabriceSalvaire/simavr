@@ -50,6 +50,7 @@ avr_load_firmware (avr_t * avr, elf_firmware_t * firmware)
     avr->avcc = firmware->avcc;
   if (firmware->aref)
     avr->aref = firmware->aref;
+
 #if CONFIG_SIMAVR_TRACE && ELF_SYMBOLS
   int scount = firmware->flashsize >> 1;
   avr->trace_data->codeline = malloc (scount * sizeof (avr_symbol_t *));
@@ -76,6 +77,7 @@ avr_load_firmware (avr_t * avr, elf_firmware_t * firmware)
       avr_eeprom_desc_t d = {.ee = firmware->eeprom,.offset = 0,.size = firmware->eesize };
       avr_ioctl (avr, AVR_IOCTL_EEPROM_SET, &d);
     }
+
   // load the default pull up/down values for ports
   for (int i = 0; i < 8; i++)
     if (firmware->external_state[i].port == 0)
@@ -113,14 +115,10 @@ avr_load_firmware (avr_t * avr, elf_firmware_t * firmware)
                                              firmware->trace[ti].name,
                                              AVR_IOMEM_IRQ_ALL);
           if (!all)
-            {
-              AVR_LOG (avr, LOG_ERROR, "ELF: %s: unable to attach trace to address %04x\n",
-                       __FUNCTION__, firmware->trace[ti].addr);
-            }
+            AVR_LOG (avr, LOG_ERROR, "ELF: %s: unable to attach trace to address %04x\n",
+                     __FUNCTION__, firmware->trace[ti].addr);
           else
-            {
-              avr_vcd_add_signal (avr->vcd, all, 8, firmware->trace[ti].name);
-            }
+            avr_vcd_add_signal (avr->vcd, all, 8, firmware->trace[ti].name);
         }
       else
         {
@@ -153,8 +151,9 @@ avr_load_firmware (avr_t * avr, elf_firmware_t * firmware)
               }
         }
     }
-  // if the firmware has specified a command register, do NOT start the trace here
-  // the firmware probably knows best when to start/stop it
+
+  // if the firmware has specified a command register, do NOT start the trace here the firmware
+  // probably knows best when to start/stop it
   if (!firmware->command_register_addr)
     avr_vcd_start (avr->vcd);
 }
@@ -214,23 +213,16 @@ elf_parse_mmcu_section (elf_firmware_t * firmware, uint8_t * src, uint32_t size)
           }
           break;
         case AVR_MMCU_TAG_VCD_FILENAME:
-          {
-            strcpy (firmware->tracename, (char *) src);
-          } break;
+          strcpy (firmware->tracename, (char *) src);
+	  break;
         case AVR_MMCU_TAG_VCD_PERIOD:
-          {
-            firmware->traceperiod = src[0] | (src[1] << 8) | (src[2] << 16) | (src[3] << 24);
-          }
+	  firmware->traceperiod = src[0] | (src[1] << 8) | (src[2] << 16) | (src[3] << 24);
           break;
         case AVR_MMCU_TAG_SIMAVR_COMMAND:
-          {
-            firmware->command_register_addr = src[0] | (src[1] << 8);
-          }
+	  firmware->command_register_addr = src[0] | (src[1] << 8);
           break;
         case AVR_MMCU_TAG_SIMAVR_CONSOLE:
-          {
-            firmware->console_register_addr = src[0] | (src[1] << 8);
-          }
+	  firmware->console_register_addr = src[0] | (src[1] << 8);
           break;
         }
       size -= next;

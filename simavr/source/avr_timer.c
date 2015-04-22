@@ -507,7 +507,6 @@ avr_timer_reset (avr_io_t * port)
       // printf("%s-%c ICP Connecting PIN IRQ %d\n", __FUNCTION__, p->name, req.irq[0]->irq);
       avr_irq_register_notify (req.irq[0], avr_timer_irq_icp, p);
     }
-
 }
 
 static const char *irq_names[TIMER_IRQ_COUNT] = {
@@ -536,9 +535,8 @@ avr_timer_init (avr_t * avr, avr_timer_t * p)
   // allocate this module's IRQ
   avr_io_setirqs (&p->io, AVR_IOCTL_TIMER_GETIRQ (p->name), TIMER_IRQ_COUNT, NULL);
 
-  // marking IRQs as "filtered" means they don't propagate if the
-  // new value raised is the same as the last one.. in the case of the
-  // pwm value it makes sense not to bother.
+  // marking IRQs as "filtered" means they don't propagate if the new value raised is the same as
+  // the last one.. in the case of the pwm value it makes sense not to bother.
   p->io.irq[TIMER_IRQ_OUT_PWM0].flags |= IRQ_FLAG_FILTERED;
   p->io.irq[TIMER_IRQ_OUT_PWM1].flags |= IRQ_FLAG_FILTERED;
 
