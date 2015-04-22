@@ -38,9 +38,8 @@ static void
 _avr_irq_pool_add (avr_irq_pool_t * pool, avr_irq_t * irq)
 {
   if ((pool->count & 0xf) == 0)
-    {
-      pool->irq = (avr_irq_t **) realloc (pool->irq, (pool->count + 16) * sizeof (avr_irq_t *));
-    }
+    pool->irq = (avr_irq_t **) realloc (pool->irq, (pool->count + 16) * sizeof (avr_irq_t *));
+
   pool->irq[pool->count++] = irq;
   irq->pool = pool;
 }
@@ -58,7 +57,8 @@ _avr_irq_pool_remove (avr_irq_pool_t * pool, avr_irq_t * irq)
 
 void
 avr_init_irq (avr_irq_pool_t * pool,
-              avr_irq_t * irq, uint32_t base, uint32_t count, const char **names /* optional */ )
+              avr_irq_t * irq, uint32_t base, uint32_t count,
+	      const char **names /* optional */ )
 {
   memset (irq, 0, sizeof (avr_irq_t) * count);
 
@@ -71,15 +71,14 @@ avr_init_irq (avr_irq_pool_t * pool,
       if (names && names[i])
         irq[i].name = strdup (names[i]);
       else
-        {
-          printf ("WARNING %s() with NULL name for irq %d.\n", __func__, irq[i].irq);
-        }
+	printf ("WARNING %s() with NULL name for irq %d.\n", __func__, irq[i].irq);
     }
 }
 
 avr_irq_t *
 avr_alloc_irq (avr_irq_pool_t * pool,
-               uint32_t base, uint32_t count, const char **names /* optional */ )
+               uint32_t base, uint32_t count,
+	       const char **names /* optional */ )
 {
   avr_irq_t *irq = (avr_irq_t *) malloc (sizeof (avr_irq_t) * count);
   avr_init_irq (pool, irq, base, count, names);
@@ -139,6 +138,7 @@ avr_irq_register_notify (avr_irq_t * irq, avr_irq_notify_t notify, void *param)
         return;   // already there
       hook = hook->next;
     }
+
   hook = _avr_alloc_irq_hook (irq);
   hook->notify = notify;
   hook->param = param;
@@ -174,11 +174,14 @@ avr_raise_irq (avr_irq_t * irq, uint32_t value)
 {
   if (!irq)
     return;
+
   uint32_t output = (irq->flags & IRQ_FLAG_NOT) ? !value : value;
+
   // if value is the same but it's the first time, raise it anyway
   if (irq->value == output && (irq->flags & IRQ_FLAG_FILTERED) && !(irq->flags & IRQ_FLAG_INIT))
     return;
   irq->flags &= ~IRQ_FLAG_INIT;
+
   avr_irq_hook_t *hook = irq->hook;
   while (hook)
     {
@@ -195,6 +198,7 @@ avr_raise_irq (avr_irq_t * irq, uint32_t value)
         }
       hook = next;
     }
+
   // the value is set after the callbacks are called, so the callbacks can themselves compare for
   // old/new values between their parameter
   // they are passed (new value) and the previous irq->value
@@ -209,6 +213,7 @@ avr_connect_irq (avr_irq_t * src, avr_irq_t * dst)
       fprintf (stderr, "error: %s invalid irq %p/%p", __FUNCTION__, src, dst);
       return;
     }
+
   avr_irq_hook_t *hook = src->hook;
   while (hook)
     {
@@ -216,6 +221,7 @@ avr_connect_irq (avr_irq_t * src, avr_irq_t * dst)
         return;   // already there
       hook = hook->next;
     }
+
   hook = _avr_alloc_irq_hook (src);
   hook->chain = dst;
 }
@@ -230,6 +236,7 @@ avr_unconnect_irq (avr_irq_t * src, avr_irq_t * dst)
       fprintf (stderr, "error: %s invalid irq %p/%p", __FUNCTION__, src, dst);
       return;
     }
+
   hook = src->hook;
   prev = NULL;
   while (hook)

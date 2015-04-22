@@ -31,6 +31,8 @@
 // SREG bit names
 const char *_sreg_bit_name = "cznvshti";
 
+/**************************************************************************************************/
+
 /*
  * Handle "touching" registers, marking them changed.
  * This is used only for debugging purposes to be able to print the effects of each instructions on
@@ -44,8 +46,8 @@ const char *_sreg_bit_name = "cznvshti";
 #define REG_ISTOUCHED(a, r) ((a)->trace_data->touched[(r) >> 5] & (1 << ((r) & 0x1f)))
 
 /*
- * This allows a "special case" to skip instruction tracing when in these
- * symbols since printf() is useful to have, but generates a lot of cycles.
+ * This allows a "special case" to skip instruction tracing when in these symbols since printf() is
+ * useful to have, but generates a lot of cycles.
  */
 int
 dont_trace (const char *name)
@@ -74,7 +76,8 @@ int donttrace = 0;
       } else                                                            \
         printf("%s: %04x: " _f, __FUNCTION__, avr->pc, ## args);        \
     }                                                                   \
-  }
+ }
+
 #define SREG() if (avr->trace && donttrace == 0) {                      \
     printf("%04x: \t\t\t\t\t\t\t\t\tSREG = ", avr->pc);                 \
     for (int _sbi = 0; _sbi < 8; _sbi++)                                \
@@ -93,13 +96,13 @@ crash (avr_t * avr)
       int pci = (avr->trace_data->old_pci + i) & 0xf;
       printf (FONT_RED "*** %04x: %-25s RESET -%d; sp %04x\n" FONT_DEFAULT,
               avr->trace_data->old[pci].pc,
-              avr->trace_data->codeline ? avr->trace_data->codeline[avr->trace_data->
-                                                                    old[pci].pc >> 1]->
-              symbol : "unknown", OLD_PC_SIZE - i, avr->trace_data->old[pci].sp);
+              avr->trace_data->codeline ?
+	      avr->trace_data->codeline[avr->trace_data->old[pci].pc >> 1]->symbol : "unknown",
+	      OLD_PC_SIZE - i, avr->trace_data->old[pci].sp);
     }
 
-  printf ("Stack Ptr %04x/%04x = %d \n", _avr_sp_get (avr), avr->ramend,
-          avr->ramend - _avr_sp_get (avr));
+  printf ("Stack Ptr %04x/%04x = %d \n",
+	  _avr_sp_get (avr), avr->ramend, avr->ramend - _avr_sp_get (avr));
   DUMP_STACK ();
 
   avr_sadly_crashed (avr, 0);
@@ -109,6 +112,8 @@ crash (avr_t * avr)
 #define REG_TOUCH(a, r)
 #define STATE(_f, args...)
 #define SREG()
+
+/**************************************************************************************************/
 
 void
 crash (avr_t * avr)
@@ -151,9 +156,7 @@ avr_core_watch_write (avr_t * avr, uint16_t addr, uint8_t v)
 #endif
 
   if (avr->gdb)
-    {
-      avr_gdb_handle_watchpoints (avr, addr, AVR_GDB_WATCH_WRITE);
-    }
+    avr_gdb_handle_watchpoints (avr, addr, AVR_GDB_WATCH_WRITE);
 
   avr->data[addr] = v;
 }
@@ -172,17 +175,15 @@ avr_core_watch_read (avr_t * avr, uint16_t addr)
     }
 
   if (avr->gdb)
-    {
-      avr_gdb_handle_watchpoints (avr, addr, AVR_GDB_WATCH_READ);
-    }
+    avr_gdb_handle_watchpoints (avr, addr, AVR_GDB_WATCH_READ);
 
   return avr->data[addr];
 }
 
 /*
  * Set a register (r < 256)
- * if it's an IO register (> 31) also (try to) call any callback that was
- * registered to track changes to that register.
+ * if it's an IO register (> 31) also (try to) call any callback that was registered to track
+ * changes to that register.
  */
 static inline void
 _avr_set_r (avr_t * avr, uint16_t r, uint8_t v)
@@ -301,9 +302,7 @@ _avr_push_addr (avr_t * avr, avr_flashaddr_t addr)
   uint16_t sp = _avr_sp_get (avr);
   addr >>= 1;
   for (int i = 0; i < avr->address_size; i++, addr >>= 8, sp--)
-    {
-      _avr_set_ram (avr, sp, addr);
-    }
+    _avr_set_ram (avr, sp, addr);
   _avr_sp_set (avr, sp);
   return avr->address_size;
 }
@@ -314,9 +313,7 @@ _avr_pop_addr (avr_t * avr)
   uint16_t sp = _avr_sp_get (avr) + 1;
   avr_flashaddr_t res = 0;
   for (int i = 0; i < avr->address_size; i++, sp++)
-    {
-      res = (res << 8) | _avr_get_ram (avr, sp);
-    }
+    res = (res << 8) | _avr_get_ram (avr, sp);
   res <<= 1;
   _avr_sp_set (avr, sp - 1);
   return res;
@@ -326,13 +323,12 @@ _avr_pop_addr (avr_t * avr)
  * "Pretty" register names
  */
 const char *reg_names[255] = {
-  [R_XH] = "XH",[R_XL] = "XL",
-  [R_YH] = "YH",[R_YL] = "YL",
-  [R_ZH] = "ZH",[R_ZL] = "ZL",
-  [R_SPH] = "SPH",[R_SPL] = "SPL",
+  [R_XH] = "XH", [R_XL] = "XL",
+  [R_YH] = "YH", [R_YL] = "YL",
+  [R_ZH] = "ZH", [R_ZL] = "ZL",
+  [R_SPH] = "SPH", [R_SPL] = "SPL",
   [R_SREG] = "SREG",
 };
-
 
 const char *
 avr_regname (uint8_t reg)
@@ -393,9 +389,7 @@ avr_dump_state (avr_t * avr)
 
   for (int i = 0; i < 3 * 32; i++)
     if (REG_ISTOUCHED (avr, i))
-      {
-        printf ("%s=%02x ", avr_regname (i), avr->data[i]);
-      }
+      printf ("%s=%02x ", avr_regname (i), avr->data[i]);
   printf ("\n");
 }
 #endif
@@ -467,6 +461,8 @@ avr_dump_state (avr_t * avr)
 #define get_sreg_bit(o)                         \
   const uint8_t b = (o >> 4) & 7;
 
+/**************************************************************************************************/
+
 /*
  * Add a "jump" address to the jump trace buffer
  */
@@ -489,12 +485,12 @@ avr_dump_state (avr_t * avr)
 #define STACK_FRAME_POP()
 #endif
 #else /* CONFIG_SIMAVR_TRACE */
-
 #define TRACE_JUMP()
 #define STACK_FRAME_PUSH()
 #define STACK_FRAME_POP()
-
 #endif
+
+/**************************************************************************************************/
 
 /****************************************************************************\
  *
@@ -533,7 +529,6 @@ _avr_flags_add_zns (struct avr_t *avr, uint8_t res, uint8_t rd, uint8_t rr)
   /* zns */
   _avr_flags_zns (avr, res);
 }
-
 
 static void
 _avr_flags_sub_zns (struct avr_t *avr, uint8_t res, uint8_t rd, uint8_t rr)
@@ -603,7 +598,8 @@ static inline int
 _avr_is_instruction_32_bits (avr_t * avr, avr_flashaddr_t pc)
 {
   uint16_t o = (avr->flash[pc] | (avr->flash[pc + 1] << 8)) & 0xfc0f;
-  return o == 0x9200 ||   // STS ! Store Direct to Data Space
+  return
+    o == 0x9200 ||   // STS ! Store Direct to Data Space
     o == 0x9000 ||   // LDS Load Direct from Data Space
     o == 0x940c ||   // JMP Long Jump
     o == 0x940d ||   // JMP Long Jump
@@ -616,28 +612,28 @@ _avr_is_instruction_32_bits (avr_t * avr, avr_flashaddr_t pc)
  * 
  * The decoder was written by following the datasheet in no particular order.
  * As I went along, I noticed "bit patterns" that could be used to factor opcodes
- * However, a lot of these only became apparent later on, so SOME instructions
- * (skip of bit set etc) are compact, and some could use some refactoring (the ALU
- * ones scream to be factored).
+ * However, a lot of these only became apparent later on, so SOME instructions (skip of bit set etc)
+ * are compact, and some could use some refactoring (the ALU ones scream to be factored).
  * I assume that the decoder could easily be 2/3 of it's current size.
  * 
  * + It lacks the "extended" XMega jumps. 
- * + It also doesn't check whether the core it's
- *   emulating is supposed to have the fancy instructions, like multiply and such.
+ * + It also doesn't check whether the core it's emulating is supposed to have the fancy
+ *   instructions, like multiply and such.
  * 
- * The number of cycles taken by instruction has been added, but might not be
- * entirely accurate.
+ * The number of cycles taken by instruction has been added, but might not be entirely accurate.
  */
 avr_flashaddr_t
 avr_run_one (avr_t * avr)
 {
  run_one_again:
+
 #if CONFIG_SIMAVR_TRACE
   /*
    * this traces spurious reset or bad jumps
    */
-  if ((avr->pc == 0 && avr->cycle > 0) || avr->pc >= avr->codeend
-      || _avr_sp_get (avr) > avr->ramend)
+  if ((avr->pc == 0 && avr->cycle > 0) ||
+      avr->pc >= avr->codeend ||
+      _avr_sp_get (avr) > avr->ramend)
     {
       avr->trace = 1;
       STATE ("RESET\n");
@@ -646,8 +642,7 @@ avr_run_one (avr_t * avr)
   avr->trace_data->touched[0] = avr->trace_data->touched[1] = avr->trace_data->touched[2] = 0;
 #endif
 
-  /* Ensure we don't crash simavr due to a bad instruction reading past
-   * the end of the flash.
+  /* Ensure we don't crash simavr due to a bad instruction reading past the end of the flash.
    */
   if (unlikely (avr->pc >= avr->flashend))
     {
@@ -679,8 +674,8 @@ avr_run_one (avr_t * avr)
                   {   // CPC -- Compare with carry -- 0000 01rd dddd rrrr
                     get_vd5_vr5 (opcode);
                     uint8_t res = vd - vr - avr->sreg[S_C];
-                    STATE ("cpc %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r),
-                           vr, res);
+                    STATE ("cpc %s[%02x], %s[%02x] = %02x\n",
+			   avr_regname (d), vd, avr_regname (r), vr, res);
                     _avr_flags_sub_Rzns (avr, res, vd, vr);
                     SREG ();
                   }
@@ -690,14 +685,14 @@ avr_run_one (avr_t * avr)
                     get_vd5_vr5 (opcode);
                     uint8_t res = vd + vr;
                     if (r == d)
-                      {
-                        STATE ("lsl %s[%02x] = %02x\n", avr_regname (d), vd, res & 0xff);
-                      }
+		      {
+			STATE ("lsl %s[%02x] = %02x\n", avr_regname (d), vd, res & 0xff);
+		      }
                     else
-                      {
-                        STATE ("add %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd,
-                               avr_regname (r), vr, res);
-                      }
+		      {
+			STATE ("add %s[%02x], %s[%02x] = %02x\n",
+			       avr_regname (d), vd, avr_regname (r), vr, res);
+		      }
                     _avr_set_r (avr, d, res);
                     _avr_flags_add_zns (avr, res, vd, vr);
                     SREG ();
@@ -707,8 +702,8 @@ avr_run_one (avr_t * avr)
                   {   // SBC -- Subtract with carry -- 0000 10rd dddd rrrr
                     get_vd5_vr5 (opcode);
                     uint8_t res = vd - vr - avr->sreg[S_C];
-                    STATE ("sbc %s[%02x], %s[%02x] = %02x\n", avr_regname (d), avr->data[d],
-                           avr_regname (r), avr->data[r], res);
+                    STATE ("sbc %s[%02x], %s[%02x] = %02x\n",
+			   avr_regname (d), avr->data[d], avr_regname (r), avr->data[r], res);
                     _avr_set_r (avr, d, res);
                     _avr_flags_sub_Rzns (avr, res, vd, vr);
                     SREG ();
@@ -721,9 +716,9 @@ avr_run_one (avr_t * avr)
                       {   // MOVW -- Copy Register Word -- 0000 0001 dddd rrrr
                         uint8_t d = ((opcode >> 4) & 0xf) << 1;
                         uint8_t r = ((opcode) & 0xf) << 1;
-                        STATE ("movw %s:%s, %s:%s[%02x%02x]\n", avr_regname (d),
-                               avr_regname (d + 1), avr_regname (r), avr_regname (r + 1),
-                               avr->data[r + 1], avr->data[r]);
+                        STATE ("movw %s:%s, %s:%s[%02x%02x]\n",
+			       avr_regname (d), avr_regname (d + 1), avr_regname (r), avr_regname (r + 1),
+			       avr->data[r + 1], avr->data[r]);
                         _avr_set_r (avr, d, avr->data[r]);
                         _avr_set_r (avr, d + 1, avr->data[r + 1]);
                       }
@@ -733,9 +728,9 @@ avr_run_one (avr_t * avr)
                         int8_t r = 16 + (opcode & 0xf);
                         int8_t d = 16 + ((opcode >> 4) & 0xf);
                         int16_t res = ((int8_t) avr->data[r]) * ((int8_t) avr->data[d]);
-                        STATE ("muls %s[%d], %s[%02x] = %d\n", avr_regname (d),
-                               ((int8_t) avr->data[d]), avr_regname (r), ((int8_t) avr->data[r]),
-                               res);
+                        STATE ("muls %s[%d], %s[%02x] = %d\n",
+			       avr_regname (d), ((int8_t) avr->data[d]), avr_regname (r),
+			       ((int8_t) avr->data[r]), res);
                         _avr_set_r (avr, 0, res);
                         _avr_set_r (avr, 1, res >> 8);
                         avr->sreg[S_C] = (res >> 15) & 1;
@@ -750,32 +745,37 @@ avr_run_one (avr_t * avr)
                         int8_t d = 16 + ((opcode >> 4) & 0x7);
                         int16_t res = 0;
                         uint8_t c = 0;
-                        T (const char *name = "";) switch (opcode & 0x88)
-                          {
-                          case 0x00:   // MULSU -- Multiply Signed Unsigned -- 0000 0011 0ddd 0rrr
-                            res = ((uint8_t) avr->data[r]) * ((int8_t) avr->data[d]);
-                            c = (res >> 15) & 1;
-                            T (name = "mulsu";) break;
-                          case 0x08:   // FMUL -- Fractional Multiply Unsigned -- 0000 0011 0ddd 1rrr
-                            res = ((uint8_t) avr->data[r]) * ((uint8_t) avr->data[d]);
-                            c = (res >> 15) & 1;
-                            res <<= 1;
-                            T (name = "fmul";) break;
-                          case 0x80:   // FMULS -- Multiply Signed -- 0000 0011 1ddd 0rrr
-                            res = ((int8_t) avr->data[r]) * ((int8_t) avr->data[d]);
-                            c = (res >> 15) & 1;
-                            res <<= 1;
-                            T (name = "fmuls";) break;
-                          case 0x88:   // FMULSU -- Multiply Signed Unsigned -- 0000 0011 1ddd 1rrr
-                            res = ((uint8_t) avr->data[r]) * ((int8_t) avr->data[d]);
-                            c = (res >> 15) & 1;
-                            res <<= 1;
-                            T (name = "fmulsu";) break;
-                          }
+                        T (const char *name = "";);
+			switch (opcode & 0x88)
+			  {
+			  case 0x00:   // MULSU -- Multiply Signed Unsigned -- 0000 0011 0ddd 0rrr
+			    res = ((uint8_t) avr->data[r]) * ((int8_t) avr->data[d]);
+			    c = (res >> 15) & 1;
+			    T (name = "mulsu";);
+			    break;
+			  case 0x08:   // FMUL -- Fractional Multiply Unsigned -- 0000 0011 0ddd 1rrr
+			    res = ((uint8_t) avr->data[r]) * ((uint8_t) avr->data[d]);
+			    c = (res >> 15) & 1;
+			    res <<= 1;
+			    T (name = "fmul";);
+			    break;
+			  case 0x80:   // FMULS -- Multiply Signed -- 0000 0011 1ddd 0rrr
+			    res = ((int8_t) avr->data[r]) * ((int8_t) avr->data[d]);
+			    c = (res >> 15) & 1;
+			    res <<= 1;
+			    T (name = "fmuls";);
+			    break;
+			  case 0x88:   // FMULSU -- Multiply Signed Unsigned -- 0000 0011 1ddd 1rrr
+			    res = ((uint8_t) avr->data[r]) * ((int8_t) avr->data[d]);
+			    c = (res >> 15) & 1;
+			    res <<= 1;
+			    T (name = "fmulsu";);
+			    break;
+			  }
                         cycle++;
-                        STATE ("%s %s[%d], %s[%02x] = %d\n", name, avr_regname (d),
-                               ((int8_t) avr->data[d]), avr_regname (r), ((int8_t) avr->data[r]),
-                               res);
+                        STATE ("%s %s[%d], %s[%02x] = %d\n",
+			       name, avr_regname (d), ((int8_t) avr->data[d]), avr_regname (r),
+			       ((int8_t) avr->data[r]), res);
                         _avr_set_r (avr, 0, res);
                         _avr_set_r (avr, 1, res >> 8);
                         avr->sreg[S_C] = c;
@@ -800,8 +800,8 @@ avr_run_one (avr_t * avr)
             {   // SUB -- Subtract without carry -- 0001 10rd dddd rrrr
               get_vd5_vr5 (opcode);
               uint8_t res = vd - vr;
-              STATE ("sub %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r), vr,
-                     res);
+              STATE ("sub %s[%02x], %s[%02x] = %02x\n",
+		     avr_regname (d), vd, avr_regname (r), vr, res);
               _avr_set_r (avr, d, res);
               _avr_flags_sub_zns (avr, res, vd, vr);
               SREG ();
@@ -811,29 +811,29 @@ avr_run_one (avr_t * avr)
             {   // CPSE -- Compare, skip if equal -- 0001 00rd dddd rrrr
               get_vd5_vr5 (opcode);
               uint16_t res = vd == vr;
-              STATE ("cpse %s[%02x], %s[%02x]\t; Will%s skip\n", avr_regname (d), avr->data[d],
-                     avr_regname (r), avr->data[r], res ? "" : " not");
+              STATE ("cpse %s[%02x], %s[%02x]\t; Will%s skip\n",
+		     avr_regname (d), avr->data[d], avr_regname (r), avr->data[r], res ? "" : " not");
               if (res)
-                {
-                  if (_avr_is_instruction_32_bits (avr, new_pc))
-                    {
-                      new_pc += 4;
-                      cycle += 2;
-                    }
-                  else
-                    {
-                      new_pc += 2;
-                      cycle++;
-                    }
-                }
+		{
+		  if (_avr_is_instruction_32_bits (avr, new_pc))
+		    {
+		      new_pc += 4;
+		      cycle += 2;
+		    }
+		  else
+		    {
+		      new_pc += 2;
+		      cycle++;
+		    }
+		}
             }
             break;
           case 0x1400:
             {   // CP -- Compare -- 0001 01rd dddd rrrr
               get_vd5_vr5 (opcode);
               uint8_t res = vd - vr;
-              STATE ("cp %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r), vr,
-                     res);
+              STATE ("cp %s[%02x], %s[%02x] = %02x\n",
+		     avr_regname (d), vd, avr_regname (r), vr, res);
               _avr_flags_sub_zns (avr, res, vd, vr);
               SREG ();
             }
@@ -843,14 +843,14 @@ avr_run_one (avr_t * avr)
               get_vd5_vr5 (opcode);
               uint8_t res = vd + vr + avr->sreg[S_C];
               if (r == d)
-                {
-                  STATE ("rol %s[%02x] = %02x\n", avr_regname (d), avr->data[d], res);
-                }
+		{
+		  STATE ("rol %s[%02x] = %02x\n", avr_regname (d), avr->data[d], res);
+		}
               else
-                {
-                  STATE ("addc %s[%02x], %s[%02x] = %02x\n", avr_regname (d), avr->data[d],
-                         avr_regname (r), avr->data[r], res);
-                }
+		{
+		  STATE ("addc %s[%02x], %s[%02x] = %02x\n",
+			 avr_regname (d), avr->data[d], avr_regname (r), avr->data[r], res);
+		}
               _avr_set_r (avr, d, res);
               _avr_flags_add_zns (avr, res, vd, vr);
               SREG ();
@@ -871,14 +871,13 @@ avr_run_one (avr_t * avr)
               get_vd5_vr5 (opcode);
               uint8_t res = vd & vr;
               if (r == d)
-                {
-                  STATE ("tst %s[%02x]\n", avr_regname (d), avr->data[d]);
-                }
+		{
+		  STATE ("tst %s[%02x]\n", avr_regname (d), avr->data[d]);
+		}
               else
-                {
-                  STATE ("and %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r),
-                         vr, res);
-                }
+		{
+		  STATE ("and %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r), vr, res);
+		}
               _avr_set_r (avr, d, res);
               _avr_flags_znv0s (avr, res);
               SREG ();
@@ -889,14 +888,13 @@ avr_run_one (avr_t * avr)
               get_vd5_vr5 (opcode);
               uint8_t res = vd ^ vr;
               if (r == d)
-                {
-                  STATE ("clr %s[%02x]\n", avr_regname (d), avr->data[d]);
-                }
+		{
+		  STATE ("clr %s[%02x]\n", avr_regname (d), avr->data[d]);
+		}
               else
-                {
-                  STATE ("eor %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r),
-                         vr, res);
-                }
+		{
+		  STATE ("eor %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r), vr, res);
+		}
               _avr_set_r (avr, d, res);
               _avr_flags_znv0s (avr, res);
               SREG ();
@@ -906,8 +904,7 @@ avr_run_one (avr_t * avr)
             {   // OR -- Logical OR -- 0010 10rd dddd rrrr
               get_vd5_vr5 (opcode);
               uint8_t res = vd | vr;
-              STATE ("or %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r), vr,
-                     res);
+              STATE ("or %s[%02x], %s[%02x] = %02x\n", avr_regname (d), vd, avr_regname (r), vr, res);
               _avr_set_r (avr, d, res);
               _avr_flags_znv0s (avr, res);
               SREG ();
@@ -1006,8 +1003,7 @@ avr_run_one (avr_t * avr)
                 }
               else
                 {
-                  STATE ("ld %s, (Z+%d[%04x])=[%02x]\n", avr_regname (d), q, v + q,
-                         avr->data[v + q]);
+                  STATE ("ld %s, (Z+%d[%04x])=[%02x]\n", avr_regname (d), q, v + q, avr->data[v + q]);
                   _avr_set_r (avr, d, _avr_get_ram (avr, v + q));
                 }
               cycle += 1;   // 2 cycles, 3 for tinyavr
@@ -1025,8 +1021,7 @@ avr_run_one (avr_t * avr)
                 }
               else
                 {
-                  STATE ("ld %s, (Y+%d[%04x])=[%02x]\n", avr_regname (d), q, v + q,
-                         avr->data[d + q]);
+                  STATE ("ld %s, (Y+%d[%04x])=[%02x]\n", avr_regname (d), q, v + q, avr->data[d + q]);
                   _avr_set_r (avr, d, _avr_get_ram (avr, v + q));
                 }
               cycle += 1;   // 2 cycles, 3 for tinyavr
@@ -1067,9 +1062,8 @@ avr_run_one (avr_t * avr)
                 STATE ("break\n");
                 if (avr->gdb)
                   {
-		    // if gdb is on, we break here as in here
-		    // and we do so until gdb restores the instruction
-		    // that was here before
+		    // if gdb is on, we break here as in here and we do so until gdb restores the
+		    // instruction that was here before
                     avr->state = cpu_StepDone;
                     new_pc = avr->pc;
                     cycle = 0;
@@ -1168,8 +1162,7 @@ avr_run_one (avr_t * avr)
                         avr->data[R_ZL] | (avr->data[R_ZH] << 8) | (avr->data[avr->rampz] << 16);
                       get_d5 (opcode);
                       int op = opcode & 1;
-                      STATE ("elpm %s, (Z[%02x:%04x]%s)\n", avr_regname (d), z >> 16, z & 0xffff,
-                             op ? "+" : "");
+                      STATE ("elpm %s, (Z[%02x:%04x]%s)\n", avr_regname (d), z >> 16, z & 0xffff, op ? "+" : "");
                       _avr_set_r (avr, d, avr->flash[z]);
                       if (op)
                         {
@@ -1196,8 +1189,8 @@ avr_run_one (avr_t * avr)
                       int op = opcode & 3;
                       get_d5 (opcode);
                       uint16_t x = (avr->data[R_XH] << 8) | avr->data[R_XL];
-                      STATE ("ld %s, %sX[%04x]%s\n", avr_regname (d), op == 2 ? "--" : "", x,
-                             op == 1 ? "++" : "");
+                      STATE ("ld %s, %sX[%04x]%s\n",
+			     avr_regname (d), op == 2 ? "--" : "", x, op == 1 ? "++" : "");
                       cycle++;   // 2 cycles (1 for tinyavr, except with inc/dec 2)
                       if (op == 2)
                         x--;
@@ -1216,8 +1209,8 @@ avr_run_one (avr_t * avr)
                       int op = opcode & 3;
                       get_vd5 (opcode);
                       uint16_t x = (avr->data[R_XH] << 8) | avr->data[R_XL];
-                      STATE ("st %sX[%04x]%s, %s[%02x] \n", op == 2 ? "--" : "", x,
-                             op == 1 ? "++" : "", avr_regname (d), vd);
+                      STATE ("st %sX[%04x]%s, %s[%02x] \n",
+			     op == 2 ? "--" : "", x, op == 1 ? "++" : "", avr_regname (d), vd);
                       cycle++;   // 2 cycles, except tinyavr
                       if (op == 2)
                         x--;
@@ -1234,8 +1227,8 @@ avr_run_one (avr_t * avr)
                       int op = opcode & 3;
                       get_d5 (opcode);
                       uint16_t y = (avr->data[R_YH] << 8) | avr->data[R_YL];
-                      STATE ("ld %s, %sY[%04x]%s\n", avr_regname (d), op == 2 ? "--" : "", y,
-                             op == 1 ? "++" : "");
+                      STATE ("ld %s, %sY[%04x]%s\n",
+			     avr_regname (d), op == 2 ? "--" : "", y, op == 1 ? "++" : "");
                       cycle++;   // 2 cycles, except tinyavr
                       if (op == 2)
                         y--;
@@ -1253,8 +1246,8 @@ avr_run_one (avr_t * avr)
                       int op = opcode & 3;
                       get_vd5 (opcode);
                       uint16_t y = (avr->data[R_YH] << 8) | avr->data[R_YL];
-                      STATE ("st %sY[%04x]%s, %s[%02x]\n", op == 2 ? "--" : "", y,
-                             op == 1 ? "++" : "", avr_regname (d), vd);
+                      STATE ("st %sY[%04x]%s, %s[%02x]\n",
+			     op == 2 ? "--" : "", y, op == 1 ? "++" : "", avr_regname (d), vd);
                       cycle++;
                       if (op == 2)
                         y--;
@@ -1281,8 +1274,8 @@ avr_run_one (avr_t * avr)
                       int op = opcode & 3;
                       get_d5 (opcode);
                       uint16_t z = (avr->data[R_ZH] << 8) | avr->data[R_ZL];
-                      STATE ("ld %s, %sZ[%04x]%s\n", avr_regname (d), op == 2 ? "--" : "", z,
-                             op == 1 ? "++" : "");
+                      STATE ("ld %s, %sZ[%04x]%s\n",
+			     avr_regname (d), op == 2 ? "--" : "", z, op == 1 ? "++" : "");
                       cycle++;;   // 2 cycles, except tinyavr
                       if (op == 2)
                         z--;
@@ -1300,8 +1293,8 @@ avr_run_one (avr_t * avr)
                       int op = opcode & 3;
                       get_vd5 (opcode);
                       uint16_t z = (avr->data[R_ZH] << 8) | avr->data[R_ZL];
-                      STATE ("st %sZ[%04x]%s, %s[%02x] \n", op == 2 ? "--" : "", z,
-                             op == 1 ? "++" : "", avr_regname (d), vd);
+                      STATE ("st %sZ[%04x]%s, %s[%02x] \n",
+			     op == 2 ? "--" : "", z, op == 1 ? "++" : "", avr_regname (d), vd);
                       cycle++;   // 2 cycles, except tinyavr
                       if (op == 2)
                         z--;
@@ -1316,9 +1309,8 @@ avr_run_one (avr_t * avr)
                     {   // POP -- 1001 000d dddd 1111
                       get_d5 (opcode);
                       _avr_set_r (avr, d, _avr_pop8 (avr));
-                      T (uint16_t sp =
-                         _avr_sp_get (avr);) STATE ("pop %s (@%04x)[%02x]\n", avr_regname (d), sp,
-                                                    avr->data[sp]);
+                      T (uint16_t sp = _avr_sp_get (avr););
+		      STATE ("pop %s (@%04x)[%02x]\n", avr_regname (d), sp, avr->data[sp]);
                       cycle++;
                     }
                     break;
@@ -1326,9 +1318,8 @@ avr_run_one (avr_t * avr)
                     {   // PUSH -- 1001 001d dddd 1111
                       get_vd5 (opcode);
                       _avr_push8 (avr, vd);
-                      T (uint16_t sp =
-                         _avr_sp_get (avr);) STATE ("push %s[%02x] (@%04x)\n", avr_regname (d), vd,
-                                                    sp);
+                      T (uint16_t sp = _avr_sp_get (avr););
+		      STATE ("push %s[%02x] (@%04x)\n", avr_regname (d), vd, sp);
                       cycle++;
                     }
                     break;
@@ -1452,8 +1443,8 @@ avr_run_one (avr_t * avr)
                           {   // ADIW -- Add Immediate to Word -- 1001 0110 KKpp KKKK
                             get_vp2_k6 (opcode);
                             uint16_t res = vp + k;
-                            STATE ("adiw %s:%s[%04x], 0x%02x\n", avr_regname (p),
-                                   avr_regname (p + 1), vp, k);
+			    STATE ("adiw %s:%s[%04x], 0x%02x\n",
+				   avr_regname (p), avr_regname (p + 1), vp, k);
                             _avr_set_r (avr, p + 1, res >> 8);
                             _avr_set_r (avr, p, res);
                             avr->sreg[S_V] = ((~vp & res) >> 15) & 1;
@@ -1467,8 +1458,8 @@ avr_run_one (avr_t * avr)
                           {   // SBIW -- Subtract Immediate from Word -- 1001 0111 KKpp KKKK
                             get_vp2_k6 (opcode);
                             uint16_t res = vp - k;
-                            STATE ("sbiw %s:%s[%04x], 0x%02x\n", avr_regname (p),
-                                   avr_regname (p + 1), vp, k);
+                            STATE ("sbiw %s:%s[%04x], 0x%02x\n",
+				   avr_regname (p), avr_regname (p + 1), vp, k);
                             _avr_set_r (avr, p + 1, res >> 8);
                             _avr_set_r (avr, p, res);
                             avr->sreg[S_V] = ((vp & ~res) >> 15) & 1;
@@ -1482,8 +1473,8 @@ avr_run_one (avr_t * avr)
                           {   // CBI -- Clear Bit in I/O Register -- 1001 1000 AAAA Abbb
                             get_io5_b3mask (opcode);
                             uint8_t res = _avr_get_ram (avr, io) & ~mask;
-                            STATE ("cbi %s[%04x], 0x%02x = %02x\n", avr_regname (io), avr->data[io],
-                                   mask, res);
+			    STATE ("cbi %s[%04x], 0x%02x = %02x\n",
+				   avr_regname (io), avr->data[io], mask, res);
                             _avr_set_ram (avr, io, res);
                             cycle++;
                           }
@@ -1492,8 +1483,8 @@ avr_run_one (avr_t * avr)
                           {   // SBIC -- Skip if Bit in I/O Register is Cleared -- 1001 1001 AAAA Abbb
                             get_io5_b3mask (opcode);
                             uint8_t res = _avr_get_ram (avr, io) & mask;
-                            STATE ("sbic %s[%04x], 0x%02x\t; Will%s branch\n", avr_regname (io),
-                                   avr->data[io], mask, !res ? "" : " not");
+                            STATE ("sbic %s[%04x], 0x%02x\t; Will%s branch\n",
+				   avr_regname (io), avr->data[io], mask, !res ? "" : " not");
                             if (!res)
                               {
                                 if (_avr_is_instruction_32_bits (avr, new_pc))
@@ -1523,21 +1514,21 @@ avr_run_one (avr_t * avr)
                           {   // SBIS -- Skip if Bit in I/O Register is Set -- 1001 1011 AAAA Abbb
                             get_io5_b3mask (opcode);
                             uint8_t res = _avr_get_ram (avr, io) & mask;
-                            STATE ("sbis %s[%04x], 0x%02x\t; Will%s branch\n", avr_regname (io),
-                                   avr->data[io], mask, res ? "" : " not");
+                            STATE ("sbis %s[%04x], 0x%02x\t; Will%s branch\n",
+				   avr_regname (io), avr->data[io], mask, res ? "" : " not");
                             if (res)
-                              {
-                                if (_avr_is_instruction_32_bits (avr, new_pc))
-                                  {
-                                    new_pc += 4;
-                                    cycle += 2;
-                                  }
-                                else
-                                  {
-                                    new_pc += 2;
-                                    cycle++;
-                                  }
-                              }
+			      {
+				if (_avr_is_instruction_32_bits (avr, new_pc))
+				  {
+				    new_pc += 4;
+				    cycle += 2;
+				  }
+				else
+				  {
+				    new_pc += 2;
+				    cycle++;
+				  }
+			      }
                           }
                           break;
                         default:
@@ -1547,8 +1538,8 @@ avr_run_one (avr_t * avr)
                               {   // MUL -- Multiply Unsigned -- 1001 11rd dddd rrrr
                                 get_vd5_vr5 (opcode);
                                 uint16_t res = vd * vr;
-                                STATE ("mul %s[%02x], %s[%02x] = %04x\n", avr_regname (d), vd,
-                                       avr_regname (r), vr, res);
+                                STATE ("mul %s[%02x], %s[%02x] = %04x\n",
+				       avr_regname (d), vd, avr_regname (r), vr, res);
                                 cycle++;
                                 _avr_set_r (avr, 0, res);
                                 _avr_set_r (avr, 1, res >> 8);
@@ -1645,15 +1636,15 @@ avr_run_one (avr_t * avr)
                 {"brcs", "breq", "brmi", "brvs", NULL, "brhs", "brts", "brie"},
               };
               if (names[set][s])
-                {
-                  STATE ("%s .%d [%04x]\t; Will%s branch\n", names[set][s], o, new_pc + (o << 1),
-                         branch ? "" : " not");
-                }
+		{
+		  STATE ("%s .%d [%04x]\t; Will%s branch\n",
+			 names[set][s], o, new_pc + (o << 1), branch ? "" : " not");
+		}
               else
-                {
-                  STATE ("%s%c .%d [%04x]\t; Will%s branch\n", set ? "brbs" : "brbc",
-                         _sreg_bit_name[s], o, new_pc + (o << 1), branch ? "" : " not");
-                }
+		{
+		  STATE ("%s%c .%d [%04x]\t; Will%s branch\n",
+			 set ? "brbs" : "brbc", _sreg_bit_name[s], o, new_pc + (o << 1), branch ? "" : " not");
+		}
               if (branch)
                 {
                   cycle++;   // 2 cycles if taken, 1 otherwise
@@ -1683,21 +1674,21 @@ avr_run_one (avr_t * avr)
             {   // SBRS/SBRC -- Skip if Bit in Register is Set/Clear -- 1111 11sd dddd 0bbb
               get_vd5_s3_mask (opcode) int set = (opcode & 0x0200) != 0;
               int branch = ((vd & mask) && set) || (!(vd & mask) && !set);
-              STATE ("%s %s[%02x], 0x%02x\t; Will%s branch\n", set ? "sbrs" : "sbrc",
-                     avr_regname (d), vd, mask, branch ? "" : " not");
+              STATE ("%s %s[%02x], 0x%02x\t; Will%s branch\n",
+		     set ? "sbrs" : "sbrc", avr_regname (d), vd, mask, branch ? "" : " not");
               if (branch)
-                {
-                  if (_avr_is_instruction_32_bits (avr, new_pc))
-                    {
-                      new_pc += 4;
-                      cycle += 2;
-                    }
-                  else
-                    {
-                      new_pc += 2;
-                      cycle++;
-                    }
-                }
+		{
+		  if (_avr_is_instruction_32_bits (avr, new_pc))
+		    {
+		      new_pc += 4;
+		      cycle += 2;
+		    }
+		  else
+		    {
+		      new_pc += 2;
+		      cycle++;
+		    }
+		}
             }
             break;
           default:
@@ -1708,11 +1699,13 @@ avr_run_one (avr_t * avr)
 
     default:
       _avr_invalid_opcode (avr);
-
     }
+  
   avr->cycle += cycle;
 
-  if ((avr->state == cpu_Running) && (avr->run_cycle_count > cycle) && (avr->interrupt_state == 0))
+  if ((avr->state == cpu_Running) &&
+      (avr->run_cycle_count > cycle) &&
+      (avr->interrupt_state == 0))
     {
       avr->run_cycle_count -= cycle;
       avr->pc = new_pc;
