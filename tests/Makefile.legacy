@@ -1,3 +1,4 @@
+# -*- mode: Makefile -*-
 #
 # This makefile takes each "at*" file, extracts it's part name
 # And compiles it into an ELF binary.
