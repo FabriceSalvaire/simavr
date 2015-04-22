@@ -5,20 +5,17 @@
 
   This file is part of simavr.
 
-  simavr is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+  General Public License as published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
 
-  simavr is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+  Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with simavr.  If not, see <http://www.gnu.org/licenses/>.
+  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+  <http://www.gnu.org/licenses/>.
 */
-
 
 #ifndef __I2C_EEPROM_H___
 #define __I2C_EEPROM_H___
@@ -26,14 +23,11 @@
 #include "sim_irq.h"
 
 /*
- * This is a generic i2c eeprom; it can be up to 4096 bytes, and can work
- * in two modes :
- * 1) ONE slave address, and either one or two bytes sent on i2c to specify
- *    the byte to read/write.
+ * This is a generic i2c eeprom; it can be up to 4096 bytes, and can work in two modes :
+ * 1) ONE slave address, and either one or two bytes sent on i2c to specify the byte to read/write.
  *    So a transaction looks like:
  *    <i2c address> [<byte offset MSB>] <byte offset LSB> [<data>]
- * 2) Multiple slave address to specify the high byte offset value, and one
- *    byte offset sent
+ * 2) Multiple slave address to specify the high byte offset value, and one byte offset sent
  *    So a transaction looks like:
  *    <i2c address; x low bits used as byte offset> <byte offset LSB> [<data>]
  *
@@ -70,9 +64,8 @@ typedef struct i2c_eeprom_t
  *
  * The "data" is optional, data is initialized as 0xff like a normal eeprom.
  */
-void
-i2c_eeprom_init (struct avr_t *avr,
-                 i2c_eeprom_t * p, uint8_t addr, uint8_t mask, uint8_t * data, size_t size);
+void i2c_eeprom_init (struct avr_t *avr, i2c_eeprom_t * p, uint8_t addr, uint8_t mask,
+		      uint8_t * data, size_t size);
 
 /*
  * Attach the eeprom to the AVR's TWI master code,

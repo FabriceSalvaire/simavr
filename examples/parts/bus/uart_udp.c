@@ -5,29 +5,27 @@
 
   This file is part of simavr.
 
-  simavr is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+  General Public License as published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
 
-  simavr is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+  Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with simavr.  If not, see <http://www.gnu.org/licenses/>.
+  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+  <http://www.gnu.org/licenses/>.
 */
 
-#include <pthread.h>
-#include <string.h>
-#include <stdio.h>
 #include <errno.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 
-#include "uart_udp.h"
 #include "avr_uart.h"
 #include "sim_hex.h"
+#include "uart_udp.h"
 
 DEFINE_FIFO (uint8_t, uart_udp_fifo);
 
@@ -43,8 +41,8 @@ uart_udp_in_hook (struct avr_irq_t *irq, uint32_t value, void *param)
 }
 
 /*
- * Called when the uart has room in it's input buffer. This is called repeateadly
- * if necessary, while the xoff is called only when the uart fifo is FULL
+ * Called when the uart has room in it's input buffer. This is called repeateadly if necessary,
+ * while the xoff is called only when the uart fifo is FULL
  */
 static void
 uart_udp_xon_hook (struct avr_irq_t *irq, uint32_t value, void *param)

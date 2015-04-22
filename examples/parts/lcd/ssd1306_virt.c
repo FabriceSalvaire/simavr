@@ -6,28 +6,27 @@
 
   This file is part of simavr.
 
-  simavr is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+  General Public License as published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
 
-  simavr is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+  Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with simavr.  If not, see <http://www.gnu.org/licenses/>.
+  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+  <http://www.gnu.org/licenses/>.
 */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
+#include "avr_ioport.h"
+#include "avr_spi.h"
 #include "sim_time.h"
 
 #include "ssd1306_virt.h"
-#include "avr_spi.h"
-#include "avr_ioport.h"
 
 /*
  * Write a byte at the current cursor location and then scroll the cursor.
@@ -51,8 +50,8 @@ ssd1306_write_data (ssd1306_t * part)
 }
 
 /*
- * Called on the first command byte sent. For setting single
- * byte commands and initiating multi-byte commands.
+ * Called on the first command byte sent. For setting single byte commands and initiating multi-byte
+ * commands.
  */
 void
 ssd1306_update_command_register (ssd1306_t * part)
@@ -152,9 +151,8 @@ ssd1306_update_setting (ssd1306_t * part)
 }
 
 /*
- * Determines whether a new command has been sent, or
- * whether we are in the process of setting a multi-
- * byte command.
+ * Determines whether a new command has been sent, or whether we are in the process of setting a
+ * multi- byte command.
  */
 static void
 ssd1306_write_command (ssd1306_t * part)

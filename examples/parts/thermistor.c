@@ -29,7 +29,7 @@
 #include "thermistor.h"
 
 /*
- * called the ADC could use a new value
+ * called when the ADC could use a new value
  * The value returned is NOT in "ADC" mode, it's in millivolts
  */
 static void
@@ -50,8 +50,7 @@ thermistor_in_hook (struct avr_irq_t *irq, uint32_t value, void *param)
         {
 	  // printf("%s(%2d) %.2f matches %3dC is %d adc\n", __func__, v.src,
 	  //        p->current, t[1], t[0] / p->oversampling);
-          avr_raise_irq (p->irq + IRQ_TERM_ADC_VALUE_OUT,
-                         ((t[0] / p->oversampling) * 5000) / 0x3ff);
+          avr_raise_irq (p->irq + IRQ_TERM_ADC_VALUE_OUT, ((t[0] / p->oversampling) * 5000) / 0x3ff);
           return;
         }
     }

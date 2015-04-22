@@ -5,46 +5,42 @@
 
   This file is part of simavr.
 
-  simavr is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+  General Public License as published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
 
-  simavr is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+  Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with simavr.  If not, see <http://www.gnu.org/licenses/>.
+  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+  <http://www.gnu.org/licenses/>.
 */
 
 /*
- * This "Part" simulates the business end of a HD44780 LCD display
- * It supports from 8x1 to 20x4 or even 40x4 (not sure that exists)
+ * This "Part" simulates the business end of a HD44780 LCD display It supports from 8x1 to 20x4 or
+ * even 40x4 (not sure that exists)
  *
- * It works both in 4 bits and 8 bits mode and supports a "quicky" method
- * of driving that is commonly used on AVR, namely
- * (msb) RW:E:RS:D7:D6:D5:D4 (lsb)
+ * It works both in 4 bits and 8 bits mode and supports a "quicky" method of driving that is
+ * commonly used on AVR, namely (msb) RW:E:RS:D7:D6:D5:D4 (lsb)
  *
- * + As usual, the "RW" pin is optional if you are willing to wait for the
- *   specific number of cycles as per the datasheet (37uS between operations)
- * + If you decide to use the RW pin, the "busy" flag is supported and will
- *   be automaticly cleared on the second read, to exercisee the code a bit.
+ * + As usual, the "RW" pin is optional if you are willing to wait for the specific number of cycles
+ *   as per the datasheet (37uS between operations)
+ * + If you decide to use the RW pin, the "busy" flag is supported and will be automaticly cleared
+ *   on the second read, to exercisee the code a bit.
  * + Cursor is supported, but now "display shift"
  * + The Character RAM is supported, but is not currently drawn.
  *
- * To interface this part, you can use the "INPUT" IRQs and hook them to the
- * simavr instance, if you use the RW pins or read back frim the display, you
- * can hook the data pins /back/ to the AVR too.
+ * To interface this part, you can use the "INPUT" IRQs and hook them to the simavr instance, if you
+ * use the RW pins or read back frim the display, you can hook the data pins /back/ to the AVR too.
  *
- * The "part" also provides various IRQs that are there to be placed in a VCD file
- * to show what is sent, and some of the internal status.
+ * The "part" also provides various IRQs that are there to be placed in a VCD file to show what is
+ * sent, and some of the internal status.
  *
- * This part has been tested with two different implementation of an AVR driver
- * for the hd44780. The one shipped in this directory is straight out of the
- * avr-libc example code.
+ * This part has been tested with two different implementation of an AVR driver for the hd44780. The
+ * one shipped in this directory is straight out of the avr-libc example code.
  */
+
 #ifndef __HD44780_H__
 #define __HD44780_H__
 

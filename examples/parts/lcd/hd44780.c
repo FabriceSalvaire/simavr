@@ -6,23 +6,22 @@
 
   This file is part of simavr.
 
-  simavr is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+  General Public License as published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
 
-  simavr is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+  Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with simavr.  If not, see <http://www.gnu.org/licenses/>.
+  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+  <http://www.gnu.org/licenses/>.
 */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
 #include "sim_time.h"
 
 #include "hd44780.h"
@@ -41,7 +40,6 @@ hd44780_print (hd44780_t * b)
   printf ("\\******************/\n");
 }
 
-
 static void
 _hd44780_reset_cursor (hd44780_t * b)
 {
@@ -58,12 +56,9 @@ _hd44780_clear_screen (hd44780_t * b)
   avr_raise_irq (b->irq + IRQ_HD44780_ADDR, b->cursor);
 }
 
-
-
 /*
- * This is called when the delay between operation is triggered
- * without the AVR firmware 'reading' the status byte. It
- * automatically clears the BUSY flag for the next command
+ * This is called when the delay between operation is triggered without the AVR firmware 'reading'
+ * the status byte. It automatically clears the BUSY flag for the next command
  */
 static avr_cycle_count_t
 _hd44780_busy_timer (struct avr_t *avr, avr_cycle_count_t when, void *param)

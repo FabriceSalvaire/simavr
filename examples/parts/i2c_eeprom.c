@@ -5,26 +5,26 @@
 
   This file is part of simavr.
 
-  simavr is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+  General Public License as published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
 
-  simavr is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+  Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with simavr.  If not, see <http://www.gnu.org/licenses/>.
+  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+  <http://www.gnu.org/licenses/>.
 */
 
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include "sim_avr.h"
+
 #include "avr_twi.h"
+#include "sim_avr.h"
+
 #include "i2c_eeprom.h"
 
 /*
@@ -53,8 +53,8 @@ i2c_eeprom_in_hook (struct avr_irq_t *irq, uint32_t value, void *param)
       p->reg_addr = 0;
     }
   /*
-   * if we receive a start, reset status, check if the slave address is
-   * meant to be us, and if so reply with an ACK bit
+   * if we receive a start, reset status, check if the slave address is meant to be us, and if so
+   * reply with an ACK bit
    */
   if (v.u.twi.msg & TWI_COND_START)
     {
@@ -70,15 +70,14 @@ i2c_eeprom_in_hook (struct avr_irq_t *irq, uint32_t value, void *param)
         }
     }
   /*
-   * If it's a data transaction, first check it is meant to be us (we
-   * received the correct address and are selected)
+   * If it's a data transaction, first check it is meant to be us (we received the correct address
+   * and are selected)
    */
   if (p->selected)
     {
       /*
-       * This is a write transaction, first receive as many address bytes
-       * as we need, then set the address register, then start
-       * writing data,
+       * This is a write transaction, first receive as many address bytes as we need, then set the
+       * address register, then start writing data,
        */
       if (v.u.twi.msg & TWI_COND_WRITE)
         {
@@ -127,8 +126,7 @@ static const char *_ee_irq_names[2] = {
 };
 
 void
-i2c_eeprom_init (struct avr_t *avr,
-                 i2c_eeprom_t * p, uint8_t addr, uint8_t mask, uint8_t * data, size_t size)
+i2c_eeprom_init (struct avr_t *avr, i2c_eeprom_t * p, uint8_t addr, uint8_t mask, uint8_t * data, size_t size)
 {
   memset (p, 0, sizeof (*p));
   memset (p->ee, 0xff, sizeof (p->ee));
