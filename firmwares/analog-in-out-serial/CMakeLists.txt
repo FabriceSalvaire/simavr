@@ -1,13 +1,13 @@
 ####################################################################################################
 
-generate_arduino_firmware(blink-led
+generate_arduino_firmware(analog-in-out-serial
   BOARD mega2560
-  SKETCH blink-led.c)
+  SKETCH analog-in-out-serial.c)
 
-install(TARGETS blink-led
+install(TARGETS analog-in-out-serial
   DESTINATION ${FIRMWARES_BINARY_DIR})
 # DESTINATION share/simavr/firmwares)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/blink-led.hex
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/analog-in-out-serial.hex
   DESTINATION ${FIRMWARES_BINARY_DIR})
 # DESTINATION share/simavr/firmwares)
 
