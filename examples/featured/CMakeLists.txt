@@ -5,7 +5,9 @@
 # Sub directories
 #
 
+add_subdirectory(analog-in-out-serial)
 add_subdirectory(blink-led)
+add_subdirectory(fade-led)
 add_subdirectory(uart)
 
 ####################################################################################################
