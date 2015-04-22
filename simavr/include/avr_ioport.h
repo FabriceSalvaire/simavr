@@ -43,8 +43,8 @@ extern "C"
 // add port name (uppercase) to get the real IRQ
 #define AVR_IOCTL_IOPORT_GETIRQ(_name) AVR_IOCTL_DEF('i','o','g',(_name))
 
-// this ioctl takes a avr_regbit_t, compares the register address to PORT/PIN/DDR and return the
-// corresponding IRQ(s) if it matches
+  // this ioctl takes a avr_regbit_t, compares the register address to PORT/PIN/DDR and return the
+  // corresponding IRQ(s) if it matches
   typedef struct avr_ioport_getirq_t
   {
     avr_regbit_t bit;    // bit wanted

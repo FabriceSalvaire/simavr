@@ -29,13 +29,13 @@ extern "C"
 
 #define ARRAY_SIZE(_aa) (sizeof(_aa) / sizeof((_aa)[0]))
 
-
   /*
    * These accessors are inlined and are used to perform the operations on avr_regbit_t
    * definitions. This is the "official" way to access bits into registers The small footprint costs
    * brings much better versatility for functions/bits that are not always defined in the same place
    * on real AVR cores
    */
+
   /*
    * set/get/clear io register bits in one operation
    */

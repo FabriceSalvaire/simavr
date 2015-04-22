@@ -70,6 +70,7 @@ extern "C" {
 #if __AVR__
 
 #define _MMCU_ __attribute__((section(".mmcu")))
+
   struct avr_mmcu_long_t {
     uint8_t tag;
     uint8_t len;
@@ -96,11 +97,11 @@ extern "C" {
     char name[];
   } __attribute__((__packed__));
 
-#define AVR_MCU_STRING(_tag, _str)			\
-  const struct avr_mmcu_string_t _##_tag _MMCU_ = {	\
-    .tag = _tag,					\
-    .len = sizeof(_str),				\
-    .string = _str,					\
+#define AVR_MCU_STRING(_tag, _str)                      \
+  const struct avr_mmcu_string_t _##_tag _MMCU_ = {     \
+    .tag = _tag,                                        \
+    .len = sizeof(_str),                                \
+    .string = _str,                                     \
   }
 
   /*
@@ -110,14 +111,14 @@ extern "C" {
 #define DO_CONCAT2(_a, _b) _a##_b
 #define DO_CONCAT(_a, _b) DO_CONCAT2(_a,_b)
 
-#define AVR_MCU_LONG(_tag, _val)					\
+#define AVR_MCU_LONG(_tag, _val)                                                  \
   const struct avr_mmcu_long_t DO_CONCAT(DO_CONCAT(_, _tag), __LINE__) _MMCU_ = { \
-    .tag = _tag,							\
-    .len = sizeof(uint32_t),						\
-    .val = _val,							\
+    .tag = _tag,                                                                  \
+    .len = sizeof(uint32_t),                                                      \
+    .val = _val,                                                                  \
   }
 
-#define AVR_MCU_BYTE(_tag, _val)			\
+#define AVR_MCU_BYTE(_tag, _val)                        \
   const uint8_t _##_tag _MMCU_ = { _tag, 1, _val }
 
   /*!
@@ -131,17 +132,17 @@ extern "C" {
    * This structure will automatically tell simavr to add a VCD trace for the UART register, and the
    * UDRE0 bit, so you can trace exactly the timing of the changed using gtkwave.
    */
-#define AVR_MCU_VCD_SYMBOL(_name)					\
-  .tag = AVR_MMCU_TAG_VCD_TRACE,					\
-    .len = sizeof(struct avr_mmcu_vcd_trace_t) - 2 + sizeof(_name),	\
-    .name = _name
+#define AVR_MCU_VCD_SYMBOL(_name)                                       \
+  .tag = AVR_MMCU_TAG_VCD_TRACE,                                        \
+  .len = sizeof(struct avr_mmcu_vcd_trace_t) - 2 + sizeof(_name),       \
+  .name = _name
 
   /*!
    * Specifies the name and wanted period (in usec) for a VCD file this is not mandatory for the VCD
    * output to work, if this tag is not used, a VCD file will still be created with default values
    */
-#define AVR_MCU_VCD_FILE(_name, _period)		\
-  AVR_MCU_STRING(AVR_MMCU_TAG_VCD_FILENAME, _name);	\
+#define AVR_MCU_VCD_FILE(_name, _period)                \
+  AVR_MCU_STRING(AVR_MMCU_TAG_VCD_FILENAME, _name);     \
   AVR_MCU_LONG(AVR_MMCU_TAG_VCD_PERIOD, _period)
 
   /*!
@@ -150,11 +151,11 @@ extern "C" {
    * usual "GPIO register" that most (all ?) AVR have.
    * See definition of SIMAVR_CMD_* to see what commands can be used from your firmware.
    */
-#define AVR_MCU_SIMAVR_COMMAND(_register)				\
-  const struct avr_mmcu_addr_t _simavr_command_register _MMCU_ = {	\
-    .tag = AVR_MMCU_TAG_SIMAVR_COMMAND,					\
-    .len = sizeof(void *),						\
-    .what = (void*)_register,						\
+#define AVR_MCU_SIMAVR_COMMAND(_register)                               \
+  const struct avr_mmcu_addr_t _simavr_command_register _MMCU_ = {      \
+    .tag = AVR_MMCU_TAG_SIMAVR_COMMAND,                                 \
+    .len = sizeof(void *),                                              \
+    .what = (void*)_register,                                           \
   }
 
   /*!
@@ -162,11 +163,11 @@ extern "C" {
    * (typically a GPIO register, but any unused register can work...) that will allow printing on
    * the host's console without using a UART to do debug.
    */
-#define AVR_MCU_SIMAVR_CONSOLE(_register)				\
-  const struct avr_mmcu_addr_t _simavr_console_register _MMCU_ = {	\
-    .tag = AVR_MMCU_TAG_SIMAVR_CONSOLE,					\
-    .len = sizeof(void *),						\
-    .what = (void*)_register,						\
+#define AVR_MCU_SIMAVR_CONSOLE(_register)                               \
+  const struct avr_mmcu_addr_t _simavr_console_register _MMCU_ = {      \
+    .tag = AVR_MMCU_TAG_SIMAVR_CONSOLE,                                 \
+    .len = sizeof(void *),                                              \
+    .what = (void*)_register,                                           \
   }
 
   /*!
@@ -175,10 +176,10 @@ extern "C" {
    * between an output state and a "default" state.
    * The value passed here will be output on the PORT IRQ when the DDR pin is set to input again
    */
-#define AVR_MCU_EXTERNAL_PORT_PULL(_port, _mask, _val)	\
-  AVR_MCU_LONG(AVR_MMCU_TAG_PORT_EXTERNAL_PULL,		\
-	       (((unsigned long)((_port)&0xff) << 16) | \
-                ((unsigned long)((_mask)&0xff) << 8) |	\
+#define AVR_MCU_EXTERNAL_PORT_PULL(_port, _mask, _val)  \
+  AVR_MCU_LONG(AVR_MMCU_TAG_PORT_EXTERNAL_PULL,         \
+               (((unsigned long)((_port)&0xff) << 16) | \
+                ((unsigned long)((_mask)&0xff) << 8) |  \
                 ((_val)&0xff)));
 
   /*!
@@ -187,18 +188,18 @@ extern "C" {
    * a divide-by-zero crash.
    * The units are Volts*1000 (millivolts)
    */
-#define AVR_MCU_VOLTAGES(_vcc, _avcc, _aref)	\
-  AVR_MCU_LONG(AVR_MMCU_TAG_VCC, (_vcc));	\
-  AVR_MCU_LONG(AVR_MMCU_TAG_AVCC, (_avcc));	\
+#define AVR_MCU_VOLTAGES(_vcc, _avcc, _aref)    \
+  AVR_MCU_LONG(AVR_MMCU_TAG_VCC, (_vcc));       \
+  AVR_MCU_LONG(AVR_MMCU_TAG_AVCC, (_avcc));     \
   AVR_MCU_LONG(AVR_MMCU_TAG_AREF, (_aref));
 
   /*!
    * This the has to be used if you want to add other tags to the .mmcu section the _mmcu symbol is
    * used as an anchor to make sure it stays linked in.
    */
-#define AVR_MCU(_speed, _name)				\
-  const uint8_t _mmcu[2] _MMCU_ = { AVR_MMCU_TAG, 0 };	\
-  AVR_MCU_STRING(AVR_MMCU_TAG_NAME, _name);		\
+#define AVR_MCU(_speed, _name)                          \
+  const uint8_t _mmcu[2] _MMCU_ = { AVR_MMCU_TAG, 0 };  \
+  AVR_MCU_STRING(AVR_MMCU_TAG_NAME, _name);             \
   AVR_MCU_LONG(AVR_MMCU_TAG_FREQUENCY, _speed)
 
 #endif /* __AVR__ */

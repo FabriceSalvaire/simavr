@@ -31,8 +31,7 @@ extern "C"
 #define ELF_SYMBOLS 1
 #endif
 
-  /* these are the addresses the gnu linker uses to "fake" a non-Harvard addressing space for the AVR
-   */
+  // These are the addresses the gnu linker uses to "fake" a non-Harvard addressing space for the AVR
 #define AVR_SEGMENT_OFFSET_FLASH 0
 #define AVR_SEGMENT_OFFSET_EEPROM 0x00810000
 
@@ -80,7 +79,6 @@ extern "C"
   } elf_firmware_t;
 
   int elf_read_firmware (const char *file, elf_firmware_t * firmware);
-
   void avr_load_firmware (avr_t * avr, elf_firmware_t * firmware);
 
 #ifdef __cplusplus

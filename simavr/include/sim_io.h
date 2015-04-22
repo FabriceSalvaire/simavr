@@ -28,8 +28,8 @@ extern "C"
 #endif
 
   /*
-   * used by the ioports to implement their own features
-   * see avr_eeprom.* for an example, and avr_ioctl().
+   * used by the ioports to implement their own features see avr_eeprom.* for an example, and
+   * avr_ioctl().
    */
 #define AVR_IOCTL_DEF(_a,_b,_c,_d)			\
   (((_a) << 24)|((_b) << 16)|((_c) << 8)|((_d)))
@@ -49,11 +49,11 @@ extern "C"
     uint32_t irq_ioctl_get;    // used to get irqs from this module
     int irq_count;    // number of (optional) irqs
     struct avr_irq_t *irq;    // optional external IRQs
+
     // called at reset time
     void (*reset) (struct avr_io_t * io);
     // called externally. allow access to io modules and so on
     int (*ioctl) (struct avr_io_t * io, uint32_t ctl, void *io_param);
-
     // optional, a function to free up allocated system resources
     void (*dealloc) (struct avr_io_t * io);
   } avr_io_t;

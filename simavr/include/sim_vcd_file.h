@@ -58,7 +58,7 @@ extern "C"
 
   typedef struct avr_vcd_t
   {
-    struct avr_t *avr;    // AVR we are attaching timers to..
+    struct avr_t *avr;    // AVR we are attaching timers to
 
     char filename[74];    // output filename
     FILE *output;

@@ -42,7 +42,7 @@ extern "C"
   // converts back a number of cycles to nsecs
   static inline uint64_t avr_cycles_to_nsec (struct avr_t *avr, avr_cycle_count_t cycles)
   {
-    return (uint64_t) 1E6 *(uint64_t) cycles / (avr->frequency / 1000);
+    return (uint64_t) 1E6 * (uint64_t) cycles / (avr->frequency / 1000);
   }
 
   // converts a number of hz (to megahertz etc) to a number of cycle

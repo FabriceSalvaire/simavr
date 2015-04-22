@@ -32,9 +32,10 @@ extern "C"
   typedef uint16_t avr_io_addr_t;
 
   /*
-   * this 'structure' is a packed representation of an IO register 'bit' (or consecutive bits). This
-   * allows a way to set/get/clear them.  gcc is happy passing these as register value, so you don't
-   * need to use a pointer when passing them along to functions.
+   * This 'structure' is a packed representation of an IO register 'bit' (or consecutive bits).
+   * This allows a way to set/get/clear them.
+   * GCC is happy passing these as register value, so you don't need to use a pointer when passing
+   * them along to functions.
    *
    * 9 bits ought to be enough, as it's the maximum I've seen (atmega2560)
    */

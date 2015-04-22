@@ -32,6 +32,7 @@ extern "C"
   typedef uint32_t avr_flashaddr_t;
 
   struct avr_t;
+
   typedef uint8_t (*avr_io_read_t) (struct avr_t * avr, avr_io_addr_t addr, void *param);
   typedef void (*avr_io_write_t) (struct avr_t * avr, avr_io_addr_t addr, uint8_t v, void *param);
 
@@ -72,6 +73,7 @@ extern "C"
     avr_global_logger(avr, level, __VA_ARGS__); \
   } while(0)
 #endif
+
 #define AVR_TRACE(avr, ... )                    \
   AVR_LOG(avr, LOG_TRACE, __VA_ARGS__)
 
@@ -82,11 +84,8 @@ extern "C"
     {
       cpu_Limbo = 0,   // before initialization is finished
       cpu_Stopped,   // all is stopped, timers included
-
       cpu_Running,   // we're free running
-
       cpu_Sleeping,   // we're now sleeping until an interrupt
-
       cpu_Step,   // run ONE instruction, then...
       cpu_StepDone,   // tell gdb it's all OK, and give it registers
       cpu_Done,   // avr software stopped gracefully

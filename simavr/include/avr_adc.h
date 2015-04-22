@@ -154,16 +154,19 @@ extern "C"
     .kind = ADC_MUX_SINGLE,			\
       .src = (_chan),				\
       }
+
 #define AVR_ADC_DIFF(_a,_b,_g) {		\
     .kind = ADC_MUX_DIFF,			\
       .src = (_a),				\
       .diff = (_b),				\
       .gain = (_g),				\
       }
+
 #define AVR_ADC_REF(_t) {			\
     .kind = ADC_MUX_REF,			\
       .src = (_t),				\
       }
+
 #define AVR_ADC_TEMP() {			\
     .kind = ADC_MUX_TEMP,			\
       }
