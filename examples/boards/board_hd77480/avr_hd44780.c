@@ -24,7 +24,7 @@
 
 #include "avr_hd44780.h"
 
-#define GLUE(a, b)     a##b
+#define GLUE(a, b) a##b
 
 /* single-bit macros, used for control bits */
 #define SET_(what, p, m) GLUE(what, p) |= (1 << (m))
@@ -35,21 +35,21 @@
 #define GET(/* PIN, */ x) GET_(x)
 
 /* nibble macros, used for data path */
-#define ASSIGN_(what, p, m, v) GLUE(what, p) = (GLUE(what, p) & \
-						~((1 << (m)) | (1 << ((m) + 1)) | \
-						  (1 << ((m) + 2)) | (1 << ((m) + 3)))) | \
-					        ((v) << (m))
+#define ASSIGN_(what, p, m, v) GLUE(what, p) =	\
+    (GLUE(what, p) &				\
+     ~((1 << (m)) | (1 << ((m) + 1)) |		\
+       (1 << ((m) + 2)) | (1 << ((m) + 3)))) |	\
+    ((v) << (m))
 #define READ_(what, p, m) (GLUE(what, p) & ((1 << (m)) | (1 << ((m) + 1)) | \
-					    (1 << ((m) + 2)) | (1 << ((m) + 3)))) >> (m)
+                                            (1 << ((m) + 2)) | (1 << ((m) + 3)))) >> (m)
 #define ASSIGN(what, x, v) ASSIGN_(what, x, v)
 #define READ(what, x) READ_(what, x)
 
 #define HD44780_BUSYFLAG 0x80
 
 /*
- * Send one pulse to the E signal (enable).  Mind the timing
- * constraints.  If readback is set to true, read the HD44780 data
- * pins right before the falling edge of E, and return that value.
+ * Send one pulse to the E signal (enable).  Mind the timing constraints.  If readback is set to
+ * true, read the HD44780 data pins right before the falling edge of E, and return that value.
  */
 static inline uint8_t
 hd44780_pulse_e(bool readback) __attribute__((always_inline));
@@ -61,19 +61,17 @@ hd44780_pulse_e(bool readback)
 
   SET(PORT, HD44780_E);
   /*
-   * Guarantee at least 500 ns of pulse width.  For high CPU
-   * frequencies, a delay loop is used.  For lower frequencies, NOPs
-   * are used, and at or below 1 MHz, the native pulse width will
-   * already be 1 us or more so no additional delays are needed.
+   * Guarantee at least 500 ns of pulse width.  For high CPU frequencies, a delay loop is used.  For
+   * lower frequencies, NOPs are used, and at or below 1 MHz, the native pulse width will already be
+   * 1 us or more so no additional delays are needed.
    */
 #if F_CPU > 4000000UL
   _delay_us(0.5);
 #else
   /*
-   * When reading back, we need one additional NOP, as the value read
-   * back from the input pin is sampled close to the beginning of a
-   * CPU clock cycle, while the previous edge on the output pin is
-   * generated towards the end of a CPU clock cycle.
+   * When reading back, we need one additional NOP, as the value read back from the input pin is
+   * sampled close to the beginning of a CPU clock cycle, while the previous edge on the output pin
+   * is generated towards the end of a CPU clock cycle.
    */
   if (readback)
     __asm__ volatile("nop");
@@ -174,10 +172,9 @@ hd44780_wait_ready(bool longwait)
 /*
  * Initialize the LCD controller.
  *
- * The initialization sequence has a mandatory timing so the
- * controller can safely recognize the type of interface desired.
- * This is the only area where timed waits are really needed as
- * the busy flag cannot be probed initially.
+ * The initialization sequence has a mandatory timing so the controller can safely recognize the
+ * type of interface desired.  This is the only area where timed waits are really needed as the busy
+ * flag cannot be probed initially.
  */
 void
 hd44780_init(void)
@@ -187,7 +184,7 @@ hd44780_init(void)
   SET(DDR, HD44780_E);
   ASSIGN(DDR, HD44780_D4, 0x0F);
 
-  _delay_ms(15);		/* 40 ms needed for Vcc = 2.7 V */
+  _delay_ms(15);                /* 40 ms needed for Vcc = 2.7 V */
   hd44780_outnibble(HD44780_FNSET(1, 0, 0) >> 4, 0);
   _delay_ms(4.1);
   hd44780_outnibble(HD44780_FNSET(1, 0, 0) >> 4, 0);

@@ -18,12 +18,12 @@
   <http://www.gnu.org/licenses/>.
 */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include <libgen.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "sim_avr.h"
 #include "avr_ioport.h"
+#include "sim_avr.h"
 #include "sim_elf.h"
 #include "sim_gdb.h"
 #include "sim_vcd_file.h"
@@ -109,8 +109,8 @@ int
 initGL(int w, int h)
 {
   // Set up projection matrix
-  glMatrixMode(GL_PROJECTION); // Select projection matrix
-  glLoadIdentity(); // Start with an identity matrix
+  glMatrixMode(GL_PROJECTION);   // Select projection matrix
+  glLoadIdentity();   // Start with an identity matrix
   glOrtho(0, w, 0, h, 0, 10);
   glScalef(1,-1,1);
   glTranslatef(0, -1 * h, 0);
@@ -134,15 +134,13 @@ initGL(int w, int h)
 }
 
 int
-main(
-     int argc,
-     char *argv[])
+main(int argc, char *argv[])
 {
   elf_firmware_t f;
   const char * fname = "atmega48_charlcd.axf";
-  //    char path[256];
-  //    sprintf(path, "%s/%s", dirname(argv[0]), fname);
-  //    printf("Firmware pathname is %s\n", path);
+  // char path[256];
+  // sprintf(path, "%s/%s", dirname(argv[0]), fname);
+  // printf("Firmware pathname is %s\n", path);
   elf_read_firmware(fname, &f);
 
   printf("firmware %s f=%d mmcu=%s\n", fname, (int) f.frequency, f.mmcu);
@@ -156,8 +154,7 @@ main(
   avr_init(avr);
   avr_load_firmware(avr, &f);
   ac_input_init(avr, &ac_input);
-  avr_connect_irq(ac_input.irq + IRQ_AC_OUT, avr_io_getirq(avr,
-                                                           AVR_IOCTL_IOPORT_GETIRQ('D'), 2));
+  avr_connect_irq(ac_input.irq + IRQ_AC_OUT, avr_io_getirq(avr, AVR_IOCTL_IOPORT_GETIRQ('D'), 2));
 
   hd44780_init(avr, &hd44780, 20, 4);
 
@@ -218,15 +215,15 @@ main(
   /*
    * OpenGL init, can be ignored
    */
-  glutInit(&argc, argv);                /* initialize GLUT system */
+  glutInit(&argc, argv);   /* initialize GLUT system */
 
   int w = 5 + hd44780.w * 6;
   int h = 5 + hd44780.h * 8;
   int pixsize = 3;
 
   glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-  glutInitWindowSize(w * pixsize, h * pixsize);         /* width=400pixels height=500pixels */
-  window = glutCreateWindow("Press 'q' to quit");       /* create window */
+  glutInitWindowSize(w * pixsize, h * pixsize);   /* width=400pixels height=500pixels */
+  window = glutCreateWindow("Press 'q' to quit");   /* create window */
 
   initGL(w * pixsize, h * pixsize);
 
