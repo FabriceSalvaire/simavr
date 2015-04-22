@@ -14,7 +14,7 @@ foreach(EXECUTABLE_SRC ${TEST_EXECUTABLE_SOURCES})
   get_filename_component(EXECUTABLE ${EXECUTABLE_SRC} NAME_WE)
   add_executable(${EXECUTABLE} ${EXECUTABLE_SRC} tests.c)
   target_link_libraries(${EXECUTABLE} simavr)
-  # add_test( ${EXECUTABLE})
+  add_test(${EXECUTABLE} ${EXECUTABLE})
 endforeach(EXECUTABLE_SRC)
 
 file(GLOB FIRMWARE_SOURCES at*.c)
