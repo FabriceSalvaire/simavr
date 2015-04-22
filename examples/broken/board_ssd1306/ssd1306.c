@@ -1,25 +1,23 @@
 /*
- ssd1306.c
+  ssd1306.c
 
- SSD1306 display driver (SPI mode)
+  SSD1306 display driver (SPI mode)
 
- Copyright 2014 Doug Szumski <d.s.szumski@gmail.com>
+  Copyright 2014 Doug Szumski <d.s.szumski@gmail.com>
 
- Inspired by the work of Gabriel Anzziani.
+  Inspired by the work of Gabriel Anzziani.
 
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+  This program is free software: you can redistribute it and/or modify it under the terms of the GNU
+  General Public License as published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+  even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
 
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>
- */
+  You should have received a copy of the GNU General Public License along with this program.  If
+  not, see <http://www.gnu.org/licenses/>
+*/
 
 #include <string.h>
 
@@ -154,15 +152,15 @@ void
 ssd1306_set_display_mode(const display_mode_t display_mode)
 {
   switch (display_mode) {
-    case DISPLAY_MODE_NORMAL:
-      ssd1306_write_instruction (SSD1306_DISP_NORMAL);
-      break;
-    case DISPLAY_MODE_INVERTED:
-      ssd1306_write_instruction (SSD1306_DISP_INVERTED);
-      break;
-    default:
-      ssd1306_write_instruction (SSD1306_DISP_NORMAL);
-      break;
+  case DISPLAY_MODE_NORMAL:
+    ssd1306_write_instruction (SSD1306_DISP_NORMAL);
+    break;
+  case DISPLAY_MODE_INVERTED:
+    ssd1306_write_instruction (SSD1306_DISP_INVERTED);
+    break;
+  default:
+    ssd1306_write_instruction (SSD1306_DISP_NORMAL);
+    break;
   }
 }
 
@@ -211,9 +209,9 @@ ssd1306_display_fb (void)
   for (uint8_t page = 0; page < SSD1306_PIXEL_PAGES; page++)
     {
       for (uint8_t column = 0; column < SSD1306_X_PIXELS; column++)
-	{
-	  ssd1306_write_data (ssd1306_frame_buffer_g[page][column]);
-	}
+        {
+          ssd1306_write_data (ssd1306_frame_buffer_g[page][column]);
+        }
     }
 }
 
@@ -248,23 +246,23 @@ ssd1306_write_image_fb (const uint8_t * image)
   for (uint8_t page = 0; page < SSD1306_PIXEL_PAGES; page++)
     {
       for (uint8_t column = 0; column < SSD1306_X_PIXELS; column++)
-	{
-	  if (!write_byte_count)
-	    {
-	      image_byte = pgm_read_byte_near (image++);
-	      next_image_byte = pgm_read_byte_near (image++);
-	      if (image_byte == next_image_byte)
-		{
-		  write_byte_count = pgm_read_byte_near (image++);
-		}
-	      else
-		{
-		  write_byte_count = 1;
-		  image--;
-		}
-	    }
-	  write_byte_count--;
-	  ssd1306_frame_buffer_g[page][column] = image_byte;
-	}
+        {
+          if (!write_byte_count)
+            {
+              image_byte = pgm_read_byte_near (image++);
+              next_image_byte = pgm_read_byte_near (image++);
+              if (image_byte == next_image_byte)
+                {
+                  write_byte_count = pgm_read_byte_near (image++);
+                }
+              else
+                {
+                  write_byte_count = 1;
+                  image--;
+                }
+            }
+          write_byte_count--;
+          ssd1306_frame_buffer_g[page][column] = image_byte;
+        }
     }
 }
