@@ -2,6 +2,7 @@
 
 #################################################################################
 
+# Generate sim_core_config.h and sim_core_decl.h
 file(GLOB ALL_SIMAVR_CORES_SRC cores/*.c)
 foreach(FILENAME ${ALL_SIMAVR_CORES_SRC})
   # try_compile(RESULT "out" ${FILENAME}
@@ -57,13 +58,21 @@ file(GLOB SIMAVR_SIM_SRC source/avr_*.c source/sim_*.c)
 #   )
 
 # file(GLOB SIMAVR_CORES_SRC cores/*.c)
-set(C_FLAGS_CORES "-nostdinc -DAVR_CORE=1")
 set_source_files_properties(${SIMAVR_CORES_SRC} PROPERTIES
- COMPILE_FLAGS "${C_FLAGS_CORES} -I${AVR_INCLUDE_DIRECTORY}")
+  COMPILE_FLAGS "-nostdinc -I${AVR_INCLUDE_DIRECTORY}"
+  COMPILE_DEFINITIONS AVR_CORE=1
+  )
+
+add_definitions(-DAVR_STACK_WATCH)
+add_definitions(-DCONFIG_SIMAVR_TRACE)
+
+# add_definitions(-DAVR_TWI_DEBUG)
 
 add_library(simavr SHARED
-  sim_core_config.h sim_core_decl.h
-  ${SIMAVR_SIM_SRC} ${SIMAVR_CORES_SRC}
+  sim_core_config.h
+  sim_core_decl.h
+  ${SIMAVR_SIM_SRC}
+  ${SIMAVR_CORES_SRC}
   )
 target_link_libraries(simavr elf)
 install(TARGETS simavr LIBRARY DESTINATION lib)
@@ -77,6 +86,8 @@ install(DIRECTORY include/avr/*.h
   DESTINATION include/simavr/avr
   FILES_MATCHING PATTERN "*.h"
   )
+
+####################################################################################################
 
 add_executable(run_avr source/run_avr.c)
 target_link_libraries(run_avr simavr)
