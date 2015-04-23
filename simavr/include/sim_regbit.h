@@ -1,21 +1,21 @@
 /*
-  sim_regbit.h
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+ * sim_regbit.h
+ * 
+ * Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ * 
+ * This file is part of simavr.
+ * 
+ * simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ * the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ * Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ * <http://www.gnu.org/licenses/>.
+ */
 
 #ifndef __SIM_REGBIT_H__
 #define __SIM_REGBIT_H__
@@ -27,7 +27,8 @@ extern "C"
 {
 #endif
 
-#define ARRAY_SIZE(_aa) (sizeof(_aa) / sizeof((_aa)[0]))
+#define ARRAY_SIZE(_aa) \
+  (sizeof(_aa) / sizeof((_aa)[0]))
 
   /*
    * These accessors are inlined and are used to perform the operations on avr_regbit_t
@@ -36,7 +37,7 @@ extern "C"
    * on real AVR cores
    */
 
-  /*
+  /**
    * set/get/clear io register bits in one operation
    */
   static inline uint8_t avr_regbit_set (avr_t * avr, avr_regbit_t rb)
@@ -63,7 +64,7 @@ extern "C"
     return (avr->data[a] >> rb.bit) & rb.mask;
   }
 
-  /*
+  /**
    * Set the 'raw' bits, if 'v' is the unshifted value of the bits
    */
   static inline uint8_t avr_regbit_setto_raw (avr_t * avr, avr_regbit_t rb, uint8_t v)
@@ -87,7 +88,7 @@ extern "C"
     return (avr->data[a] >> rb.bit) & rb.mask;
   }
 
-  /*
+  /**
    * Using regbit from value eliminates some of the set to test then clear register operations.
    * makes cheking register bits before setting easier.
    */
@@ -99,7 +100,7 @@ extern "C"
     return (value >> rb.bit) & rb.mask;
   }
 
-  /*
+  /**
    * Return the bit(s) 'in position' instead of zero based
    */
   static inline uint8_t avr_regbit_get_raw (avr_t * avr, avr_regbit_t rb)
@@ -119,7 +120,7 @@ extern "C"
     return avr->data[a];
   }
 
-  /*
+  /**
    * This reads the bits for an array of avr_regbit_t, make up a "byte" with them.
    * This allows reading bits like CS0, CS1, CS2 etc even if they are not in the same physical IO
    * register.
@@ -138,7 +139,7 @@ extern "C"
     return res;
   }
 
-  /*
+  /**
    * Does the reverse of avr_regbit_get_array
    */
   static inline void avr_regbit_set_array_from_value (avr_t * avr,
@@ -154,8 +155,10 @@ extern "C"
         }
   }
 
-#define AVR_IO_REGBIT(_io, _bit) { . reg = (_io), .bit = (_bit), .mask = 1 }
-#define AVR_IO_REGBITS(_io, _bit, _mask) { . reg = (_io), .bit = (_bit), .mask = (_mask) }
+#define AVR_IO_REGBIT(_io, _bit) \
+  { . reg = (_io), .bit = (_bit), .mask = 1 }
+#define AVR_IO_REGBITS(_io, _bit, _mask) \
+  { . reg = (_io), .bit = (_bit), .mask = (_mask) }
 
 #ifdef __cplusplus
 };

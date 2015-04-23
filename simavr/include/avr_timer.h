@@ -1,21 +1,21 @@
 /*
-  avr_timer.h
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+ * avr_timer.h
+ *
+ * Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ *
+ * This file is part of simavr.
+ *
+ * simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ * the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ * Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ * <http://www.gnu.org/licenses/>.
+ */
 
 #ifndef __AVR_TIMER_H__
 #define __AVR_TIMER_H__
@@ -25,6 +25,11 @@ extern "C"
 {
 #endif
 
+  /**
+   * @defgroup avr_timer Timer
+   * @{
+   */
+  
 #include "sim_avr.h"
 
   enum
@@ -40,15 +45,15 @@ extern "C"
     {
       TIMER_IRQ_OUT_PWM0 = 0,
       TIMER_IRQ_OUT_PWM1,
-      TIMER_IRQ_OUT_COMP,   // comparator pins output IRQ
+      TIMER_IRQ_OUT_COMP,   ///< comparator pins output IRQ
 
       TIMER_IRQ_COUNT = TIMER_IRQ_OUT_COMP + AVR_TIMER_COMP_COUNT
     };
 
-  // Get the internal IRQ corresponding to the INT
+  /// Get the internal IRQ corresponding to the INT
 #define AVR_IOCTL_TIMER_GETIRQ(_name) AVR_IOCTL_DEF('t','m','r',(_name))
 
-  // Waveform generation modes
+  /// Waveform generation modes
   enum
     {
       avr_timer_wgm_none = 0,   // invalid mode
@@ -59,13 +64,13 @@ extern "C"
       avr_timer_wgm_fc_pwm,
     };
 
-  // Compare output modes
+  /// Compare output modes
   enum
     {
-      avr_timer_com_normal = 0,   // Normal mode, OCnx disconnected
-      avr_timer_com_toggle,   // Toggle OCnx on compare match
-      avr_timer_com_clear,   // clear OCnx on compare match
-      avr_timer_com_set,   // set OCnx on compare match
+      avr_timer_com_normal = 0,   ///< Normal mode, OCnx disconnected
+      avr_timer_com_toggle,   ///< Toggle OCnx on compare match
+      avr_timer_com_clear,   ///< clear OCnx on compare match
+      avr_timer_com_set,   ///< set OCnx on compare match
     };
 
   enum
@@ -94,12 +99,12 @@ extern "C"
 
   typedef struct avr_timer_comp_t
   {
-    avr_int_vector_t interrupt;   // interrupt vector
-    struct avr_timer_t *timer;   // parent timer
-    avr_io_addr_t r_ocr;   // comparator register low byte
-    avr_io_addr_t r_ocrh;   // comparator register hi byte
-    avr_regbit_t com;   // comparator output mode registers
-    avr_regbit_t com_pin;   // where comparator output is connected
+    avr_int_vector_t interrupt;   ///< interrupt vector
+    struct avr_timer_t *timer;   ///< parent timer
+    avr_io_addr_t r_ocr;   ///< comparator register low byte
+    avr_io_addr_t r_ocrh;   ///< comparator register hi byte
+    avr_regbit_t com;   ///< comparator output mode registers
+    avr_regbit_t com_pin;   ///< where comparator output is connected
     uint64_t comp_cycles;
   } avr_timer_comp_t, *avr_timer_comp_p;
 
@@ -108,7 +113,7 @@ extern "C"
     avr_io_t io;
     char name;
 
-    avr_regbit_t disabled;   // bit in the PRR
+    avr_regbit_t disabled;   ///< bit in the PRR
 
     avr_io_addr_t r_tcnt, r_icr;
     avr_io_addr_t r_tcnth, r_icrh;
@@ -119,22 +124,22 @@ extern "C"
     int wgm_op_mode_kind;
     uint32_t wgm_op_mode_size;
 
-    avr_regbit_t as2;   // asynchronous clock 32khz
+    avr_regbit_t as2;   ///< asynchronous clock 32khz
     avr_regbit_t cs[4];
     uint8_t cs_div[16];
     uint32_t cs_div_clock;
 
-    avr_regbit_t icp;   // input capture pin, to link IRQs
-    avr_regbit_t ices;   // input capture edge select
+    avr_regbit_t icp;   ///< input capture pin, to link IRQs
+    avr_regbit_t ices;   ///< input capture edge select
 
     avr_timer_comp_t comp[AVR_TIMER_COMP_COUNT];
 
-    avr_int_vector_t overflow;   // overflow
-    avr_int_vector_t icr;   // input capture
+    avr_int_vector_t overflow;   ///< overflow
+    avr_int_vector_t icr;   ///< input capture
 
     uint64_t tov_cycles;
-    uint64_t tov_base;   // when we last were called
-    uint16_t tov_top;   // current top value to calculate tnct
+    uint64_t tov_base;   ///< when we last were called
+    uint16_t tov_top;   ///< current top value to calculate tnct
   } avr_timer_t;
 
   void avr_timer_init (avr_t * avr, avr_timer_t * port);
@@ -144,3 +149,4 @@ extern "C"
 #endif
 
 #endif /*__AVR_TIMER_H__*/
+/// @} end of avr_timer group

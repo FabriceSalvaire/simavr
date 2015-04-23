@@ -1,21 +1,21 @@
 /*
-  fido_declare.h
-  Copyright (C) 2003-2012 Michel Pollet <buserror@gmail.com>
+ *  fido_declare.h
+ *  Copyright (C) 2003-2012 Michel Pollet <buserror@gmail.com>
+ * 
+ *  This library is free software; you can redistribute it and/or modify it under the terms of the GNU
+ *  Lesser General Public License as published by the Free Software Foundation; either version 2.1 of
+ *  the License, or (at your option) any later version.
+ * 
+ *  This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ *  even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ *  Lesser General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU Lesser General Public License along with this library;
+ *  if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ *  02110-1301 USA
+ */
 
-  This library is free software; you can redistribute it and/or modify it under the terms of the GNU
-  Lesser General Public License as published by the Free Software Foundation; either version 2.1 of
-  the License, or (at your option) any later version.
-
-  This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
-  even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Lesser General Public License for more details.
-
-  You should have received a copy of the GNU Lesser General Public License along with this library;
-  if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-  02110-1301 USA
-*/
-
-/*
+/**
  * FIFO helpers, aka circular buffers
  *
  * these macros define accessories for FIFOs of any name, type and any (power of two) size
@@ -37,17 +37,17 @@ extern "C"
     enum : myfifo_overflow_f
     type : myfifo_t
     functions:
-    // write a byte into the fifo, return 1 if there was room, 0 if there wasn't
+    /// write a byte into the fifo, return 1 if there was room, 0 if there wasn't
     int myfifo_write(myfifo_t *c, uint8_t b);
-    // reads a byte from the fifo, return 0 if empty. Use myfifo_isempty() to check beforehand
+    /// reads a byte from the fifo, return 0 if empty. Use myfifo_isempty() to check beforehand
     uint8_t myfifo_read(myfifo_t *c);
     int myfifo_isfull(myfifo_t *c);
     int myfifo_isempty(myfifo_t *c);
-    // returns number of items to read now
+    /// returns number of items to read now
     uint16_t myfifo_get_read_size(myfifo_t *c);
-    // read item at offset o from read cursor, no cursor advance
+    /// read item at offset o from read cursor, no cursor advance
     uint8_t myfifo_read_at(myfifo_t *c, uint16_t o);
-    // write b at offset o compared to current write cursor, no cursor advance
+    /// write b at offset o compared to current write cursor, no cursor advance
     void myfifo_write_at(myfifo_t *c, uint16_t o, uint8_t b);
 
     In your .c you need to 'implement' the fifo:

@@ -1,22 +1,22 @@
 /*
-  avr_bitbang.h
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-  2011 Stephan Veigl <veig@gmx.net>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+ * avr_bitbang.h
+ * 
+ * Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ * 2011 Stephan Veigl <veig@gmx.net>
+ * 
+ * This file is part of simavr.
+ * 
+ * simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ * the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ * Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ * <http://www.gnu.org/licenses/>.
+ */
 
 /**
    @defgroup avr_bitbang Generic BitBang Module
@@ -38,15 +38,11 @@
 
 */
 
-
 #ifndef AVR_BITBANG_H_
 #define AVR_BITBANG_H_
 
 #include "sim_avr.h"
 #include "avr_ioport.h"
-
-
-
 
 /// SPI Module initialization and state structure
 typedef struct avr_bitbang_t
@@ -69,8 +65,7 @@ typedef struct avr_bitbang_t
   void *callback_param;   /// anonymous parameter for callback functions
   void (*callback_bit_read) (uint8_t bit, void *param);   ///< callback function to notify about bit read
   void (*callback_bit_write) (uint8_t bit, void *param);   ///< callback function to notify about bit write
-  uint32_t (*callback_transfer_finished) (uint32_t data, void *param);   ///< callback function to notify about a complete transfer
-  /// (read received data and write new output data)
+  uint32_t (*callback_transfer_finished) (uint32_t data, void *param);   ///< callback function to notify about a complete transfer (read received data and write new output data)
 
   avr_iopin_t p_clk;   ///< clock pin (optional)
   avr_iopin_t p_in;   ///< data in pin
@@ -101,7 +96,6 @@ void avr_bitbang_reset (avr_t * avr, avr_bitbang_t * p);
  */
 void avr_bitbang_start (avr_bitbang_t * p);
 
-
 /**
  * stop bitbang transfer
  *
@@ -110,7 +104,6 @@ void avr_bitbang_start (avr_bitbang_t * p);
  * @param p   bitbang structure
  */
 void avr_bitbang_stop (avr_bitbang_t * p);
-
 
 #endif /* AVR_BITBANG_H_ */
 /// @} end of avr_bitbang group

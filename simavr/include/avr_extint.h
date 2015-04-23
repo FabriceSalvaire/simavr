@@ -1,24 +1,24 @@
 /*
-  avr_extint.h
-
-  External Interrupt Handling (for INT0-3)
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-  Copyright 2014 Doug Szumski <d.s.szumski@gmail.com>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+ *  avr_extint.h
+ * 
+ *  External Interrupt Handling (for INT0-3)
+ * 
+ *  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ *  Copyright 2014 Doug Szumski <d.s.szumski@gmail.com>
+ * 
+ *  This file is part of simavr.
+ * 
+ *  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ *  General Public License as published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ * 
+ *  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ *  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ *  Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ *  <http://www.gnu.org/licenses/>.
+ */
 
 #ifndef __AVR_EXTINT_H__
 #define __AVR_EXTINT_H__
@@ -39,10 +39,10 @@ extern "C"
       EXTINT_COUNT
     };
 
-  // Get the internal IRQ corresponding to the INT
+  /// Get the internal IRQ corresponding to the INT
 #define AVR_IOCTL_EXTINT_GETIRQ() AVR_IOCTL_DEF('i','n','t',' ')
 
-  /*
+  /**
    * This module is just a "relay" for the pin change IRQ in the IO port
    * module. We hook up to their IRQ and raise out interrupt vectors as needed
    *
@@ -54,21 +54,21 @@ extern "C"
 
     struct
     {
-      avr_regbit_t isc[2];   // interrupt sense control bits
-      avr_int_vector_t vector;   // interrupt vector
+      avr_regbit_t isc[2];   ///< interrupt sense control bits
+      avr_int_vector_t vector;   ///< interrupt vector
 
-      uint32_t port_ioctl;   // ioctl to use to get port
-      uint8_t port_pin;   // pin number in said port
+      uint32_t port_ioctl;   ///< ioctl to use to get port
+      uint8_t port_pin;   ///< pin number in said port
     } eint[EXTINT_COUNT];
 
   } avr_extint_t;
 
   void avr_extint_init (avr_t * avr, avr_extint_t * p);
 
-  // Declares a typical INT into a avr_extint_t in a core.
-  // this is a shortcut since INT declarations are pretty standard.
-  // The Tinies as well as the atmega1280 are slightly different.
-  // See sim_tinyx5.h and sim_mega1280.h
+  /// Declares a typical INT into a avr_extint_t in a core.
+  /// this is a shortcut since INT declarations are pretty standard.
+  /// The Tinies as well as the atmega1280 are slightly different.
+  /// See sim_tinyx5.h and sim_mega1280.h
 #define AVR_EXTINT_DECLARE(_index, _portname, _portpin)			\
   .eint[_index] = {							\
     .port_ioctl = AVR_IOCTL_IOPORT_GETIRQ(_portname),			\
@@ -81,8 +81,8 @@ extern "C"
     },									\
   }
 
-  // Asynchronous External Interrupt, for example INT2 on the m16 and m32
-  // Uses only 1 interrupt sense control bit
+  /// Asynchronous External Interrupt, for example INT2 on the m16 and m32
+  /// Uses only 1 interrupt sense control bit
 #define AVR_ASYNC_EXTINT_DECLARE(_index, _portname, _portpin)	\
   .eint[_index] = {						\
     .port_ioctl = AVR_IOCTL_IOPORT_GETIRQ(_portname),		\

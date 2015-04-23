@@ -1,21 +1,21 @@
 /*
-  sim_core.h
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+ * sim_core.h
+ *
+ * Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ *
+ * This file is part of simavr.
+ *
+ * simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ * the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ * Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ * <http://www.gnu.org/licenses/>.
+ */
 
 #ifndef __SIM_CORE_H__
 #define __SIM_CORE_H__
@@ -35,9 +35,7 @@ extern "C"
 #define FONT_DEFAULT "\e[0m"
 #endif
 
-  /*
-   * Instruction decoder, run ONE instruction
-   */
+  /// Instruction decoder, run ONE instruction
   avr_flashaddr_t avr_run_one (avr_t * avr);
 
   /*
@@ -49,12 +47,10 @@ extern "C"
 
 #if CONFIG_SIMAVR_TRACE
 
-  /*
-   * Get a "pretty" register name
-   */
+  /// Get a "pretty" register name
   const char *avr_regname (uint8_t reg);
 
-  /* 
+  /**
    * DEBUG bits follow 
    * These will disappear when gdb arrives
    */
