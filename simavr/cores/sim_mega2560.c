@@ -1,22 +1,22 @@
 /*
-  sim_mega2560.c
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-  Copyright 2013 Yann GOUY <yann_gouy@yahoo.fr>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+ * sim_mega2560.c
+ *
+ * Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ * Copyright 2013 Yann GOUY <yann_gouy@yahoo.fr>
+ *
+ * This file is part of simavr.
+ *
+ * simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ * the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ * Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ * <http://www.gnu.org/licenses/>.
+ */
 
 #include "avr_adc.h"
 #include "avr_eeprom.h"
@@ -51,13 +51,14 @@ const struct mcu_t {
   avr_watchdog_t watchdog;
   avr_extint_t extint;
   avr_ioport_t porta, portb, portc, portd, porte, portf, portg, porth, portj, portk, portl;
-  avr_uart_t uart0,uart1;
-  avr_uart_t uart2,uart3;
+  avr_uart_t uart0, uart1;
+  avr_uart_t uart2, uart3;
   avr_adc_t adc;
-  avr_timer_t timer0,timer1,timer2,timer3,timer4,timer5;
+  avr_timer_t timer0, timer1, timer2, timer3, timer4, timer5;
   avr_spi_t spi;
   avr_twi_t twi;
 } mcu_mega2560 = {
+
   .core = {
     .mmcu = "atmega2560",
     DEFAULT_CORE(4),
@@ -68,9 +69,11 @@ const struct mcu_t {
     .rampz = RAMPZ,   // extended program memory access
     .eind = EIND,   // extended index register
   },
+
   AVR_EEPROM_DECLARE(EE_READY_vect),
   AVR_SELFPROG_DECLARE(SPMCSR, SPMEN, SPM_READY_vect),
   AVR_WATCHDOG_DECLARE(WDTCSR, WDT_vect),
+
   .extint = {
     AVR_EXTINT_MEGA_DECLARE(0, 'D', PD0, A),
     AVR_EXTINT_MEGA_DECLARE(1, 'D', PD1, A),
@@ -81,7 +84,9 @@ const struct mcu_t {
     AVR_EXTINT_MEGA_DECLARE(6, 'E', PE6, B),
     AVR_EXTINT_MEGA_DECLARE(7, 'E', PE7, B),
   },
+
   AVR_IOPORT_DECLARE(a, 'A', A),
+
   .portb = {
     .name = 'B', .r_port = PORTB, .r_ddr = DDRB, .r_pin = PINB,
     .pcint = {
@@ -91,6 +96,7 @@ const struct mcu_t {
     },
     .r_pcint = PCMSK0,
   },
+
   AVR_IOPORT_DECLARE(c, 'C', C),
   AVR_IOPORT_DECLARE(d, 'D', D),
   AVR_IOPORT_DECLARE(e, 'E', E),
@@ -100,6 +106,7 @@ const struct mcu_t {
   AVR_IOPORT_DECLARE(j, 'J', J),
   AVR_IOPORT_DECLARE(k, 'K', K),
   AVR_IOPORT_DECLARE(l, 'L', L),
+
   .uart0 = {
     .disabled = AVR_IO_REGBIT(PRR0,PRUSART0),
     .name = '0',
@@ -131,6 +138,7 @@ const struct mcu_t {
       .vector = USART0_UDRE_vect,
     },
   },
+
   .uart1 = {
     .disabled = AVR_IO_REGBIT(PRR1,PRUSART1),
     .name = '1',
@@ -226,11 +234,16 @@ const struct mcu_t {
       .vector = USART3_UDRE_vect,
     },
   },
+
   .adc = {
     .r_admux = ADMUX,
-    .mux = { AVR_IO_REGBIT(ADMUX, MUX0), AVR_IO_REGBIT(ADMUX, MUX1),
-	     AVR_IO_REGBIT(ADMUX, MUX2), AVR_IO_REGBIT(ADMUX, MUX3),
-	     AVR_IO_REGBIT(ADMUX, MUX4),AVR_IO_REGBIT(ADCSRB, MUX5),},
+    .mux = { AVR_IO_REGBIT(ADMUX, MUX0),
+	     AVR_IO_REGBIT(ADMUX, MUX1),
+	     AVR_IO_REGBIT(ADMUX, MUX2),
+	     AVR_IO_REGBIT(ADMUX, MUX3),
+	     AVR_IO_REGBIT(ADMUX, MUX4),
+	     AVR_IO_REGBIT(ADCSRB, MUX5),
+    },
     .ref = { AVR_IO_REGBIT(ADMUX, REFS0), AVR_IO_REGBIT(ADMUX, REFS1)},
     .ref_values = { [1] = ADC_VREF_AVCC, [2] = ADC_VREF_V110, [3] = ADC_VREF_V256 },
 
@@ -307,6 +320,7 @@ const struct mcu_t {
       .vector = ADC_vect,
     },
   },
+
   .timer0 = {
     .name = '0',
     .wgm = { AVR_IO_REGBIT(TCCR0A, WGM00), AVR_IO_REGBIT(TCCR0A, WGM01), AVR_IO_REGBIT(TCCR0B, WGM02) },
@@ -349,6 +363,7 @@ const struct mcu_t {
       },
     },
   },
+
   .timer1 = {
     .name = '1',
     .disabled = AVR_IO_REGBIT(PRR0,PRTIM1),
@@ -357,8 +372,8 @@ const struct mcu_t {
     .wgm_op = {
       [0] = AVR_TIMER_WGM_NORMAL16(),
       // TODO: 1 PWM phase correct 8bit
-      //              2 PWM phase correct 9bit
-      //              3 PWM phase correct 10bit
+      //       2 PWM phase correct 9bit
+      //       3 PWM phase correct 10bit
       [4] = AVR_TIMER_WGM_CTC(),
       [5] = AVR_TIMER_WGM_FASTPWM8(),
       [6] = AVR_TIMER_WGM_FASTPWM9(),
@@ -424,8 +439,8 @@ const struct mcu_t {
 	},
       },
     },
-
   },
+
   .timer2 = {
     .name = '2',
     .wgm = { AVR_IO_REGBIT(TCCR2A, WGM20), AVR_IO_REGBIT(TCCR2A, WGM21), AVR_IO_REGBIT(TCCR2B, WGM22) },
@@ -460,18 +475,19 @@ const struct mcu_t {
 	},
       },
       // TIMER2_COMPB is only appeared in 2560
-      //[AVR_TIMER_COMPB] = {
-      //     .r_ocr = OCR2B,
-      //     .com = AVR_IO_REGBITS(TCCR2A, COM2B0, 0x3),
-      //     .com_pin = AVR_IO_REGBIT(PORTH, PH6),
-      //     .interrupt = {
-      //             .enable = AVR_IO_REGBIT(TIMSK2, OCIE2B),
-      //             .raised = AVR_IO_REGBIT(TIFR2, OCF2B),
-      //             .vector = TIMER2_COMPB_vect,
-      //     },
+      // [AVR_TIMER_COMPB] = {
+      //      .r_ocr = OCR2B,
+      //      .com = AVR_IO_REGBITS(TCCR2A, COM2B0, 0x3),
+      //      .com_pin = AVR_IO_REGBIT(PORTH, PH6),
+      //      .interrupt = {
+      //              .enable = AVR_IO_REGBIT(TIMSK2, OCIE2B),
+      //              .raised = AVR_IO_REGBIT(TIFR2, OCF2B),
+      //              .vector = TIMER2_COMPB_vect,
+      //      },
       //},
     },
   },
+
   .timer3 = {
     .name = '3',
     .wgm = { AVR_IO_REGBIT(TCCR3A, WGM30), AVR_IO_REGBIT(TCCR3A, WGM31),
@@ -479,16 +495,16 @@ const struct mcu_t {
     .wgm_op = {
       [0] = AVR_TIMER_WGM_NORMAL16(),
       // TODO: 1 PWM phase correct 8bit
-      //              2 PWM phase correct 9bit
-      //              3 PWM phase correct 10bit
+      //       2 PWM phase correct 9bit
+      //       3 PWM phase correct 10bit
       [4] = AVR_TIMER_WGM_CTC(),
       [5] = AVR_TIMER_WGM_FASTPWM8(),
       [6] = AVR_TIMER_WGM_FASTPWM9(),
       [7] = AVR_TIMER_WGM_FASTPWM10(),
       // TODO: 8 PWM phase and freq correct ICR
-      //              9 PWM phase and freq correct OCR
-      //              10
-      //              11
+      //       9 PWM phase and freq correct OCR
+      //       10
+      //       11
       [12] = AVR_TIMER_WGM_ICCTC(),
       [14] = AVR_TIMER_WGM_ICPWM(),
       [15] = AVR_TIMER_WGM_OCPWM(),
@@ -550,6 +566,7 @@ const struct mcu_t {
       .vector = TIMER3_CAPT_vect,
     },
   },
+
   .timer4 = {
     .name = '4',
     .disabled = AVR_IO_REGBIT(PRR1,PRTIM4),
@@ -627,6 +644,7 @@ const struct mcu_t {
     },
 
   },
+
   .timer5 = {
     .name = '5',
     .disabled = AVR_IO_REGBIT(PRR1,PRTIM5),
@@ -704,9 +722,10 @@ const struct mcu_t {
     },
 
   },
-  AVR_SPI_DECLARE(PRR0, PRSPI),
-  .twi = {
 
+  AVR_SPI_DECLARE(PRR0, PRSPI),
+
+  .twi = {
     .r_twcr = TWCR,
     .r_twsr = TWSR,
     .r_twbr = TWBR,
@@ -750,6 +769,7 @@ void m2560_init(struct avr_t * avr)
   avr_flash_init(avr, &mcu->selfprog);
   avr_extint_init(avr, &mcu->extint);
   avr_watchdog_init(avr, &mcu->watchdog);
+
   avr_ioport_init(avr, &mcu->porta);
   avr_ioport_init(avr, &mcu->portb);
   avr_ioport_init(avr, &mcu->portc);
@@ -766,13 +786,16 @@ void m2560_init(struct avr_t * avr)
   avr_uart_init(avr, &mcu->uart1);
   avr_uart_init(avr, &mcu->uart2);
   avr_uart_init(avr, &mcu->uart3);
+
   avr_adc_init(avr, &mcu->adc);
+
   avr_timer_init(avr, &mcu->timer0);
   avr_timer_init(avr, &mcu->timer1);
   avr_timer_init(avr, &mcu->timer2);
   avr_timer_init(avr, &mcu->timer3);
   avr_timer_init(avr, &mcu->timer4);
   avr_timer_init(avr, &mcu->timer5);
+
   avr_spi_init(avr, &mcu->spi);
   avr_twi_init(avr, &mcu->twi);
 }
@@ -781,5 +804,3 @@ void m2560_reset(struct avr_t * avr)
 {
   // struct mcu_t * mcu = (struct mcu_t*)avr;
 }
-
-
