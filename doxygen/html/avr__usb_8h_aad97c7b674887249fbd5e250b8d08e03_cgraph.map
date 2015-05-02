@@ -1,0 +1,8 @@
+<map id="avr_usb_init" name="avr_usb_init">
+<area shape="rect" id="node2" href="$sim__io_8h.html#ac32f09e926e9152291bd758f5860cd4e" title="Registers an IO module, so it&#39;s run(), reset() etc are called. " alt="" coords="163,5,270,32"/>
+<area shape="rect" id="node3" href="$sim__io_8h.html#adf58f2274a9630198a6ff7f77ebc882a" title="Sets an IO module &quot;official&quot; IRQs and the ioctl used to get to them. " alt="" coords="165,56,268,83"/>
+<area shape="rect" id="node6" href="$sim__io_8h.html#a9fc8ac70dea4e1989eefe7a8e5f5e4ad" title="Register a callback for when the IO register is written. callback has to set the memory itself..." alt="" coords="145,107,288,133"/>
+<area shape="rect" id="node7" href="$sim__io_8h.html#aefd66e86a2ea71d10f94616a64e49add" title="Register a callback for when IO register &quot;addr&quot; is read. " alt="" coords="147,157,286,184"/>
+<area shape="rect" id="node4" href="$group__sim__irq.html#gab643092a04e04aca6c4e9eb08db4b81f" title="allocates &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment ..." alt="" coords="336,56,431,83"/>
+<area shape="rect" id="node5" href="$group__sim__irq.html#ga258c5ad75c46ff8180430d7ace63771f" title="init &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment " alt="" coords="479,56,564,83"/>
+</map>

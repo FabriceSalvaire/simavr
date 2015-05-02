@@ -1,0 +1,5 @@
+<map id="_avr_io_console_write" name="_avr_io_console_write">
+<area shape="rect" id="node2" href="$group__sim__avr.html#ga4f3b7cc88e6890cbb8dc7fb2fb5ddfc8" title="Specify the &quot;console register&quot; – output sent to this register is printed on the simulator console..." alt="" coords="204,5,371,32"/>
+<area shape="rect" id="node3" href="$group__sim__elf.html#ga85cfc3d055b9730c00d1c66237d50eb0" title="Load the firmware to the AVR instance. " alt="" coords="419,5,547,32"/>
+<area shape="rect" id="node4" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="595,5,645,32"/>
+</map>

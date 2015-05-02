@@ -1,0 +1,5 @@
+<map id="avr_deallocate_ios" name="avr_deallocate_ios">
+<area shape="rect" id="node2" href="$sim__io_8c.html#aca3dff623ecabf0e1b694959611873eb" title="avr_deallocate_io" alt="" coords="184,5,307,32"/>
+<area shape="rect" id="node3" href="$group__sim__irq.html#ga7114a332b5fefeeb3dedbd7f11575536" title="Free allocated IRQs. " alt="" coords="355,5,445,32"/>
+<area shape="rect" id="node4" href="$sim__irq_8c.html#a004c4ead81fe6caf8b8838d2899cc7ef" title="_avr_irq_pool_remove" alt="" coords="493,5,643,32"/>
+</map>

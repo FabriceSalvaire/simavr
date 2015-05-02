@@ -1,0 +1,51 @@
+<map id="avr_reset" name="avr_reset">
+<area shape="rect" id="node2" href="$avr__watchdog_8c.html#a90186830ee76aa5e97672999a1f0ca1c" title="avr_watchdog_run_callback\l_software_reset" alt="" coords="329,235,512,276"/>
+<area shape="rect" id="node24" href="$group__sim__avr.html#ga0f62b71791203a3c7fdcfe228d1b0f5a" title="Initializes a new AVR instance. Will call the IO registers init(), and then reset() ..." alt="" coords="594,695,658,722"/>
+<area shape="rect" id="node26" href="$sim__gdb_8c.html#ae5a71455af56c93aa99c2d4ba82d716c" title="gdb_handle_command" alt="" coords="129,645,281,671"/>
+<area shape="rect" id="node3" href="$avr__watchdog_8c.html#a6752640dd1247adf54bd07cd57a88e68" title="avr_watchdog_timer" alt="" coords="1376,71,1515,98"/>
+<area shape="rect" id="node4" href="$avr__watchdog_8c.html#a52583483eae3aa9eb71b7326c9bae373" title="avr_watchdog_set_cycle\l_count_and_timer" alt="" coords="1568,5,1735,47"/>
+<area shape="rect" id="node23" href="$avr__watchdog_8c.html#a3d9146e8d26f3ee22dac3402b2fc3533" title="avr_watchdog_ioctl" alt="" coords="1584,71,1719,98"/>
+<area shape="rect" id="node5" href="$avr__watchdog_8c.html#a49d07ad6d544bd834a2eed31d106608a" title="avr_watchdog_write" alt="" coords="1788,541,1927,567"/>
+<area shape="rect" id="node22" href="$avr__watchdog_8c.html#a2f14017d271e65d722137950df9e4543" title="avr_watchdog_reset" alt="" coords="1788,617,1927,643"/>
+<area shape="rect" id="node6" href="$group__avr__watchdog.html#gafb1a6c6d795871184f8bdd73ffcca289" title="avr_watchdog_init" alt="" coords="1980,541,2107,567"/>
+<area shape="rect" id="node7" href="$sim__90usb162_8c.html#a94281f1e6275e36f8c3f74cf45af1094" title="usb162_init" alt="" coords="2161,186,2249,213"/>
+<area shape="rect" id="node8" href="$sim__mega128_8c.html#aa75db9154ff7da86ea2d0529eb5681ac" title="m128_init" alt="" coords="2165,237,2244,263"/>
+<area shape="rect" id="node9" href="$sim__mega1280_8c.html#a27f0cfb99d0fb08696933148a30b2a0d" title="m1280_init" alt="" coords="2162,287,2247,314"/>
+<area shape="rect" id="node10" href="$sim__mega1281_8c.html#ae0732161cc4e02dd81cf0fde0d0e727b" title="m1281_init" alt="" coords="2162,338,2247,365"/>
+<area shape="rect" id="node11" href="$sim__mega128rfa1_8c.html#a760d33397450f6992a799be5b96cedf8" title="m128rfa1_init" alt="" coords="2155,389,2255,415"/>
+<area shape="rect" id="node12" href="$sim__mega128rfr2_8c.html#ac621b083db4bd04c6d416e326d02d58d" title="m128rfr2_init" alt="" coords="2156,439,2253,466"/>
+<area shape="rect" id="node13" href="$sim__mega169_8c.html#a744d6860d2b5bbc4cea804aabd531493" title="m169p_init" alt="" coords="2162,490,2247,517"/>
+<area shape="rect" id="node14" href="$sim__mega2560_8c.html#a61aa264c3e77b1d99556dc040bfe47ed" title="m2560_init" alt="" coords="2162,541,2247,567"/>
+<area shape="rect" id="node15" href="$sim__megax_8h.html#a66f2ee34f5c100623a0f5aa91b9b48a1" title="mx_init" alt="" coords="2173,591,2237,618"/>
+<area shape="rect" id="node16" href="$sim__megax4_8h.html#a43ff8cef3fa2e05282aa063284231e03" title="mx4_init" alt="" coords="2169,642,2240,669"/>
+<area shape="rect" id="node17" href="$sim__megax8_8h.html#a193fe7e4188d32f956e6e47ba7a6b593" title="mx8_init" alt="" coords="2169,693,2240,719"/>
+<area shape="rect" id="node18" href="$sim__megaxm1_8h.html#a62fd6eb6657d3685eaff349434bff721" title="mxm1_init" alt="" coords="2163,743,2246,770"/>
+<area shape="rect" id="node19" href="$sim__tiny13_8c.html#ad25a2fcdaeb68a7f43aeda7f115104fd" title="init" alt="" coords="2185,794,2224,821"/>
+<area shape="rect" id="node20" href="$sim__tinyx4_8h.html#a79f175ec4edeffef69e1a9b0d2902165" title="tx4_init" alt="" coords="2173,845,2237,871"/>
+<area shape="rect" id="node21" href="$sim__tinyx5_8h.html#ab429b18dc2641017d6052543035238e2" title="tx5_init" alt="" coords="2173,895,2237,922"/>
+<area shape="rect" id="node25" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1129,695,1180,722"/>
+<area shape="rect" id="node27" href="$sim__gdb_8c.html#a2579e845a74fdb5883bedd34832334ee" title="gdb_network_handler" alt="" coords="348,645,493,671"/>
+<area shape="rect" id="node28" href="$group__sim__gdb.html#ga4a8a8c9374ad68c67fea5342f6479827" title="Call from the main AVR decoder thread. " alt="" coords="560,645,692,671"/>
+<area shape="rect" id="node29" href="$group__sim__avr.html#gaa1d5062766f4b90f98c13e58ba515042" title="These are callbacks for the two &#39;main&#39; behaviour in simavr. " alt="" coords="740,645,901,671"/>
+<area shape="rect" id="node50" href="$group__sim__avr.html#gaf3423fc886b29e62d8206dacbf7c3eb5" title="avr_callback_run_gdb" alt="" coords="1577,882,1725,909"/>
+<area shape="rect" id="node30" href="$group__sim__gdb.html#gaaee0c4dc854693c9c444665a099bc59d" title="Initialise GDB. " alt="" coords="949,645,1041,671"/>
+<area shape="rect" id="node31" href="$group__sim__avr.html#ga41fa6410b6832751264cc8898ce8c981" title="Called when the core has detected a crash somehow. " alt="" coords="1089,406,1220,433"/>
+<area shape="rect" id="node32" href="$sim__core_8c.html#abd2089910a233d944503e553526ce649" title="crash" alt="" coords="1268,406,1323,433"/>
+<area shape="rect" id="node47" href="$tmp_8c.html#a2b7572c52203ddbee339db995d80dea1" title="_avr_set_r" alt="" coords="1610,122,1693,149"/>
+<area shape="rect" id="node33" href="$group__sim__avr.html#ga6bb6e950ca849414923b3ea37dc9ed36" title="These are accessors for avr&#45;&gt;data but allows watchpoints to be set for gdb IO modules use that to set..." alt="" coords="1371,467,1520,494"/>
+<area shape="rect" id="node48" href="$group__sim__avr.html#ga54c74c348d29309eba5920c69b8fad35" title="avr_core_watch_read" alt="" coords="1372,258,1519,285"/>
+<area shape="rect" id="node49" href="$group__sim__core.html#ga80ca0a5234d7095e2491e4ca5022a69b" title="Instruction decoder, run ONE instruction. " alt="" coords="1399,543,1492,570"/>
+<area shape="rect" id="node34" href="$group__sim__regbit.html#ga31a9e7a25f604e3aa44ae67666c8aea8" title="Set/get/clear io register bits in one operation. " alt="" coords="1599,629,1703,655"/>
+<area shape="rect" id="node35" href="$avr__adc_8c.html#abdff38686087932dd4e35301e14d0f1b" title="avr_adc_write_adcsra" alt="" coords="1783,679,1932,706"/>
+<area shape="rect" id="node36" href="$group__sim__regbit.html#gae1283d16e78d0bd87b96db2e44c88a54" title="avr_regbit_setto" alt="" coords="1594,173,1709,199"/>
+<area shape="rect" id="node37" href="$group__sim__regbit.html#ga0885cea33bff34f998823eea52d3605c" title="Set the &#39;raw&#39; bits, if &#39;v&#39; is the unshifted value of the bits. " alt="" coords="1580,578,1723,605"/>
+<area shape="rect" id="node38" href="$group__sim__regbit.html#gae20f788d4eab7e2518a3ffe8d41dc4e9" title="avr_regbit_clear" alt="" coords="1594,730,1709,757"/>
+<area shape="rect" id="node39" href="$avr__eeprom_8c.html#af16c377cca0862ab0cc5b85d1fc7818c" title="avr_eeprom_write" alt="" coords="1795,743,1920,770"/>
+<area shape="rect" id="node40" href="$avr__spi_8c.html#a15ba633efb105672b749f0e2c8e81766" title="avr_spi_write" alt="" coords="1808,819,1907,846"/>
+<area shape="rect" id="node41" href="$avr__flash_8c.html#a72fa89d539c620c415ee6fe9e4622699" title="avr_flash_write" alt="" coords="1596,223,1707,250"/>
+<area shape="rect" id="node42" href="$avr__ioport_8c.html#ab94eff4ddc760d3f0416ac12b95a9e4a" title="avr_ioport_write" alt="" coords="1594,274,1709,301"/>
+<area shape="rect" id="node43" href="$avr__ioport_8c.html#a80e516d2fb1ee538b0bf102b972915d3" title="avr_ioport_ddr_write" alt="" coords="1582,325,1721,351"/>
+<area shape="rect" id="node44" href="$avr__lin_8c.html#a3ba58a8701b08c60afe85d63078e0633" title="avr_lin_baud_write" alt="" coords="1586,375,1717,402"/>
+<area shape="rect" id="node45" href="$avr__timer_8c.html#a03b12680dc930ded571e6a2c94eca2b0" title="Write TCNT. " alt="" coords="1581,426,1721,453"/>
+<area shape="rect" id="node46" href="$avr__timer_8c.html#a5d023bbf33536cf9f6fab7e934eaa024" title="avr_timer_write_ocr" alt="" coords="1583,477,1719,503"/>
+</map>

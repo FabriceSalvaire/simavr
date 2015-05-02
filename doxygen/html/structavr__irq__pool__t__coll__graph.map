@@ -1,0 +1,4 @@
+<map id="avr_irq_pool_t" name="avr_irq_pool_t">
+<area shape="rect" id="node2" href="$structavr__irq__t.html" title="Public IRQ structure. " alt="" coords="23,95,95,121"/>
+<area shape="rect" id="node3" href="$structavr__irq__hook__t.html" title="avr_irq_hook_t" alt="" coords="5,199,112,225"/>
+</map>

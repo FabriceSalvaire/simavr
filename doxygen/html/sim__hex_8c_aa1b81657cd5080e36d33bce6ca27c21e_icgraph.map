@@ -1,0 +1,5 @@
+<map id="read_hex_string" name="read_hex_string">
+<area shape="rect" id="node2" href="$sim__hex_8c.html#a77b5416775d1ecf16a33cfd90d66d3d5" title="reads IHEX file &#39;fname&#39;, puts it&#39;s decoded size in *&#39;dsize&#39; and returns a newly allocated buffer with..." alt="" coords="180,5,283,32"/>
+<area shape="rect" id="node3" href="$sim__hex_8c.html#ab25c0cc69ff2fad95c7181fcb330baf0" title="Read a .hex file, detects the various different chunks in it from their starting addresses and alloca..." alt="" coords="168,56,295,83"/>
+<area shape="rect" id="node4" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="343,56,393,83"/>
+</map>

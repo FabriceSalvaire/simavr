@@ -1,0 +1,27 @@
+var structavr__timer__t =
+[
+    [ "as2", "structavr__timer__t.html#a544cb57c394ecf79d3de6e8f44f2ce56", null ],
+    [ "comp", "structavr__timer__t.html#a77b49c09905d38da2c900ca50df14738", null ],
+    [ "cs", "structavr__timer__t.html#a7b7615998da0b6477087306f3cdd0d3c", null ],
+    [ "cs_div", "structavr__timer__t.html#ab07caedaaa050153cd126c99454c3f61", null ],
+    [ "cs_div_clock", "structavr__timer__t.html#a38144c58ac884133dc763af0ee6b8d86", null ],
+    [ "disabled", "structavr__timer__t.html#aaba6a2ca80b00ebf21e14d5850e52b7d", null ],
+    [ "ices", "structavr__timer__t.html#a8039b3180c96d05ff8f533f379c5c224", null ],
+    [ "icp", "structavr__timer__t.html#a328a33a2ff49ad99a91acc259d46a6c2", null ],
+    [ "icr", "structavr__timer__t.html#a792fc1bfadaf99579f49a2b9d2dd7583", null ],
+    [ "io", "structavr__timer__t.html#a9134059040c4e52e60cddfc50b76e120", null ],
+    [ "mode", "structavr__timer__t.html#afd72b55fc119dbc00f2c12d1375afc5f", null ],
+    [ "name", "structavr__timer__t.html#afc65b5080badbd1e1482dae3cc685b5b", null ],
+    [ "overflow", "structavr__timer__t.html#addd5d93af76f80654e647c29c21362c9", null ],
+    [ "r_icr", "structavr__timer__t.html#ab9b47b2f225f3d495d8d53b20686f667", null ],
+    [ "r_icrh", "structavr__timer__t.html#a05d12dd49f04059d2c6d40344eef703d", null ],
+    [ "r_tcnt", "structavr__timer__t.html#aa555d49dfe53e16635cd768a330aa960", null ],
+    [ "r_tcnth", "structavr__timer__t.html#a07c5c606443ade0361ea8dffa19924b0", null ],
+    [ "tov_base", "structavr__timer__t.html#a681389d14b5a18a50824fb798f1cf292", null ],
+    [ "tov_cycles", "structavr__timer__t.html#abda72d2560f12c5652d172c4b64b2b0e", null ],
+    [ "tov_top", "structavr__timer__t.html#a35169ced34cefb1ccf8afd4d8379f4ce", null ],
+    [ "wgm", "structavr__timer__t.html#a008bfba4aa03ee20f7f011d7afa7c9a2", null ],
+    [ "wgm_op", "structavr__timer__t.html#a9f40ae4c16a4f98dd9c1394966f92884", null ],
+    [ "wgm_op_mode_kind", "structavr__timer__t.html#ad8840ac89c6c16222f301f76da7d7346", null ],
+    [ "wgm_op_mode_size", "structavr__timer__t.html#a8e28d9276c4d9e53626d4edcf7a659a0", null ]
+];

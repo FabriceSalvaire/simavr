@@ -1,0 +1,12 @@
+<map id="current_ep_to_cpu" name="current_ep_to_cpu">
+<area shape="rect" id="node2" href="$avr__usb_8c.html#a08b20aced7bea0c010937066a0e5a399" title="avr_usb_ep_read_bytecount" alt="" coords="387,5,572,32"/>
+<area shape="rect" id="node5" href="$avr__usb_8c.html#ab587aeb29e8bb7bb36d4b71bc39e8d44" title="avr_usb_ep_read_ueintx" alt="" coords="398,56,561,83"/>
+<area shape="rect" id="node6" href="$avr__usb_8c.html#a360fe6d77bebb3a7e59c202cf5da97b1" title="avr_usb_ep_write_ueintx" alt="" coords="396,107,563,133"/>
+<area shape="rect" id="node7" href="$avr__usb_8c.html#aa57973f1330820a77ea826c66567da3e" title="avr_usb_ep_read" alt="" coords="200,157,321,184"/>
+<area shape="rect" id="node9" href="$avr__usb_8c.html#a9c0cb078c97095a5c387d4b2274c728b" title="avr_usb_ep_write" alt="" coords="199,208,323,235"/>
+<area shape="rect" id="node10" href="$avr__usb_8c.html#ac8d685869770ae2bcc3000cfa773f999" title="avr_usb_ep_read_data" alt="" coords="184,259,337,285"/>
+<area shape="rect" id="node11" href="$avr__usb_8c.html#af9b9a70ac948154418deab8b56b3be9c" title="avr_usb_ep_write_data" alt="" coords="183,309,339,336"/>
+<area shape="rect" id="node3" href="$group__avr__usb.html#gaad97c7b674887249fbd5e250b8d08e03" title="avr_usb_init" alt="" coords="620,132,712,159"/>
+<area shape="rect" id="node4" href="$sim__90usb162_8c.html#a94281f1e6275e36f8c3f74cf45af1094" title="usb162_init" alt="" coords="760,132,848,159"/>
+<area shape="rect" id="node8" href="$avr__usb_8c.html#a4516e72f950cae8e09cbed44fe1c5554" title="register_io_ep_readwrite" alt="" coords="398,157,561,184"/>
+</map>

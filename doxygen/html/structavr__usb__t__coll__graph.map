@@ -1,0 +1,22 @@
+<map id="avr_usb_t" name="avr_usb_t">
+<area shape="rect" id="node2" href="$structusb__internal__state.html" title="usb_internal_state" alt="" coords="407,609,535,636"/>
+<area shape="rect" id="node3" href="$structavr__int__vector__t.html" title="interrupt vector for the IO modules " alt="" coords="187,587,301,613"/>
+<area shape="rect" id="node16" href="$structavr__int__table__t.html" title="Interrupt vectors, and their enable/clear registers. " alt="" coords="417,413,524,440"/>
+<area shape="rect" id="node4" href="$structavr__irq__t.html" title="Public IRQ structure. " alt="" coords="15,355,87,381"/>
+<area shape="rect" id="node5" href="$structavr__irq__pool__t.html" title="IRQ Pool structure. " alt="" coords="193,267,295,293"/>
+<area shape="rect" id="node6" href="$structavr__irq__hook__t.html" title="avr_irq_hook_t" alt="" coords="191,421,297,448"/>
+<area shape="rect" id="node10" href="$structavr__io__t.html" title="IO module base struct Modules uses that as their first member in their own struct. " alt="" coords="967,479,1035,505"/>
+<area shape="rect" id="node11" href="$structavr__t.html" title="Main AVR instance. " alt="" coords="701,265,751,292"/>
+<area shape="rect" id="node18" href="$structavr__vcd__signal__t.html" title="This structure registers IRQ change hooks to various &quot;source&quot; IRQs and dumps their values (if changed..." alt="" coords="411,57,531,84"/>
+<area shape="rect" id="node7" href="$structavr__regbit__t.html" title="This &#39;structure&#39; is a packed representation of an IO register &#39;bit&#39; (or consecutive bits)..." alt="" coords="5,655,96,681"/>
+<area shape="rect" id="node8" href="$struct__epstate.html" title="_epstate" alt="" coords="208,731,280,757"/>
+<area shape="rect" id="node9" href="$union__ueintx.html" title="_ueintx" alt="" coords="19,731,83,757"/>
+<area shape="rect" id="node13" href="$structavr__cycle__timer__slot__t.html" title="Each timer instance contains the absolute cycle number they are hoping to run at, a function pointer ..." alt="" coords="924,175,1077,201"/>
+<area shape="rect" id="node17" href="$structavr__vcd__t.html" title="avr_vcd_t" alt="" coords="961,72,1040,99"/>
+<area shape="rect" id="node20" href="$structavr__gdb__t.html" title="avr_gdb_t" alt="" coords="961,307,1040,333"/>
+<area shape="rect" id="node12" href="$structavr__cycle__timer__pool__t.html" title="Timer pool contains a pool of timer slots available, they all start queued into the &#39;free&#39; qeueue..." alt="" coords="1191,203,1347,229"/>
+<area shape="rect" id="node14" href="$structavr__trace__data__t.html" title="This is only ever used if CONFIG_SIMAVR_TRACE is defined. " alt="" coords="411,215,530,241"/>
+<area shape="rect" id="node15" href="$structavr__symbol__t.html" title="Symbol loaded from the .elf file. " alt="" coords="194,215,294,241"/>
+<area shape="rect" id="node19" href="$structavr__vcd__log__t.html" title="avr_vcd_log_t" alt="" coords="675,5,777,32"/>
+<area shape="rect" id="node21" href="$structavr__gdb__watchpoints__t.html" title="avr_gdb_watchpoints_t" alt="" coords="648,412,804,439"/>
+</map>

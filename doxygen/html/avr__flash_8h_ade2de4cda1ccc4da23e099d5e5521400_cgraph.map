@@ -1,0 +1,5 @@
+<map id="avr_flash_init" name="avr_flash_init">
+<area shape="rect" id="node2" href="$sim__io_8h.html#ac32f09e926e9152291bd758f5860cd4e" title="Registers an IO module, so it&#39;s run(), reset() etc are called. " alt="" coords="170,5,277,32"/>
+<area shape="rect" id="node3" href="$sim__interrupts_8h.html#a7f84bf7cd40ade6cec2dd865cc5468a9" title="register an interrupt vector. It&#39;s only needed if you want to use the &quot;r_raised&quot; flags ..." alt="" coords="157,56,290,83"/>
+<area shape="rect" id="node4" href="$sim__io_8h.html#a9fc8ac70dea4e1989eefe7a8e5f5e4ad" title="Register a callback for when the IO register is written. callback has to set the memory itself..." alt="" coords="152,107,295,133"/>
+</map>

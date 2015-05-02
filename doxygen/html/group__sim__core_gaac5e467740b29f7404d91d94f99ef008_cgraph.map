@@ -1,0 +1,4 @@
+<map id="_avr_sp_set" name="_avr_sp_set">
+<area shape="rect" id="node2" href="$sim__core_8c.html#a2b7572c52203ddbee339db995d80dea1" title="_avr_set_r" alt="" coords="147,5,229,32"/>
+<area shape="rect" id="node3" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="Raise an IRQ. I.e. call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39;..." alt="" coords="277,5,373,32"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="avr_connect_irq" name="avr_connect_irq">
+<area shape="rect" id="node2" href="$avr__extint_8c.html#a43979b94ea6f7457d76db3197a2ff1c7" title="avr_extint_reset" alt="" coords="192,5,307,32"/>
+<area shape="rect" id="node3" href="$avr__timer_8c.html#a44b06436b7762bc0576e1fb87b962f51" title="avr_timer_reset" alt="" coords="193,56,305,83"/>
+<area shape="rect" id="node4" href="$sim__avr_8c.html#a5221ddab7dcd5cda9ed0835ec96d5aaf" title="_avr_io_command_write" alt="" coords="168,107,331,133"/>
+<area shape="rect" id="node8" href="$group__sim__vcd__file.html#ga35ddf764e7c9d4261f5143c399667921" title="Add a trace signal to the vcd file. " alt="" coords="399,157,537,184"/>
+<area shape="rect" id="node5" href="$group__sim__avr.html#ga143c409d79573ae95a99132517c3a866" title="Set an IO register to receive commands from the AVR firmware it&#39;s optional, and uses the ELF tags..." alt="" coords="379,107,557,133"/>
+<area shape="rect" id="node6" href="$group__sim__elf.html#ga85cfc3d055b9730c00d1c66237d50eb0" title="Load the firmware to the AVR instance. " alt="" coords="605,132,733,159"/>
+<area shape="rect" id="node7" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="781,132,832,159"/>
+</map>

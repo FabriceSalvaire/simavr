@@ -1,0 +1,7 @@
+<map id="avr_cycle_timer_register" name="avr_cycle_timer_register">
+<area shape="rect" id="node2" href="$group__avr__bitbang.html#ga333dc5109dfdfe6ef58550d123f5ed10" title="start bitbang transfer " alt="" coords="255,5,378,32"/>
+<area shape="rect" id="node3" href="$sim__cycle__timers_8c.html#a663dc6028f9734e237cb1307e7678417" title="register a timer to call in &#39;when&#39; usec " alt="" coords="217,56,416,83"/>
+<area shape="rect" id="node4" href="$group__sim__vcd__file.html#gac70111af7bb4209053b9ecd885c48d46" title="Starts recording the signal value into the file. " alt="" coords="266,107,367,133"/>
+<area shape="rect" id="node5" href="$sim__elf_8c.html#a85cfc3d055b9730c00d1c66237d50eb0" title="avr_load_firmware" alt="" coords="464,107,592,133"/>
+<area shape="rect" id="node6" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="640,107,691,133"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="avr_cycle_timer_cancel" name="avr_cycle_timer_cancel">
+<area shape="rect" id="node2" href="$sim__cycle__timers_8c.html#ae6f1c35b5f5c34abd9aa07b3eb6f907c" title="avr_cycle_timer_reset\l_sleep_run_cycles_limited" alt="" coords="212,5,387,47"/>
+<area shape="rect" id="node3" href="$sim__cycle__timers_8c.html#a1cf6099f6187998f314ff9f5e1a295e4" title="avr_cycle_timer_return\l_sleep_run_cycles_limited" alt="" coords="435,5,609,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="avr_io_getirq" name="avr_io_getirq">
+<area shape="rect" id="node2" href="$group__avr__bitbang.html#ga333dc5109dfdfe6ef58550d123f5ed10" title="start bitbang transfer " alt="" coords="149,5,272,32"/>
+<area shape="rect" id="node3" href="$group__avr__bitbang.html#ga313a21069910cdee13a6de44edc8fc93" title="stop bitbang transfer " alt="" coords="150,56,271,83"/>
+</map>

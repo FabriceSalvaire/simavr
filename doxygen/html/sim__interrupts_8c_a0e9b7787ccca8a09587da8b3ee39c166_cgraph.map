@@ -1,0 +1,3 @@
+<map id="avr_clear_interrupt" name="avr_clear_interrupt">
+<area shape="rect" id="node2" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="&#39;raise&#39; an IRQ. Ie call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39; ..." alt="" coords="183,5,279,32"/>
+</map>

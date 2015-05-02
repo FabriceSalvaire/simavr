@@ -1,0 +1,4 @@
+<map id="avr_bitbang_write_bit" name="avr_bitbang_write_bit">
+<area shape="rect" id="node2" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="Raise an IRQ. I.e. call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39;..." alt="" coords="199,5,295,32"/>
+<area shape="rect" id="node3" href="$group__sim__io.html#gaaf605d10c50ccc53e3639fb07c15e765" title="Get the specific irq for a module, check AVR_IOCTL_IOPORT_GETIRQ for example. " alt="" coords="199,56,295,83"/>
+</map>

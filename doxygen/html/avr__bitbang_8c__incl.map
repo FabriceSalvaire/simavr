@@ -1,0 +1,12 @@
+<map id="simavr/source/avr_bitbang.c" name="simavr/source/avr_bitbang.c">
+<area shape="rect" id="node4" href="$avr__bitbang_8h.html" title="avr_bitbang.h" alt="" coords="379,80,479,107"/>
+<area shape="rect" id="node14" href="$sim__regbit_8h.html" title="sim_regbit.h" alt="" coords="521,304,615,331"/>
+<area shape="rect" id="node15" href="$avr__ioport_8h.html" title="avr_ioport.h" alt="" coords="440,155,531,181"/>
+<area shape="rect" id="node16" href="$sim__core_8h.html" title="sim_core.h" alt="" coords="606,80,693,107"/>
+<area shape="rect" id="node5" href="$sim__avr_8h.html" title="sim_avr.h" alt="" coords="393,229,471,256"/>
+<area shape="rect" id="node6" href="$sim__irq_8h.html" title="sim_irq.h" alt="" coords="5,379,80,405"/>
+<area shape="rect" id="node8" href="$sim__interrupts_8h.html" title="sim_interrupts.h" alt="" coords="33,304,148,331"/>
+<area shape="rect" id="node11" href="$sim__cycle__timers_8h.html" title="sim_cycle_timers.h" alt="" coords="173,304,307,331"/>
+<area shape="rect" id="node13" href="$sim__io_8h.html" title="sim_io.h" alt="" coords="426,304,497,331"/>
+<area shape="rect" id="node9" href="$sim__avr__types_8h.html" title="sim_avr_types.h" alt="" coords="105,379,223,405"/>
+</map>

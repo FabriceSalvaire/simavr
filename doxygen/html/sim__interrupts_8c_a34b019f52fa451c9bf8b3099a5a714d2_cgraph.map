@@ -1,0 +1,4 @@
+<map id="avr_clear_interrupt_if" name="avr_clear_interrupt_if">
+<area shape="rect" id="node2" href="$sim__interrupts_8c.html#a0e9b7787ccca8a09587da8b3ee39c166" title="clear the &quot;pending&quot; status of an interrupt " alt="" coords="196,5,325,32"/>
+<area shape="rect" id="node3" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="&#39;raise&#39; an IRQ. Ie call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39; ..." alt="" coords="373,5,469,32"/>
+</map>

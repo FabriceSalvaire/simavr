@@ -1,0 +1,5 @@
+<map id="gdb_change_breakpoint" name="gdb_change_breakpoint">
+<area shape="rect" id="node2" href="$sim__gdb_8c.html#abbd13cbd4cf49502d97baae55d5d8e9f" title="Returns &#45;1 on error, 0 otherwise. " alt="" coords="212,5,389,32"/>
+<area shape="rect" id="node4" href="$sim__gdb_8c.html#af7f6b91ef4a9b4e61ff595fd852f5074" title="Returns &#45;1 on error or if the specified point does not exist, 0 otherwise. " alt="" coords="247,56,354,83"/>
+<area shape="rect" id="node3" href="$sim__gdb_8c.html#a4cfa8d75194b380cc5d37dbf6eaee992" title="Returns the index of the watchpoint if found, &#45;1 otherwise. " alt="" coords="437,31,551,57"/>
+</map>

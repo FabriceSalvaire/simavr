@@ -1,0 +1,11 @@
+<map id="avr_sadly_crashed" name="avr_sadly_crashed">
+<area shape="rect" id="node2" href="$sim__core_8c.html#abd2089910a233d944503e553526ce649" title="crash" alt="" coords="184,81,239,108"/>
+<area shape="rect" id="node3" href="$sim__core_8c.html#a6bb6e950ca849414923b3ea37dc9ed36" title="These are accessors for avr&#45;&gt;data but allows watchpoints to be set for gdb IO modules use that to set..." alt="" coords="287,56,436,83"/>
+<area shape="rect" id="node4" href="$sim__core_8c.html#a54c74c348d29309eba5920c69b8fad35" title="avr_core_watch_read" alt="" coords="288,107,435,133"/>
+<area shape="rect" id="node5" href="$sim__core_8c.html#a80ca0a5234d7095e2491e4ca5022a69b" title="Instruction decoder, run ONE instruction. " alt="" coords="315,5,408,32"/>
+<area shape="rect" id="node6" href="$sim__avr_8c.html#af3423fc886b29e62d8206dacbf7c3eb5" title="avr_callback_run_gdb" alt="" coords="484,56,632,83"/>
+<area shape="rect" id="node9" href="$sim__avr_8c.html#ab516b7c5410cec79a63207ad43a611aa" title="avr_callback_run_raw" alt="" coords="484,5,632,32"/>
+<area shape="rect" id="node7" href="$group__sim__gdb.html#gaaee0c4dc854693c9c444665a099bc59d" title="avr_gdb_init" alt="" coords="680,56,772,83"/>
+<area shape="rect" id="node8" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="820,31,871,57"/>
+<area shape="rect" id="node10" href="$sim__avr_8c.html#a0f62b71791203a3c7fdcfe228d1b0f5a" title="Initializes a new AVR instance. Will call the IO registers init(), and then reset() ..." alt="" coords="694,5,758,32"/>
+</map>

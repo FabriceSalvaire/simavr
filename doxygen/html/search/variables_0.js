@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['_5favr_5fglobal_5flogger',['_avr_global_logger',['../sim__avr_8c.html#a6b1c09a0970dd097eda095aa7116759c',1,'sim_avr.c']]],
+  ['_5fio',['_io',['../avr__adc_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_adc.c'],['../avr__eeprom_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_eeprom.c'],['../avr__extint_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_extint.c'],['../avr__flash_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_flash.c'],['../avr__ioport_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_ioport.c'],['../avr__lin_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_lin.c'],['../avr__spi_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_spi.c'],['../avr__timer_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_timer.c'],['../avr__twi_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_twi.c'],['../avr__uart_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_uart.c'],['../avr__usb_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_usb.c'],['../avr__watchdog_8c.html#a28940c6bf786fa60f32893dc8b002203',1,'_io():&#160;avr_watchdog.c']]],
+  ['_5fsreg_5fbit_5fname',['_sreg_bit_name',['../sim__core_8c.html#a5cd114a5a983dc8f446e37566ca23812',1,'sim_core.c']]]
+];

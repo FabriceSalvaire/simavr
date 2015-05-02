@@ -1,0 +1,21 @@
+<map id="simavr/cores/sim_mega2560.c" name="simavr/cores/sim_mega2560.c">
+<area shape="rect" id="node2" href="$avr__adc_8h.html" title="avr_adc.h" alt="" coords="5,80,84,107"/>
+<area shape="rect" id="node3" href="$sim__avr_8h.html" title="sim_avr.h" alt="" coords="557,155,636,181"/>
+<area shape="rect" id="node13" href="$avr__eeprom_8h.html" title="avr_eeprom.h" alt="" coords="159,80,261,107"/>
+<area shape="rect" id="node14" href="$avr__extint_8h.html" title="avr_extint.h" alt="" coords="285,80,375,107"/>
+<area shape="rect" id="node15" href="$avr__flash_8h.html" title="avr_flash.h" alt="" coords="400,80,487,107"/>
+<area shape="rect" id="node16" href="$avr__ioport_8h.html" title="avr_ioport.h" alt="" coords="511,80,602,107"/>
+<area shape="rect" id="node17" href="$avr__spi_8h.html" title="avr_spi.h" alt="" coords="626,80,701,107"/>
+<area shape="rect" id="node18" href="$avr__timer_8h.html" title="avr_timer.h" alt="" coords="725,80,812,107"/>
+<area shape="rect" id="node19" href="$avr__twi_8h.html" title="avr_twi.h" alt="" coords="837,80,911,107"/>
+<area shape="rect" id="node20" href="$avr__uart_8h.html" title="avr_uart.h" alt="" coords="1074,80,1154,107"/>
+<area shape="rect" id="node22" href="$avr__watchdog_8h.html" title="avr_watchdog.h" alt="" coords="935,80,1050,107"/>
+<area shape="rect" id="node23" href="$sim__core__declare_8h.html" title="sim_core_declare.h" alt="" coords="1179,80,1313,107"/>
+<area shape="rect" id="node4" href="$sim__irq_8h.html" title="sim_irq.h" alt="" coords="610,304,685,331"/>
+<area shape="rect" id="node6" href="$sim__interrupts_8h.html" title="sim_interrupts.h" alt="" coords="329,229,443,256"/>
+<area shape="rect" id="node9" href="$sim__cycle__timers_8h.html" title="sim_cycle_timers.h" alt="" coords="169,229,304,256"/>
+<area shape="rect" id="node11" href="$sim__io_8h.html" title="sim_io.h" alt="" coords="561,229,632,256"/>
+<area shape="rect" id="node12" href="$sim__regbit_8h.html" title="sim_regbit.h" alt="" coords="657,229,750,256"/>
+<area shape="rect" id="node7" href="$sim__avr__types_8h.html" title="sim_avr_types.h" alt="" coords="327,304,445,331"/>
+<area shape="rect" id="node21" href="$fifo__declare_8h.html" title="fifo_declare.h" alt="" coords="1024,155,1124,181"/>
+</map>

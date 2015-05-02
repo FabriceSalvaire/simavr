@@ -1,0 +1,6 @@
+<map id="avr_cycle_timer_register" name="avr_cycle_timer_register">
+<area shape="rect" id="node2" href="$group__sim__cycle__timers.html#ga3ab10b0853c7668ce29907d1577392c8" title="cancel a previously set timer " alt="" coords="217,5,376,32"/>
+<area shape="rect" id="node3" href="$sim__cycle__timers_8c.html#ae6f1c35b5f5c34abd9aa07b3eb6f907c" title="avr_cycle_timer_reset\l_sleep_run_cycles_limited" alt="" coords="424,23,599,65"/>
+<area shape="rect" id="node5" href="$sim__cycle__timers_8c.html#a7a6e02a792cc73e158a2a5578a9d3abd" title="avr_cycle_timer_insert" alt="" coords="220,107,373,133"/>
+<area shape="rect" id="node4" href="$sim__cycle__timers_8c.html#a1cf6099f6187998f314ff9f5e1a295e4" title="avr_cycle_timer_return\l_sleep_run_cycles_limited" alt="" coords="647,23,821,65"/>
+</map>

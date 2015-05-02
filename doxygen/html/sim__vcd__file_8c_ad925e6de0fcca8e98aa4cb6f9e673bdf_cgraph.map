@@ -1,0 +1,4 @@
+<map id="avr_vcd_close" name="avr_vcd_close">
+<area shape="rect" id="node2" href="$sim__vcd__file_8c.html#a42637e57552524ce9b620fe19ba96d12" title="avr_vcd_stop" alt="" coords="160,5,260,32"/>
+<area shape="rect" id="node3" href="$sim__cycle__timers_8h.html#a3ab10b0853c7668ce29907d1577392c8" title="cancel a previously set timer " alt="" coords="308,5,467,32"/>
+</map>

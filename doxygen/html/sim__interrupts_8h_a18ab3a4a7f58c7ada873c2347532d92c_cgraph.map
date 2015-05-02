@@ -1,0 +1,8 @@
+<map id="avr_service_interrupts" name="avr_service_interrupts">
+<area shape="rect" id="node2" href="$sim__interrupts_8c.html#a2dfce3272d3653a9a77ae1c2e712069d" title="return non&#45;zero if the AVR core has any pending interrupts " alt="" coords="204,5,385,32"/>
+<area shape="rect" id="node3" href="$sim__core_8h.html#a7d3ad3fb3f0d56d27082e1beefd41bc4" title="_avr_push_addr" alt="" coords="237,56,352,83"/>
+<area shape="rect" id="node6" href="$sim__interrupts_8c.html#a0e9b7787ccca8a09587da8b3ee39c166" title="clear the &quot;pending&quot; status of an interrupt " alt="" coords="230,107,359,133"/>
+<area shape="rect" id="node4" href="$sim__core_8c.html#afb171aa77f23670c5662cb285bdcaa3c" title="Stack pointer access. " alt="" coords="435,5,528,32"/>
+<area shape="rect" id="node5" href="$sim__core_8c.html#aac5e467740b29f7404d91d94f99ef008" title="_avr_sp_set" alt="" coords="435,56,528,83"/>
+<area shape="rect" id="node7" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="&#39;raise&#39; an IRQ. Ie call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39; ..." alt="" coords="433,107,529,133"/>
+</map>

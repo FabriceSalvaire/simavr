@@ -1,0 +1,6 @@
+<map id="avr_vcd_add_signal" name="avr_vcd_add_signal">
+<area shape="rect" id="node2" href="$group__sim__irq.html#ga258c5ad75c46ff8180430d7ace63771f" title="init &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment " alt="" coords="223,5,309,32"/>
+<area shape="rect" id="node3" href="$group__sim__irq.html#ga73540ea207c91e6bf57cd75d5509b5ac" title="register a notification &#39;hook&#39; for &#39;irq&#39; – &#39;param&#39; is anything that your want passed back as argumen..." alt="" coords="191,56,341,83"/>
+<area shape="rect" id="node4" href="$sim__vcd__file_8c.html#a21cc667074a54bf595bb933f7f83d91c" title="_avr_vcd_notify" alt="" coords="209,107,323,133"/>
+<area shape="rect" id="node5" href="$group__sim__irq.html#gad2d68ac482b5d631c7c70541608d5487" title="this connects a &quot;source&quot; IRQ to a &quot;destination&quot; IRQ " alt="" coords="209,157,323,184"/>
+</map>

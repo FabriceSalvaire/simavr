@@ -1,0 +1,6 @@
+<map id="simavr/cores/sim_megax.h" name="simavr/cores/sim_megax.h">
+<area shape="rect" id="node2" href="$sim__mega16_8c.html" title="simavr/cores/sim_mega16.c" alt="" coords="5,80,192,107"/>
+<area shape="rect" id="node3" href="$sim__mega32_8c.html" title="simavr/cores/sim_mega32.c" alt="" coords="216,80,403,107"/>
+<area shape="rect" id="node4" href="$sim__mega8_8c.html" title="simavr/cores/sim_mega8.c" alt="" coords="427,80,605,107"/>
+<area shape="rect" id="node5" href="$sim__megax_8c.html" title="simavr/cores/sim_megax.c" alt="" coords="629,80,808,107"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="simavr/include/sim_core.h" name="simavr/include/sim_core.h">
+<area shape="rect" id="node2" href="$avr__bitbang_8c.html" title="simavr/source/avr_bitbang.c" alt="" coords="5,95,192,121"/>
+<area shape="rect" id="node3" href="$run__avr_8c.html" title="simavr/source/run_avr.c" alt="" coords="216,95,379,121"/>
+<area shape="rect" id="node4" href="$sim__avr_8c.html" title="simavr/source/sim_avr.c" alt="" coords="403,95,568,121"/>
+<area shape="rect" id="node5" href="$sim__core_8c.html" title="simavr/source/sim_core.c" alt="" coords="593,95,765,121"/>
+<area shape="rect" id="node6" href="$sim__gdb_8c.html" title="simavr/source/sim_gdb.c" alt="" coords="789,95,957,121"/>
+<area shape="rect" id="node7" href="$sim__interrupts_8c.html" title="simavr/source/sim_interrupts.c" alt="" coords="982,95,1183,121"/>
+</map>

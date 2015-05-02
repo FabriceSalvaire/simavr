@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['s_5fc',['S_C',['../group__sim__avr.html#ggaaf8fd5f0e57d456151c951e0f3715fc4a24573efd7bb3b4d26bfa0e0e28d80294',1,'sim_avr.h']]],
+  ['s_5fh',['S_H',['../group__sim__avr.html#ggaaf8fd5f0e57d456151c951e0f3715fc4ae1f521d6cb3b00b6c4dbe42ec526926f',1,'sim_avr.h']]],
+  ['s_5fi',['S_I',['../group__sim__avr.html#ggaaf8fd5f0e57d456151c951e0f3715fc4a0859ff36837f0993ba61c300ea3fbd59',1,'sim_avr.h']]],
+  ['s_5fn',['S_N',['../group__sim__avr.html#ggaaf8fd5f0e57d456151c951e0f3715fc4abfd477dc313622bc0570f8ff686493fb',1,'sim_avr.h']]],
+  ['s_5fs',['S_S',['../group__sim__avr.html#ggaaf8fd5f0e57d456151c951e0f3715fc4ab76712cbc44f311a633f6d3e27a612b0',1,'sim_avr.h']]],
+  ['s_5ft',['S_T',['../group__sim__avr.html#ggaaf8fd5f0e57d456151c951e0f3715fc4a64903a6c6568258abcc1aef67629771c',1,'sim_avr.h']]],
+  ['s_5fv',['S_V',['../group__sim__avr.html#ggaaf8fd5f0e57d456151c951e0f3715fc4a4b47e47e2cf818dbf643847acbd6e921',1,'sim_avr.h']]],
+  ['s_5fz',['S_Z',['../group__sim__avr.html#ggaaf8fd5f0e57d456151c951e0f3715fc4a60045f0982d8065cfe0fa8f3fb819935',1,'sim_avr.h']]],
+  ['simavr_5fcmd_5fnone',['SIMAVR_CMD_NONE',['../avr__mcu__section_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ac45981a8fff01451aa5db0a681a42a0f',1,'avr_mcu_section.h']]],
+  ['simavr_5fcmd_5fuart_5floopback',['SIMAVR_CMD_UART_LOOPBACK',['../avr__mcu__section_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a4a172b3a736198ed7242f725a3eb32d8',1,'avr_mcu_section.h']]],
+  ['simavr_5fcmd_5fvcd_5fstart_5ftrace',['SIMAVR_CMD_VCD_START_TRACE',['../avr__mcu__section_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a76928951870117f2ce3953f245b3c6bf',1,'avr_mcu_section.h']]],
+  ['simavr_5fcmd_5fvcd_5fstop_5ftrace',['SIMAVR_CMD_VCD_STOP_TRACE',['../avr__mcu__section_8h.html#adf764cbdea00d65edcd07bb9953ad2b7adb88670b025937348af30103769dc972',1,'avr_mcu_section.h']]],
+  ['sofi',['sofi',['../avr__usb_8c.html#ab65bf8e1a0edf640246f4e453b5847cea3f12feab6834e0975ee833fc52853258',1,'avr_usb.c']]],
+  ['spi_5firq_5fcount',['SPI_IRQ_COUNT',['../group__avr__spi.html#ggab04a0655cd1e3bcac5e8f48c18df1a57aca52b8ea13807c9cfd4ea306aba19152',1,'avr_spi.h']]],
+  ['spi_5firq_5finput',['SPI_IRQ_INPUT',['../group__avr__spi.html#ggab04a0655cd1e3bcac5e8f48c18df1a57a74274f30055335b2d0a84968bf9baa7b',1,'avr_spi.h']]],
+  ['spi_5firq_5foutput',['SPI_IRQ_OUTPUT',['../group__avr__spi.html#ggab04a0655cd1e3bcac5e8f48c18df1a57a170e2b8af2948dcc0ee6df29b74f5eed',1,'avr_spi.h']]],
+  ['stalledi',['stalledi',['../avr__usb_8c.html#a88f13aef1dc24c0c8d34a4339d1a4ecfac9628bfda0df551f16cb68d671f0c10d',1,'avr_usb.c']]],
+  ['suspi',['suspi',['../avr__usb_8c.html#ab65bf8e1a0edf640246f4e453b5847cea305503d59624227cf04e8e8ef8d1a6e5',1,'avr_usb.c']]]
+];

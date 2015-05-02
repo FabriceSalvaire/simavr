@@ -1,0 +1,16 @@
+<map id="simavr/source/sim_avr.c" name="simavr/source/sim_avr.c">
+<area shape="rect" id="node7" href="$avr__mcu__section_8h.html" title="avr/avr_mcu_section.h" alt="" coords="741,304,896,331"/>
+<area shape="rect" id="node9" href="$avr__uart_8h.html" title="avr_uart.h" alt="" coords="551,80,631,107"/>
+<area shape="rect" id="node10" href="$sim__avr_8h.html" title="sim_avr.h" alt="" coords="361,155,439,181"/>
+<area shape="rect" id="node19" href="$sim__core_8h.html" title="sim_core.h" alt="" coords="1157,80,1243,107"/>
+<area shape="rect" id="node20" href="$sim__gdb_8h.html" title="sim_gdb.h" alt="" coords="1268,80,1351,107"/>
+<area shape="rect" id="node21" href="$sim__time_8h.html" title="sim_time.h" alt="" coords="358,80,445,107"/>
+<area shape="rect" id="node22" href="$sim__vcd__file_8h.html" title="sim_vcd_file.h" alt="" coords="655,80,761,107"/>
+<area shape="rect" id="node18" href="$fifo__declare_8h.html" title="fifo_declare.h" alt="" coords="558,155,658,181"/>
+<area shape="rect" id="node11" href="$sim__irq_8h.html" title="sim_irq.h" alt="" coords="561,304,636,331"/>
+<area shape="rect" id="node12" href="$sim__interrupts_8h.html" title="sim_interrupts.h" alt="" coords="471,229,585,256"/>
+<area shape="rect" id="node15" href="$sim__cycle__timers_8h.html" title="sim_cycle_timers.h" alt="" coords="99,229,234,256"/>
+<area shape="rect" id="node16" href="$sim__io_8h.html" title="sim_io.h" alt="" coords="258,229,329,256"/>
+<area shape="rect" id="node17" href="$sim__regbit_8h.html" title="sim_regbit.h" alt="" coords="353,229,447,256"/>
+<area shape="rect" id="node13" href="$sim__avr__types_8h.html" title="sim_avr_types.h" alt="" coords="418,304,537,331"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="read_ihex_chunks" name="read_ihex_chunks">
+<area shape="rect" id="node2" href="$group__sim__hex.html#gaa1b81657cd5080e36d33bce6ca27c21e" title="Parses a hex text string &#39;src&#39; of at max &#39;maxlen&#39; characters, decodes it into &#39;buffer&#39;. " alt="" coords="180,5,295,32"/>
+</map>

@@ -1,0 +1,24 @@
+<map id="avr_register_io_read" name="avr_register_io_read">
+<area shape="rect" id="node2" href="$group__avr__adc.html#ga6c1ba6d528dd6a3adc3b0c393922ed2c" title="avr_adc_init" alt="" coords="197,291,289,318"/>
+<area shape="rect" id="node16" href="$group__avr__ioport.html#ga2038a9682e7f0a4bd0f384515dc39901" title="avr_ioport_init" alt="" coords="192,342,295,369"/>
+<area shape="rect" id="node18" href="$group__avr__spi.html#ga94ca1155d4b56fe050092840e66b6a86" title="avr_spi_init" alt="" coords="199,545,287,571"/>
+<area shape="rect" id="node19" href="$group__avr__timer.html#ga109f7e761984eec89ba3209d34c237f7" title="avr_timer_init" alt="" coords="193,443,293,470"/>
+<area shape="rect" id="node20" href="$group__avr__twi.html#gaae81708e7ebf9784be29ee71ccdee09d" title="avr_twi_init" alt="" coords="199,393,287,419"/>
+<area shape="rect" id="node21" href="$group__avr__uart.html#gad9e028ea2f9beda8ca0366852704697b" title="avr_uart_init" alt="" coords="197,494,290,521"/>
+<area shape="rect" id="node23" href="$group__avr__usb.html#gaad97c7b674887249fbd5e250b8d08e03" title="avr_usb_init" alt="" coords="197,671,289,698"/>
+<area shape="rect" id="node3" href="$sim__mega128_8c.html#aa75db9154ff7da86ea2d0529eb5681ac" title="m128_init" alt="" coords="353,443,432,470"/>
+<area shape="rect" id="node4" href="$sim__mega1280_8c.html#a27f0cfb99d0fb08696933148a30b2a0d" title="m1280_init" alt="" coords="350,494,435,521"/>
+<area shape="rect" id="node5" href="$sim__mega1281_8c.html#ae0732161cc4e02dd81cf0fde0d0e727b" title="m1281_init" alt="" coords="350,545,435,571"/>
+<area shape="rect" id="node6" href="$sim__mega128rfa1_8c.html#a760d33397450f6992a799be5b96cedf8" title="m128rfa1_init" alt="" coords="343,595,443,622"/>
+<area shape="rect" id="node7" href="$sim__mega128rfr2_8c.html#ac621b083db4bd04c6d416e326d02d58d" title="m128rfr2_init" alt="" coords="344,190,441,217"/>
+<area shape="rect" id="node8" href="$sim__mega169_8c.html#a744d6860d2b5bbc4cea804aabd531493" title="m169p_init" alt="" coords="350,697,435,723"/>
+<area shape="rect" id="node9" href="$sim__mega2560_8c.html#a61aa264c3e77b1d99556dc040bfe47ed" title="m2560_init" alt="" coords="350,241,435,267"/>
+<area shape="rect" id="node10" href="$sim__megax_8h.html#a66f2ee34f5c100623a0f5aa91b9b48a1" title="mx_init" alt="" coords="361,291,425,318"/>
+<area shape="rect" id="node11" href="$sim__megax4_8h.html#a43ff8cef3fa2e05282aa063284231e03" title="mx4_init" alt="" coords="357,342,428,369"/>
+<area shape="rect" id="node12" href="$sim__megax8_8h.html#a193fe7e4188d32f956e6e47ba7a6b593" title="mx8_init" alt="" coords="357,393,428,419"/>
+<area shape="rect" id="node13" href="$sim__megaxm1_8h.html#a62fd6eb6657d3685eaff349434bff721" title="mxm1_init" alt="" coords="491,646,573,673"/>
+<area shape="rect" id="node14" href="$sim__tinyx4_8h.html#a79f175ec4edeffef69e1a9b0d2902165" title="tx4_init" alt="" coords="361,38,425,65"/>
+<area shape="rect" id="node15" href="$sim__tinyx5_8h.html#ab429b18dc2641017d6052543035238e2" title="tx5_init" alt="" coords="361,139,425,166"/>
+<area shape="rect" id="node17" href="$sim__90usb162_8c.html#a94281f1e6275e36f8c3f74cf45af1094" title="usb162_init" alt="" coords="349,747,437,774"/>
+<area shape="rect" id="node22" href="$group__avr__lin.html#ga3ccac2e9ed2a5255830de76230d78526" title="avr_lin_init" alt="" coords="351,798,435,825"/>
+</map>

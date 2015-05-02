@@ -1,0 +1,9 @@
+<map id="avr_irq_register_notify" name="avr_irq_register_notify">
+<area shape="rect" id="node2" href="$group__avr__bitbang.html#ga333dc5109dfdfe6ef58550d123f5ed10" title="avr_bitbang_start" alt="" coords="211,5,334,32"/>
+<area shape="rect" id="node3" href="$avr__spi_8c.html#a084669c58a934ba1984c3da709eecf48" title="avr_spi_reset" alt="" coords="223,56,323,83"/>
+<area shape="rect" id="node4" href="$avr__twi_8c.html#aae94efee783bfcbbb9eede8d65b110ae" title="avr_twi_reset" alt="" coords="223,107,323,133"/>
+<area shape="rect" id="node5" href="$avr__uart_8c.html#acffe17c32de6f53bd9d63a3b07140e28" title="avr_uart_reset" alt="" coords="220,157,325,184"/>
+<area shape="rect" id="node6" href="$sim__vcd__file_8c.html#a35ddf764e7c9d4261f5143c399667921" title="avr_vcd_add_signal" alt="" coords="204,208,341,235"/>
+<area shape="rect" id="node7" href="$sim__elf_8c.html#a85cfc3d055b9730c00d1c66237d50eb0" title="avr_load_firmware" alt="" coords="389,208,517,235"/>
+<area shape="rect" id="node8" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="565,208,616,235"/>
+</map>

@@ -1,0 +1,51 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$run__avr_8c.html#a03f07cf7714b3c7719a7bee146dcaa7b" title="display_usage" alt="" coords="137,208,242,235"/>
+<area shape="rect" id="node3" href="$group__sim__hex.html#gab25c0cc69ff2fad95c7181fcb330baf0" title="Read a .hex file, detects the various different chunks in it from their starting addresses and alloca..." alt="" coords="126,259,253,285"/>
+<area shape="rect" id="node5" href="$group__sim__elf.html#ga5c5af71c9bd54cb69785fa963cbb29f6" title="Read an ELF firmware. " alt="" coords="127,309,252,336"/>
+<area shape="rect" id="node7" href="$group__sim__avr.html#ga9daaee86aaf66a85c6a70a43859cec3b" title="Locate the maker for mcu &quot;name&quot; and allocates a new avr instance. " alt="" coords="104,360,275,387"/>
+<area shape="rect" id="node8" href="$group__sim__avr.html#ga0f62b71791203a3c7fdcfe228d1b0f5a" title="Initializes a new AVR instance. Will call the IO registers init(), and then reset() ..." alt="" coords="157,411,221,437"/>
+<area shape="rect" id="node21" href="$group__sim__elf.html#ga85cfc3d055b9730c00d1c66237d50eb0" title="Load the firmware to the AVR instance. " alt="" coords="125,461,253,488"/>
+<area shape="rect" id="node41" href="$group__sim__gdb.html#gaaee0c4dc854693c9c444665a099bc59d" title="Initialise GDB. " alt="" coords="143,613,235,640"/>
+<area shape="rect" id="node45" href="$run__avr_8c.html#a1eaa6002be5f73ad0802d990bea3be8f" title="sig_int" alt="" coords="159,664,219,691"/>
+<area shape="rect" id="node46" href="$group__sim__avr.html#ga0f0fc39b8130ef83ef768686dfd1959e" title="Finish any pending operations. " alt="" coords="361,867,463,893"/>
+<area shape="rect" id="node50" href="$group__sim__avr.html#ga6af69965625ee8a4cee49a68649edf65" title="Run one cycle of the AVR, sleep if necessary. " alt="" coords="157,765,222,792"/>
+<area shape="rect" id="node4" href="$group__sim__hex.html#gaa1b81657cd5080e36d33bce6ca27c21e" title="Parses a hex text string &#39;src&#39; of at max &#39;maxlen&#39; characters, decodes it into &#39;buffer&#39;. " alt="" coords="355,5,469,32"/>
+<area shape="rect" id="node6" href="$sim__elf_8c.html#a1152e742fcaa59b886a25c5bbbaafcc5" title="elf_parse_mmcu_section" alt="" coords="329,56,495,83"/>
+<area shape="rect" id="node9" href="$group__sim__interrupts.html#ga018360a13c4b43592bcf90b53dcd18c5" title="Initializes the interrupt table. " alt="" coords="353,157,471,184"/>
+<area shape="rect" id="node10" href="$group__sim__avr.html#gab516b7c5410cec79a63207ad43a611aa" title="avr_callback_run_raw" alt="" coords="338,664,486,691"/>
+<area shape="rect" id="node15" href="$group__sim__avr.html#ga8f5fa15f4603ed6442955ca0dedcace8" title="avr_callback_sleep_raw" alt="" coords="331,411,493,437"/>
+<area shape="rect" id="node17" href="$group__sim__avr.html#gab2cd3266800c9dd2be9461d5a680ab5e" title="Resets the AVR, and the IO modules. " alt="" coords="374,107,450,133"/>
+<area shape="rect" id="node11" href="$group__sim__core.html#ga80ca0a5234d7095e2491e4ca5022a69b" title="Instruction decoder, run ONE instruction. " alt="" coords="586,664,679,691"/>
+<area shape="rect" id="node13" href="$group__sim__cycle__timers.html#gad5101b3d431c3673ab719245a7293512" title="avr_cycle_timer_process" alt="" coords="549,715,716,741"/>
+<area shape="rect" id="node14" href="$group__sim__interrupts.html#ga18ab3a4a7f58c7ada873c2347532d92c" title="Called by the core at each cycle to check whether an interrupt is pending. " alt="" coords="557,613,708,640"/>
+<area shape="rect" id="node12" href="$group__sim__io.html#ga3a93a5e3c3b49cf1a04ef8b4d9ee3b73" title="Call every IO modules until one responds to this. " alt="" coords="804,715,875,741"/>
+<area shape="rect" id="node16" href="$group__sim__avr.html#gaa2ba0de4d0a8f68e851aa80e2f745d4c" title="Accumulates sleep requests (and returns a sleep time of 0) until a minimum count of requested sleep m..." alt="" coords="550,563,715,589"/>
+<area shape="rect" id="node18" href="$group__sim__core.html#gaac5e467740b29f7404d91d94f99ef008" title="_avr_sp_set" alt="" coords="586,56,679,83"/>
+<area shape="rect" id="node19" href="$group__sim__interrupts.html#gaf6ff373ca757ae0d41298a27566c82f9" title="Reset the interrupt table and the fifo. " alt="" coords="567,107,698,133"/>
+<area shape="rect" id="node20" href="$group__sim__cycle__timers.html#gac9a0176572795ca831e2de5ac4c9c69c" title="avr_cycle_timer_reset" alt="" coords="557,157,708,184"/>
+<area shape="rect" id="node22" href="$group__sim__avr.html#gad997bb8e4e8841240ea31ac26c3687e7" title="Load code in the &quot;flash&quot;. " alt="" coords="363,461,461,488"/>
+<area shape="rect" id="node23" href="$group__sim__avr.html#ga143c409d79573ae95a99132517c3a866" title="Set an IO register to receive commands from the AVR firmware it&#39;s optional, and uses the ELF tags..." alt="" coords="323,309,501,336"/>
+<area shape="rect" id="node26" href="$group__sim__vcd__file.html#gac70111af7bb4209053b9ecd885c48d46" title="Starts recording the signal value into the file. " alt="" coords="789,255,890,281"/>
+<area shape="rect" id="node31" href="$group__sim__avr.html#ga4f3b7cc88e6890cbb8dc7fb2fb5ddfc8" title="Specify the &quot;console register&quot; – output sent to this register is printed on the simulator console..." alt="" coords="329,360,495,387"/>
+<area shape="rect" id="node33" href="$group__sim__vcd__file.html#ga463e992294ae95f66dff96ddb424c5af" title="Initializes a new VCD trace file, and returns zero if all is well. " alt="" coords="366,259,458,285"/>
+<area shape="rect" id="node35" href="$group__sim__io.html#ga57ef8d43a30075c976601bbc5bec9a79" title="Get the IRQ for an absolute IO address. " alt="" coords="349,563,475,589"/>
+<area shape="rect" id="node38" href="$group__sim__vcd__file.html#ga35ddf764e7c9d4261f5143c399667921" title="Add a trace signal to the vcd file. " alt="" coords="564,461,701,488"/>
+<area shape="rect" id="node24" href="$group__sim__io.html#ga9fc8ac70dea4e1989eefe7a8e5f5e4ad" title="Register a callback for when the IO register is written. callback has to set the memory itself..." alt="" coords="561,360,704,387"/>
+<area shape="rect" id="node25" href="$sim__avr_8c.html#a5221ddab7dcd5cda9ed0835ec96d5aaf" title="_avr_io_command_write" alt="" coords="551,309,714,336"/>
+<area shape="rect" id="node27" href="$group__sim__vcd__file.html#ga42637e57552524ce9b620fe19ba96d12" title="Stops recording signal values into the file. " alt="" coords="995,313,1095,340"/>
+<area shape="rect" id="node30" href="$group__sim__irq.html#gad2d68ac482b5d631c7c70541608d5487" title="Connect a source IRQ to a destination IRQ. " alt="" coords="782,360,897,387"/>
+<area shape="rect" id="node28" href="$sim__vcd__file_8c.html#ac4e57d96be2b98150a7b6e8ca19ed363" title="_avr_vcd_get_float\l_signal_text" alt="" coords="979,247,1111,289"/>
+<area shape="rect" id="node29" href="$group__sim__cycle__timers.html#gab10f8f0e0e7e2f560bd83bae06bcb5c1" title="register for calling &#39;timer&#39; in &#39;when&#39; cycles " alt="" coords="963,196,1127,223"/>
+<area shape="rect" id="node32" href="$sim__avr_8c.html#aeddeed68e70f1046f0a4dde376fcb97e" title="_avr_io_console_write" alt="" coords="557,411,708,437"/>
+<area shape="rect" id="node34" href="$group__sim__time.html#ga90392da0a89e4a031ff881b2c560a105" title="Converts a number of usec to a number of machine cycles, at current speed. " alt="" coords="563,259,702,285"/>
+<area shape="rect" id="node36" href="$group__sim__irq.html#gab643092a04e04aca6c4e9eb08db4b81f" title="Allocates &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment. " alt="" coords="585,512,680,539"/>
+<area shape="rect" id="node37" href="$group__sim__irq.html#ga258c5ad75c46ff8180430d7ace63771f" title="Init &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment. " alt="" coords="797,512,882,539"/>
+<area shape="rect" id="node39" href="$group__sim__irq.html#ga73540ea207c91e6bf57cd75d5509b5ac" title="Register a notification hook (callback) for an irq. " alt="" coords="764,411,915,437"/>
+<area shape="rect" id="node40" href="$sim__vcd__file_8c.html#a21cc667074a54bf595bb933f7f83d91c" title="_avr_vcd_notify" alt="" coords="782,461,897,488"/>
+<area shape="rect" id="node42" href="$group__sim__network.html#ga7fcc7182cbadb5b3c97435612ac874d8" title="network_init" alt="" coords="366,816,458,843"/>
+<area shape="rect" id="node43" href="$group__sim__avr.html#gaf3423fc886b29e62d8206dacbf7c3eb5" title="avr_callback_run_gdb" alt="" coords="338,715,486,741"/>
+<area shape="rect" id="node44" href="$group__sim__avr.html#gaa1d5062766f4b90f98c13e58ba515042" title="These are callbacks for the two &#39;main&#39; behaviour in simavr. " alt="" coords="331,613,493,640"/>
+<area shape="rect" id="node47" href="$group__sim__gdb.html#gac7dd5bca74f6cc19b96265ed348759ba" title="avr_deinit_gdb" alt="" coords="579,867,686,893"/>
+<area shape="rect" id="node48" href="$group__sim__vcd__file.html#gad925e6de0fcca8e98aa4cb6f9e673bdf" title="Close a vcd file. " alt="" coords="786,791,893,817"/>
+<area shape="rect" id="node49" href="$group__sim__io.html#ga5f50f574988d429bdc07b7358c6cfaf4" title="Terminates all IOs and remove from them from the io chain. " alt="" coords="567,917,698,944"/>
+</map>

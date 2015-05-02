@@ -1,0 +1,10 @@
+<map id="avr_vcd_close" name="avr_vcd_close">
+<area shape="rect" id="node2" href="$group__sim__vcd__file.html#ga42637e57552524ce9b620fe19ba96d12" title="Stops recording signal values into the file. " alt="" coords="160,63,260,90"/>
+<area shape="rect" id="node3" href="$group__sim__cycle__timers.html#ga3ab10b0853c7668ce29907d1577392c8" title="cancel a previously set timer " alt="" coords="308,13,467,39"/>
+<area shape="rect" id="node6" href="$sim__vcd__file_8c.html#a7caa95f912587cf856c0d4128ee36356" title="_avr_vcd_timer" alt="" coords="332,63,443,90"/>
+<area shape="rect" id="node7" href="$sim__vcd__file_8c.html#a488b5dc1bb57082ed519a2dde8bf9547" title="avr_vcd_flush_log" alt="" coords="539,93,665,119"/>
+<area shape="rect" id="node4" href="$sim__cycle__timers_8c.html#ae6f1c35b5f5c34abd9aa07b3eb6f907c" title="avr_cycle_timer_reset\l_sleep_run_cycles_limited" alt="" coords="515,5,689,47"/>
+<area shape="rect" id="node5" href="$sim__cycle__timers_8c.html#a1cf6099f6187998f314ff9f5e1a295e4" title="avr_cycle_timer_return\l_sleep_run_cycles_limited" alt="" coords="737,5,912,47"/>
+<area shape="rect" id="node8" href="$group__sim__time.html#ga202230bca458e26736d215093625d469" title="Converts back a number of cycles to nsecs. " alt="" coords="755,82,894,109"/>
+<area shape="rect" id="node9" href="$sim__vcd__file_8c.html#ab74d496f2244c5c6611c459cbfd239a5" title="_avr_vcd_get_signal_text" alt="" coords="739,133,910,159"/>
+</map>

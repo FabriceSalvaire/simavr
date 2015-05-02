@@ -1,0 +1,6 @@
+<map id="simavr/include/avr/avr_mcu_section.h" name="simavr/include/avr/avr_mcu_section.h">
+<area shape="rect" id="node2" href="$sim__elf_8h.html" title="simavr/include/sim\l_elf.h" alt="" coords="115,95,245,136"/>
+<area shape="rect" id="node5" href="$sim__avr_8c.html" title="simavr/source/sim_avr.c" alt="" coords="269,102,435,129"/>
+<area shape="rect" id="node3" href="$run__avr_8c.html" title="simavr/source/run_avr.c" alt="" coords="5,184,168,211"/>
+<area shape="rect" id="node4" href="$sim__elf_8c.html" title="simavr/source/sim_elf.c" alt="" coords="193,184,354,211"/>
+</map>

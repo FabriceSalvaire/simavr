@@ -1,0 +1,4 @@
+<map id="avr_io_setirqs" name="avr_io_setirqs">
+<area shape="rect" id="node2" href="$group__sim__irq.html#gab643092a04e04aca6c4e9eb08db4b81f" title="allocates &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment ..." alt="" coords="156,5,251,32"/>
+<area shape="rect" id="node3" href="$group__sim__irq.html#ga258c5ad75c46ff8180430d7ace63771f" title="init &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment " alt="" coords="299,5,384,32"/>
+</map>

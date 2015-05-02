@@ -1,0 +1,51 @@
+<map id="init" name="init">
+<area shape="rect" id="node2" href="$group__avr__eeprom.html#ga9351d07e1efe9ea4efd835ca9d3b3d19" title="avr_eeprom_init" alt="" coords="98,1136,213,1163"/>
+<area shape="rect" id="node16" href="$group__avr__watchdog.html#gafb1a6c6d795871184f8bdd73ffcca289" title="avr_watchdog_init" alt="" coords="92,1187,219,1213"/>
+<area shape="rect" id="node24" href="$group__avr__extint.html#ga25e0542a6fa33631e3dd2a00aa1b7e6f" title="avr_extint_init" alt="" coords="104,1237,207,1264"/>
+<area shape="rect" id="node27" href="$group__avr__ioport.html#ga2038a9682e7f0a4bd0f384515dc39901" title="avr_ioport_init" alt="" coords="104,1693,207,1720"/>
+<area shape="rect" id="node36" href="$group__avr__timer.html#ga109f7e761984eec89ba3209d34c237f7" title="avr_timer_init" alt="" coords="105,1339,205,1365"/>
+<area shape="rect" id="node3" href="$group__sim__io.html#gac32f09e926e9152291bd758f5860cd4e" title="Registers an IO module, so it&#39;s run(), reset() etc are called. " alt="" coords="295,1136,401,1163"/>
+<area shape="rect" id="node4" href="$group__sim__interrupts.html#ga7f84bf7cd40ade6cec2dd865cc5468a9" title="Register an interrupt vector. It&#39;s only needed if you want to use the &quot;r_raised&quot; flags. " alt="" coords="281,1187,415,1213"/>
+<area shape="rect" id="node5" href="$group__sim__io.html#ga9fc8ac70dea4e1989eefe7a8e5f5e4ad" title="Register a callback for when the IO register is written. callback has to set the memory itself..." alt="" coords="277,1237,419,1264"/>
+<area shape="rect" id="node7" href="$avr__eeprom_8c.html#af16c377cca0862ab0cc5b85d1fc7818c" title="avr_eeprom_write" alt="" coords="285,183,411,209"/>
+<area shape="rect" id="node6" href="$sim__io_8c.html#a73250b42a7b0b28fbfc852d9c65eca5f" title="_avr_io_mux_write" alt="" coords="511,832,642,859"/>
+<area shape="rect" id="node8" href="$group__sim__regbit.html#ga607125cf0af29de0b96eb07b3f7b902b" title="avr_regbit_get" alt="" coords="754,913,858,940"/>
+<area shape="rect" id="node9" href="$group__sim__avr.html#ga6bb6e950ca849414923b3ea37dc9ed36" title="These are accessors for avr&#45;&gt;data but allows watchpoints to be set for gdb IO modules use that to set..." alt="" coords="941,1035,1090,1061"/>
+<area shape="rect" id="node10" href="$group__sim__cycle__timers.html#gab10f8f0e0e7e2f560bd83bae06bcb5c1" title="register for calling &#39;timer&#39; in &#39;when&#39; cycles " alt="" coords="724,411,888,437"/>
+<area shape="rect" id="node12" href="$avr__eeprom_8c.html#aca711b149183573c8804af694e6da9e5" title="avr_eempe_clear" alt="" coords="516,107,637,133"/>
+<area shape="rect" id="node13" href="$group__sim__regbit.html#gae20f788d4eab7e2518a3ffe8d41dc4e9" title="avr_regbit_clear" alt="" coords="749,208,863,235"/>
+<area shape="rect" id="node14" href="$group__sim__cycle__timers.html#ga07184e570e1b49ad0779b9d95322a8a5" title="register a timer to call in &#39;when&#39; usec " alt="" coords="477,208,676,235"/>
+<area shape="rect" id="node15" href="$avr__eeprom_8c.html#a540064f2c7161880b68df8ce688b433f" title="avr_eei_raise" alt="" coords="527,5,626,32"/>
+<area shape="rect" id="node11" href="$group__sim__cycle__timers.html#ga3ab10b0853c7668ce29907d1577392c8" title="cancel a previously set timer " alt="" coords="936,461,1095,488"/>
+<area shape="rect" id="node17" href="$avr__watchdog_8c.html#a49d07ad6d544bd834a2eed31d106608a" title="avr_watchdog_write" alt="" coords="279,604,417,631"/>
+<area shape="rect" id="node18" href="$group__sim__regbit.html#ga1a019b3e6035ce74b71991a5aa894306" title="This reads the bits for an array of avr_regbit_t, make up a &quot;byte&quot; with them. " alt="" coords="736,1187,876,1213"/>
+<area shape="rect" id="node19" href="$group__sim__regbit.html#ga31a9e7a25f604e3aa44ae67666c8aea8" title="Set/get/clear io register bits in one operation. " alt="" coords="754,699,858,725"/>
+<area shape="rect" id="node20" href="$avr__watchdog_8c.html#a52583483eae3aa9eb71b7326c9bae373" title="avr_watchdog_set_cycle\l_count_and_timer" alt="" coords="493,513,660,554"/>
+<area shape="rect" id="node21" href="$group__sim__regbit.html#gaf8ff9b2f2bc9a8250f0cef50e2abb23b" title="Using regbit from value eliminates some of the set to test then clear register operations. " alt="" coords="501,629,652,656"/>
+<area shape="rect" id="node22" href="$avr__watchdog_8c.html#a3be2a521d7fd8e3d69dffa5abc73cca6" title="avr_wdce_clear" alt="" coords="520,259,633,285"/>
+<area shape="rect" id="node23" href="$group__sim__regbit.html#ga0885cea33bff34f998823eea52d3605c" title="Set the &#39;raw&#39; bits, if &#39;v&#39; is the unshifted value of the bits. " alt="" coords="735,787,877,813"/>
+<area shape="rect" id="node25" href="$group__sim__io.html#gadf58f2274a9630198a6ff7f77ebc882a" title="Sets an IO module &quot;official&quot; IRQs and the ioctl used to get to them. " alt="" coords="297,1643,399,1669"/>
+<area shape="rect" id="node26" href="$group__sim__irq.html#gab643092a04e04aca6c4e9eb08db4b81f" title="Allocates &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment. " alt="" coords="529,1845,624,1872"/>
+<area shape="rect" id="node28" href="$avr__ioport_8c.html#ab94eff4ddc760d3f0416ac12b95a9e4a" title="avr_ioport_write" alt="" coords="519,1947,634,1973"/>
+<area shape="rect" id="node31" href="$group__sim__io.html#gaefd66e86a2ea71d10f94616a64e49add" title="Register a callback for when IO register &quot;addr&quot; is read. " alt="" coords="279,1744,417,1771"/>
+<area shape="rect" id="node32" href="$avr__ioport_8c.html#a95db63839c1b73a66f842e7be39c2152" title="avr_ioport_read" alt="" coords="293,1947,403,1973"/>
+<area shape="rect" id="node34" href="$avr__ioport_8c.html#ae29aafa5d6036ecc891e396963459803" title="avr_ioport_pin_write" alt="" coords="279,1795,417,1821"/>
+<area shape="rect" id="node35" href="$avr__ioport_8c.html#a80e516d2fb1ee538b0bf102b972915d3" title="avr_ioport_ddr_write" alt="" coords="507,1997,646,2024"/>
+<area shape="rect" id="node29" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="Raise an IRQ. I.e. call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39;..." alt="" coords="967,1997,1063,2024"/>
+<area shape="rect" id="node30" href="$avr__ioport_8c.html#aa9d653c02686a229dd2587124b266b67" title="avr_ioport_update_irqs" alt="" coords="729,1997,883,2024"/>
+<area shape="rect" id="node33" href="$group__sim__avr.html#ga54c74c348d29309eba5920c69b8fad35" title="avr_core_watch_read" alt="" coords="503,1896,650,1923"/>
+<area shape="rect" id="node37" href="$avr__timer_8c.html#a49c96f60c1ead6a58ecc06a9e7d8ada4" title="avr_timer_write" alt="" coords="293,1389,403,1416"/>
+<area shape="rect" id="node44" href="$avr__timer_8c.html#a2bffc2bdd8074881a99da1bbedee488b" title="avr_timer_write_pending" alt="" coords="267,1288,429,1315"/>
+<area shape="rect" id="node46" href="$avr__timer_8c.html#a5d023bbf33536cf9f6fab7e934eaa024" title="avr_timer_write_ocr" alt="" coords="280,1592,416,1619"/>
+<area shape="rect" id="node48" href="$avr__timer_8c.html#a03b12680dc930ded571e6a2c94eca2b0" title="Write TCNT. " alt="" coords="278,1339,418,1365"/>
+<area shape="rect" id="node50" href="$avr__timer_8c.html#a0c5c9ccf884e2d7c27385ba6b658a92f" title="Read TCNT. " alt="" coords="279,1693,417,1720"/>
+<area shape="rect" id="node38" href="$avr__timer_8c.html#a6f923ed410cf704804070fb6bdf578d8" title="avr_timer_tov" alt="" coords="526,1339,627,1365"/>
+<area shape="rect" id="node39" href="$avr__timer_8c.html#a68c5a56dc62b2033371c63e0a59e7b83" title="avr_timer_compa" alt="" coords="745,1440,867,1467"/>
+<area shape="rect" id="node40" href="$avr__timer_8c.html#aa2ffad9d5b6bc6e0d8f06c5c3d744604" title="avr_timer_compb" alt="" coords="745,1377,867,1404"/>
+<area shape="rect" id="node41" href="$avr__timer_8c.html#a78e55cc2ca5d8c04b8f2469d25b8a32c" title="avr_timer_compc" alt="" coords="745,1313,867,1340"/>
+<area shape="rect" id="node42" href="$avr__timer_8c.html#aad27bb63066131159ea46c9e2b5dc426" title="avr_timer_reconfigure" alt="" coords="503,1592,650,1619"/>
+<area shape="rect" id="node43" href="$avr__timer_8c.html#ae180e765f8f64d7ca6f486d219c993e6" title="Get Ouput Compare Register (OCR) " alt="" coords="752,1617,860,1644"/>
+<area shape="rect" id="node45" href="$group__sim__interrupts.html#ga274ce5cf220a7382151f243a690bd133" title="Clear the interrupt (inc pending) if &quot;raised&quot; flag is 1. " alt="" coords="505,984,648,1011"/>
+<area shape="rect" id="node47" href="$avr__timer_8c.html#a11f767b8790128f4c5ccbf56e83a74bd" title="cf. " alt="" coords="503,1693,650,1720"/>
+<area shape="rect" id="node49" href="$avr__timer_8c.html#aa80609ad4bd21acdb8ba33e73f69a78d" title="Get Timer Counter Register (TCNT) " alt="" coords="521,1136,633,1163"/>
+</map>

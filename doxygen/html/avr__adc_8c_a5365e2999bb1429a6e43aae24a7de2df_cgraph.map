@@ -1,0 +1,5 @@
+<map id="avr_adc_write_adcsrb" name="avr_adc_write_adcsrb">
+<area shape="rect" id="node2" href="$avr__adc_8c.html#aca0c3d18901028337ce7eb93cfea2ee5" title="avr_adc_configure_trigger" alt="" coords="203,31,373,57"/>
+<area shape="rect" id="node3" href="$group__sim__regbit.html#ga607125cf0af29de0b96eb07b3f7b902b" title="avr_regbit_get" alt="" coords="439,5,543,32"/>
+<area shape="rect" id="node4" href="$group__sim__regbit.html#ga1a019b3e6035ce74b71991a5aa894306" title="This reads the bits for an array of avr_regbit_t, make up a &quot;byte&quot; with them. " alt="" coords="421,56,561,83"/>
+</map>

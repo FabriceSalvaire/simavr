@@ -1,0 +1,31 @@
+<map id="avr_register_vector" name="avr_register_vector">
+<area shape="rect" id="node2" href="$group__avr__adc.html#ga6c1ba6d528dd6a3adc3b0c393922ed2c" title="avr_adc_init" alt="" coords="204,664,296,691"/>
+<area shape="rect" id="node16" href="$group__avr__eeprom.html#ga9351d07e1efe9ea4efd835ca9d3b3d19" title="avr_eeprom_init" alt="" coords="193,715,307,741"/>
+<area shape="rect" id="node19" href="$group__avr__extint.html#ga25e0542a6fa33631e3dd2a00aa1b7e6f" title="avr_extint_init" alt="" coords="199,765,301,792"/>
+<area shape="rect" id="node20" href="$group__avr__flash.html#gade2de4cda1ccc4da23e099d5e5521400" title="avr_flash_init" alt="" coords="201,512,299,539"/>
+<area shape="rect" id="node21" href="$group__avr__ioport.html#ga2038a9682e7f0a4bd0f384515dc39901" title="avr_ioport_init" alt="" coords="199,867,301,893"/>
+<area shape="rect" id="node22" href="$group__avr__spi.html#ga94ca1155d4b56fe050092840e66b6a86" title="avr_spi_init" alt="" coords="206,563,294,589"/>
+<area shape="rect" id="node23" href="$group__avr__timer.html#ga109f7e761984eec89ba3209d34c237f7" title="avr_timer_init" alt="" coords="200,917,300,944"/>
+<area shape="rect" id="node24" href="$group__avr__twi.html#gaae81708e7ebf9784be29ee71ccdee09d" title="avr_twi_init" alt="" coords="206,613,294,640"/>
+<area shape="rect" id="node25" href="$group__avr__uart.html#gad9e028ea2f9beda8ca0366852704697b" title="avr_uart_init" alt="" coords="203,461,297,488"/>
+<area shape="rect" id="node28" href="$avr__usb_8c.html#a46db706d082e7e6f3a9a12aa948e1b7a" title="register_vectors" alt="" coords="193,1272,307,1299"/>
+<area shape="rect" id="node30" href="$group__avr__watchdog.html#gafb1a6c6d795871184f8bdd73ffcca289" title="avr_watchdog_init" alt="" coords="187,816,313,843"/>
+<area shape="rect" id="node3" href="$sim__mega128_8c.html#aa75db9154ff7da86ea2d0529eb5681ac" title="m128_init" alt="" coords="372,765,451,792"/>
+<area shape="rect" id="node4" href="$sim__mega1280_8c.html#a27f0cfb99d0fb08696933148a30b2a0d" title="m1280_init" alt="" coords="369,816,454,843"/>
+<area shape="rect" id="node5" href="$sim__mega1281_8c.html#ae0732161cc4e02dd81cf0fde0d0e727b" title="m1281_init" alt="" coords="369,411,454,437"/>
+<area shape="rect" id="node6" href="$sim__mega128rfa1_8c.html#a760d33397450f6992a799be5b96cedf8" title="m128rfa1_init" alt="" coords="361,461,461,488"/>
+<area shape="rect" id="node7" href="$sim__mega128rfr2_8c.html#ac621b083db4bd04c6d416e326d02d58d" title="m128rfr2_init" alt="" coords="363,512,460,539"/>
+<area shape="rect" id="node8" href="$sim__mega169_8c.html#a744d6860d2b5bbc4cea804aabd531493" title="m169p_init" alt="" coords="369,867,454,893"/>
+<area shape="rect" id="node9" href="$sim__mega2560_8c.html#a61aa264c3e77b1d99556dc040bfe47ed" title="m2560_init" alt="" coords="369,563,454,589"/>
+<area shape="rect" id="node10" href="$sim__megax_8h.html#a66f2ee34f5c100623a0f5aa91b9b48a1" title="mx_init" alt="" coords="379,613,443,640"/>
+<area shape="rect" id="node11" href="$sim__megax4_8h.html#a43ff8cef3fa2e05282aa063284231e03" title="mx4_init" alt="" coords="376,664,447,691"/>
+<area shape="rect" id="node12" href="$sim__megax8_8h.html#a193fe7e4188d32f956e6e47ba7a6b593" title="mx8_init" alt="" coords="376,715,447,741"/>
+<area shape="rect" id="node13" href="$sim__megaxm1_8h.html#a62fd6eb6657d3685eaff349434bff721" title="mxm1_init" alt="" coords="512,917,595,944"/>
+<area shape="rect" id="node14" href="$sim__tinyx4_8h.html#a79f175ec4edeffef69e1a9b0d2902165" title="tx4_init" alt="" coords="379,1120,443,1147"/>
+<area shape="rect" id="node15" href="$sim__tinyx5_8h.html#ab429b18dc2641017d6052543035238e2" title="tx5_init" alt="" coords="379,1171,443,1197"/>
+<area shape="rect" id="node17" href="$sim__90usb162_8c.html#a94281f1e6275e36f8c3f74cf45af1094" title="usb162_init" alt="" coords="509,1069,597,1096"/>
+<area shape="rect" id="node18" href="$sim__tiny13_8c.html#ad25a2fcdaeb68a7f43aeda7f115104fd" title="init" alt="" coords="392,1221,431,1248"/>
+<area shape="rect" id="node26" href="$sim__tiny2313_8c.html#ad25a2fcdaeb68a7f43aeda7f115104fd" title="init" alt="" coords="392,5,431,32"/>
+<area shape="rect" id="node27" href="$group__avr__lin.html#ga3ccac2e9ed2a5255830de76230d78526" title="avr_lin_init" alt="" coords="369,56,453,83"/>
+<area shape="rect" id="node29" href="$group__avr__usb.html#gaad97c7b674887249fbd5e250b8d08e03" title="avr_usb_init" alt="" coords="365,1576,457,1603"/>
+</map>

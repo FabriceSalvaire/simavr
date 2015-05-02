@@ -1,0 +1,27 @@
+<map id="simavr/include/avr_twi.h" name="simavr/include/avr_twi.h">
+<area shape="rect" id="node2" href="$sim__mega128_8c.html" title="simavr/cores/sim_mega128.c" alt="" coords="118,95,311,121"/>
+<area shape="rect" id="node3" href="$sim__mega1280_8c.html" title="simavr/cores/sim_mega1280.c" alt="" coords="336,95,536,121"/>
+<area shape="rect" id="node4" href="$sim__mega1281_8c.html" title="simavr/cores/sim_mega1281.c" alt="" coords="560,95,760,121"/>
+<area shape="rect" id="node5" href="$sim__megax4_8h.html" title="simavr/cores/sim_megax4.h" alt="" coords="784,95,971,121"/>
+<area shape="rect" id="node11" href="$sim__mega128rfa1_8c.html" title="simavr/cores/sim_mega128rfa1.c" alt="" coords="995,95,1210,121"/>
+<area shape="rect" id="node12" href="$sim__mega128rfr2_8c.html" title="simavr/cores/sim_mega128rfr2.c" alt="" coords="1234,95,1446,121"/>
+<area shape="rect" id="node13" href="$sim__megax_8h.html" title="simavr/cores/sim_megax.h" alt="" coords="1471,95,1649,121"/>
+<area shape="rect" id="node18" href="$sim__megax8_8h.html" title="simavr/cores/sim_megax8.h" alt="" coords="1880,95,2067,121"/>
+<area shape="rect" id="node24" href="$sim__mega169_8c.html" title="simavr/cores/sim_mega169.c" alt="" coords="2091,95,2285,121"/>
+<area shape="rect" id="node25" href="$sim__mega2560_8c.html" title="simavr/cores/sim_mega2560.c" alt="" coords="2309,95,2509,121"/>
+<area shape="rect" id="node26" href="$avr__twi_8c.html" title="simavr/source/avr_twi.c" alt="" coords="2534,95,2695,121"/>
+<area shape="rect" id="node6" href="$sim__mega324_8c.html" title="simavr/cores/disabled\l/sim_mega324.c" alt="" coords="5,169,155,211"/>
+<area shape="rect" id="node7" href="$sim__mega1284_8c.html" title="simavr/cores/sim_mega1284.c" alt="" coords="179,177,379,203"/>
+<area shape="rect" id="node8" href="$sim__mega164_8c.html" title="simavr/cores/sim_mega164.c" alt="" coords="403,177,597,203"/>
+<area shape="rect" id="node9" href="$sim__mega644_8c.html" title="simavr/cores/sim_mega644.c" alt="" coords="621,177,814,203"/>
+<area shape="rect" id="node10" href="$sim__megax4_8c.html" title="simavr/cores/sim_megax4.c" alt="" coords="839,177,1025,203"/>
+<area shape="rect" id="node14" href="$sim__mega16_8c.html" title="simavr/cores/sim_mega16.c" alt="" coords="1049,177,1236,203"/>
+<area shape="rect" id="node15" href="$sim__mega32_8c.html" title="simavr/cores/sim_mega32.c" alt="" coords="1260,177,1447,203"/>
+<area shape="rect" id="node16" href="$sim__mega8_8c.html" title="simavr/cores/sim_mega8.c" alt="" coords="1471,177,1649,203"/>
+<area shape="rect" id="node17" href="$sim__megax_8c.html" title="simavr/cores/sim_megax.c" alt="" coords="1673,177,1852,203"/>
+<area shape="rect" id="node19" href="$sim__mega168_8c.html" title="simavr/cores/sim_mega168.c" alt="" coords="1877,177,2070,203"/>
+<area shape="rect" id="node20" href="$sim__mega328_8c.html" title="simavr/cores/sim_mega328.c" alt="" coords="2094,177,2287,203"/>
+<area shape="rect" id="node21" href="$sim__mega48_8c.html" title="simavr/cores/sim_mega48.c" alt="" coords="2312,177,2499,203"/>
+<area shape="rect" id="node22" href="$sim__mega88_8c.html" title="simavr/cores/sim_mega88.c" alt="" coords="2523,177,2709,203"/>
+<area shape="rect" id="node23" href="$sim__megax8_8c.html" title="simavr/cores/sim_megax8.c" alt="" coords="2733,177,2920,203"/>
+</map>

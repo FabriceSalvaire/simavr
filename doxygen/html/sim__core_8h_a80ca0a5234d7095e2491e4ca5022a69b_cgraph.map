@@ -1,0 +1,22 @@
+<map id="avr_run_one" name="avr_run_one">
+<area shape="rect" id="node2" href="$sim__core_8c.html#afb171aa77f23670c5662cb285bdcaa3c" title="Stack pointer access. " alt="" coords="1349,208,1443,235"/>
+<area shape="rect" id="node3" href="$sim__core_8c.html#abd2089910a233d944503e553526ce649" title="crash" alt="" coords="210,107,265,133"/>
+<area shape="rect" id="node17" href="$sim__core_8c.html#ad907e32f2c5c5c5f8e648e76a5adc0b2" title="avr_regname" alt="" coords="189,360,286,387"/>
+<area shape="rect" id="node18" href="$sim__interrupts_8h.html#a55b3229b07450edea9f2530fc496a3d5" title="return non&#45;zero if the AVR core has any pending interrupts " alt="" coords="147,411,328,437"/>
+<area shape="rect" id="node19" href="$sim__io_8h.html#a3a93a5e3c3b49cf1a04ef8b4d9ee3b73" title="Call every IO modules until one responds to this. " alt="" coords="202,461,273,488"/>
+<area shape="rect" id="node20" href="$sim__core_8c.html#a7d3ad3fb3f0d56d27082e1beefd41bc4" title="_avr_push_addr" alt="" coords="1152,259,1267,285"/>
+<area shape="rect" id="node21" href="$sim__core_8c.html#ac1edce19fd3428d921ada9369c8333c6" title="_avr_pop_addr" alt="" coords="1156,309,1263,336"/>
+<area shape="rect" id="node4" href="$sim__avr_8h.html#a41fa6410b6832751264cc8898ce8c981" title="Called when the core has detected a crash somehow. " alt="" coords="376,107,507,133"/>
+<area shape="rect" id="node5" href="$group__sim__gdb.html#gaaee0c4dc854693c9c444665a099bc59d" title="avr_gdb_init" alt="" coords="555,107,647,133"/>
+<area shape="rect" id="node6" href="$sim__avr_8h.html#af3423fc886b29e62d8206dacbf7c3eb5" title="avr_callback_run_gdb" alt="" coords="701,107,849,133"/>
+<area shape="rect" id="node15" href="$sim__avr_8h.html#aa1d5062766f4b90f98c13e58ba515042" title="These are callbacks for the two &#39;main&#39; behaviour in simavr. " alt="" coords="695,56,856,83"/>
+<area shape="rect" id="node7" href="$group__sim__gdb.html#ga4a8a8c9374ad68c67fea5342f6479827" title="call from the main AVR decoder thread " alt="" coords="921,56,1053,83"/>
+<area shape="rect" id="node8" href="$sim__cycle__timers_8h.html#ad5101b3d431c3673ab719245a7293512" title="avr_cycle_timer_process" alt="" coords="904,157,1071,184"/>
+<area shape="rect" id="node9" href="$sim__interrupts_8h.html#a18ab3a4a7f58c7ada873c2347532d92c" title="called by the core at each cycle to check whether an interrupt is pending " alt="" coords="912,107,1063,133"/>
+<area shape="rect" id="node10" href="$sim__interrupts_8c.html#a2dfce3272d3653a9a77ae1c2e712069d" title="return non&#45;zero if the AVR core has any pending interrupts " alt="" coords="1119,107,1300,133"/>
+<area shape="rect" id="node11" href="$sim__core_8h.html#a7d3ad3fb3f0d56d27082e1beefd41bc4" title="_avr_push_addr" alt="" coords="1152,157,1267,184"/>
+<area shape="rect" id="node13" href="$sim__interrupts_8c.html#a0e9b7787ccca8a09587da8b3ee39c166" title="clear the &quot;pending&quot; status of an interrupt " alt="" coords="1145,56,1274,83"/>
+<area shape="rect" id="node12" href="$sim__core_8c.html#aac5e467740b29f7404d91d94f99ef008" title="_avr_sp_set" alt="" coords="1349,259,1443,285"/>
+<area shape="rect" id="node14" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="&#39;raise&#39; an IRQ. Ie call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39; ..." alt="" coords="1348,56,1444,83"/>
+<area shape="rect" id="node16" href="$sim__avr_8c.html#af6aad7e94f37016297dac1d23bf0204e" title="Accumulates sleep requests (and returns a sleep time of 0) until a minimum count of requested sleep m..." alt="" coords="905,5,1070,32"/>
+</map>

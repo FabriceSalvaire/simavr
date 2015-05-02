@@ -1,0 +1,4 @@
+<map id="avr_gdb_handle_watchpoints" name="avr_gdb_handle_watchpoints">
+<area shape="rect" id="node2" href="$sim__gdb_8c.html#a06ddf7e732ff9fcc389bc0bacca84fe9" title="Contrary to gdb_watch_find, this actually checks the address against a watched memory range..." alt="" coords="244,5,396,32"/>
+<area shape="rect" id="node3" href="$sim__gdb_8c.html#afa8c609036ad6e9e3ea66dbc14f8279e" title="gdb_send_reply" alt="" coords="263,56,377,83"/>
+</map>

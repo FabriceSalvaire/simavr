@@ -1,0 +1,4 @@
+<map id="avr_interrupt_init" name="avr_interrupt_init">
+<area shape="rect" id="node2" href="$sim__avr_8c.html#a0f62b71791203a3c7fdcfe228d1b0f5a" title="Initializes a new AVR instance. Will call the IO registers init(), and then reset() ..." alt="" coords="172,5,236,32"/>
+<area shape="rect" id="node3" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="284,5,335,32"/>
+</map>

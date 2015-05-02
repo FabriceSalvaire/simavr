@@ -1,0 +1,4 @@
+<map id="avr_cycle_timer_register_usec" name="avr_cycle_timer_register_usec">
+<area shape="rect" id="node2" href="$sim__cycle__timers_8c.html#a67ebb5a02c5af28c628e133cf5c03a74" title="register for calling &#39;timer&#39; in &#39;when&#39; cycles " alt="" coords="252,5,416,32"/>
+<area shape="rect" id="node3" href="$sim__cycle__timers_8c.html#a948bb750792293b81800230b42f9a4b8" title="cancel a previously set timer " alt="" coords="464,5,623,32"/>
+</map>

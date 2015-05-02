@@ -1,0 +1,7 @@
+<map id="ep_fifo_count" name="ep_fifo_count">
+<area shape="rect" id="node2" href="$avr__usb_8c.html#a4f2949eb801c991a8c1e1e8036884e2c" title="ep_fifo_cpu_readbyte" alt="" coords="153,5,300,32"/>
+<area shape="rect" id="node6" href="$avr__usb_8c.html#a08b20aced7bea0c010937066a0e5a399" title="avr_usb_ep_read_bytecount" alt="" coords="348,56,533,83"/>
+<area shape="rect" id="node3" href="$avr__usb_8c.html#ac8d685869770ae2bcc3000cfa773f999" title="avr_usb_ep_read_data" alt="" coords="364,5,517,32"/>
+<area shape="rect" id="node4" href="$group__avr__usb.html#gaad97c7b674887249fbd5e250b8d08e03" title="avr_usb_init" alt="" coords="581,31,673,57"/>
+<area shape="rect" id="node5" href="$sim__90usb162_8c.html#a94281f1e6275e36f8c3f74cf45af1094" title="usb162_init" alt="" coords="721,31,809,57"/>
+</map>

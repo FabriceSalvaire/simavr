@@ -1,0 +1,4 @@
+<map id="avr_callback_sleep_gdb" name="avr_callback_sleep_gdb">
+<area shape="rect" id="node2" href="$sim__avr_8c.html#aa2ba0de4d0a8f68e851aa80e2f745d4c" title="Accumulates sleep requests (and returns a sleep time of 0) until a minimum count of requested sleep m..." alt="" coords="215,5,380,32"/>
+<area shape="rect" id="node3" href="$sim__gdb_8h.html#a4a8a8c9374ad68c67fea5342f6479827" title="call from the main AVR decoder thread " alt="" coords="231,56,363,83"/>
+</map>

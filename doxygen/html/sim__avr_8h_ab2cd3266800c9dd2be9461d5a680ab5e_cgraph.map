@@ -1,0 +1,5 @@
+<map id="avr_reset" name="avr_reset">
+<area shape="rect" id="node2" href="$sim__core_8h.html#aac5e467740b29f7404d91d94f99ef008" title="_avr_sp_set" alt="" coords="158,5,251,32"/>
+<area shape="rect" id="node3" href="$sim__interrupts_8h.html#af6ff373ca757ae0d41298a27566c82f9" title="reset the interrupt table and the fifo " alt="" coords="139,56,270,83"/>
+<area shape="rect" id="node4" href="$sim__cycle__timers_8h.html#ac9a0176572795ca831e2de5ac4c9c69c" title="avr_cycle_timer_reset" alt="" coords="129,107,280,133"/>
+</map>

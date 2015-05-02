@@ -1,0 +1,8 @@
+<map id="avr_bitbang_clk_hook" name="avr_bitbang_clk_hook">
+<area shape="rect" id="node2" href="$avr__bitbang_8c.html#a9e9c676a40a5b7c5142728f0e13a7999" title="process clock edges (both: positive and negative edges) " alt="" coords="201,68,349,95"/>
+<area shape="rect" id="node3" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="Raise an IRQ. I.e. call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39;..." alt="" coords="591,5,687,32"/>
+<area shape="rect" id="node4" href="$group__sim__io.html#gaaf605d10c50ccc53e3639fb07c15e765" title="Get the specific irq for a module, check AVR_IOCTL_IOPORT_GETIRQ for example. " alt="" coords="591,81,687,108"/>
+<area shape="rect" id="node5" href="$avr__bitbang_8c.html#afba0c5b06c4bd48a803989066f0b2be4" title="read (sample) data from input pin " alt="" coords="399,144,541,171"/>
+<area shape="rect" id="node7" href="$avr__bitbang_8c.html#ae7d8463fda6d14db3b8b0cd7bf31c1f5" title="write data to output pin " alt="" coords="397,43,543,69"/>
+<area shape="rect" id="node6" href="$group__sim__io.html#ga3a93a5e3c3b49cf1a04ef8b4d9ee3b73" title="Call every IO modules until one responds to this. " alt="" coords="603,144,674,171"/>
+</map>

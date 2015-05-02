@@ -1,0 +1,20 @@
+<map id="avr_bitbang_t" name="avr_bitbang_t">
+<area shape="rect" id="node2" href="$structavr__iopin__t.html" title="pin structure " alt="" coords="671,611,757,637"/>
+<area shape="rect" id="node3" href="$structavr__t.html" title="Main AVR instance. " alt="" coords="689,317,739,344"/>
+<area shape="rect" id="node5" href="$structavr__cycle__timer__slot__t.html" title="Each timer instance contains the absolute cycle number they are hoping to run at, a function pointer ..." alt="" coords="912,432,1065,459"/>
+<area shape="rect" id="node6" href="$structavr__io__t.html" title="IO module base struct Modules uses that as their first member in their own struct. " alt="" coords="955,521,1023,548"/>
+<area shape="rect" id="node15" href="$structavr__vcd__t.html" title="avr_vcd_t" alt="" coords="949,105,1028,132"/>
+<area shape="rect" id="node18" href="$structavr__gdb__t.html" title="avr_gdb_t" alt="" coords="949,243,1028,269"/>
+<area shape="rect" id="node4" href="$structavr__cycle__timer__pool__t.html" title="Timer pool contains a pool of timer slots available, they all start queued into the &#39;free&#39; qeueue..." alt="" coords="1179,373,1335,400"/>
+<area shape="rect" id="node7" href="$structavr__irq__t.html" title="Public IRQ structure. " alt="" coords="15,383,87,409"/>
+<area shape="rect" id="node8" href="$structavr__irq__pool__t.html" title="IRQ Pool structure. " alt="" coords="193,457,295,484"/>
+<area shape="rect" id="node9" href="$structavr__irq__hook__t.html" title="avr_irq_hook_t" alt="" coords="191,407,297,433"/>
+<area shape="rect" id="node13" href="$structavr__int__vector__t.html" title="interrupt vector for the IO modules " alt="" coords="187,216,301,243"/>
+<area shape="rect" id="node16" href="$structavr__vcd__signal__t.html" title="This structure registers IRQ change hooks to various &quot;source&quot; IRQs and dumps their values (if changed..." alt="" coords="403,57,523,84"/>
+<area shape="rect" id="node10" href="$structavr__trace__data__t.html" title="This is only ever used if CONFIG_SIMAVR_TRACE is defined. " alt="" coords="403,267,522,293"/>
+<area shape="rect" id="node11" href="$structavr__symbol__t.html" title="Symbol loaded from the .elf file. " alt="" coords="194,267,294,293"/>
+<area shape="rect" id="node12" href="$structavr__int__table__t.html" title="Interrupt vectors, and their enable/clear registers. " alt="" coords="409,216,516,243"/>
+<area shape="rect" id="node14" href="$structavr__regbit__t.html" title="This &#39;structure&#39; is a packed representation of an IO register &#39;bit&#39; (or consecutive bits)..." alt="" coords="5,111,96,137"/>
+<area shape="rect" id="node17" href="$structavr__vcd__log__t.html" title="avr_vcd_log_t" alt="" coords="663,5,765,32"/>
+<area shape="rect" id="node19" href="$structavr__gdb__watchpoints__t.html" title="avr_gdb_watchpoints_t" alt="" coords="636,119,792,145"/>
+</map>

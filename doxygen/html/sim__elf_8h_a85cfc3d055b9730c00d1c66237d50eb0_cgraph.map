@@ -1,0 +1,20 @@
+<map id="avr_load_firmware" name="avr_load_firmware">
+<area shape="rect" id="node2" href="$sim__avr_8h.html#ad997bb8e4e8841240ea31ac26c3687e7" title="Load code in the &quot;flash&quot;. " alt="" coords="221,5,320,32"/>
+<area shape="rect" id="node3" href="$sim__io_8h.html#a3a93a5e3c3b49cf1a04ef8b4d9ee3b73" title="Call every IO modules until one responds to this. " alt="" coords="235,56,306,83"/>
+<area shape="rect" id="node4" href="$sim__avr_8h.html#a143c409d79573ae95a99132517c3a866" title="Set an IO register to receive commands from the AVR firmware it&#39;s optional, and uses the ELF tags..." alt="" coords="181,107,360,133"/>
+<area shape="rect" id="node6" href="$sim__avr_8h.html#a4f3b7cc88e6890cbb8dc7fb2fb5ddfc8" title="Specify the &quot;console register&quot; – output sent to this register is printed on the simulator console..." alt="" coords="187,157,354,184"/>
+<area shape="rect" id="node7" href="$group__sim__vcd__file.html#ga463e992294ae95f66dff96ddb424c5af" title="Initializes a new VCD trace file, and returns zero if all is well. " alt="" coords="225,208,317,235"/>
+<area shape="rect" id="node8" href="$sim__io_8h.html#a57ef8d43a30075c976601bbc5bec9a79" title="Get the IRQ for an absolute IO address. " alt="" coords="208,259,333,285"/>
+<area shape="rect" id="node11" href="$group__sim__vcd__file.html#ga35ddf764e7c9d4261f5143c399667921" title="Add a trace signal to the vcd file. " alt="" coords="202,309,339,336"/>
+<area shape="rect" id="node15" href="$group__sim__vcd__file.html#gac70111af7bb4209053b9ecd885c48d46" title="Starts recording the signal value into the file. " alt="" coords="220,436,321,463"/>
+<area shape="rect" id="node5" href="$sim__io_8h.html#a9fc8ac70dea4e1989eefe7a8e5f5e4ad" title="Register a callback for when the IO register is written. callback has to set the memory itself..." alt="" coords="419,107,561,133"/>
+<area shape="rect" id="node9" href="$group__sim__irq.html#gab643092a04e04aca6c4e9eb08db4b81f" title="allocates &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment ..." alt="" coords="443,183,537,209"/>
+<area shape="rect" id="node10" href="$group__sim__irq.html#ga258c5ad75c46ff8180430d7ace63771f" title="init &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment " alt="" coords="657,208,742,235"/>
+<area shape="rect" id="node12" href="$group__sim__irq.html#ga73540ea207c91e6bf57cd75d5509b5ac" title="register a notification &#39;hook&#39; for &#39;irq&#39; – &#39;param&#39; is anything that your want passed back as argumen..." alt="" coords="415,284,565,311"/>
+<area shape="rect" id="node13" href="$sim__vcd__file_8c.html#a21cc667074a54bf595bb933f7f83d91c" title="_avr_vcd_notify" alt="" coords="433,335,547,361"/>
+<area shape="rect" id="node14" href="$group__sim__irq.html#gad2d68ac482b5d631c7c70541608d5487" title="this connects a &quot;source&quot; IRQ to a &quot;destination&quot; IRQ " alt="" coords="433,385,547,412"/>
+<area shape="rect" id="node16" href="$group__sim__vcd__file.html#ga42637e57552524ce9b620fe19ba96d12" title="Stops recording signal values into the file. " alt="" coords="440,436,540,463"/>
+<area shape="rect" id="node18" href="$sim__cycle__timers_8h.html#ab10f8f0e0e7e2f560bd83bae06bcb5c1" title="register for calling &#39;timer&#39; in &#39;when&#39; cycles " alt="" coords="408,487,572,513"/>
+<area shape="rect" id="node17" href="$sim__cycle__timers_8h.html#a3ab10b0853c7668ce29907d1577392c8" title="cancel a previously set timer " alt="" coords="620,436,779,463"/>
+<area shape="rect" id="node19" href="$sim__cycle__timers_8c.html#a948bb750792293b81800230b42f9a4b8" title="cancel a previously set timer " alt="" coords="620,487,779,513"/>
+</map>

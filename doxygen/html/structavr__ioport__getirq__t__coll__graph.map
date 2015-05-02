@@ -1,0 +1,6 @@
+<map id="avr_ioport_getirq_t" name="avr_ioport_getirq_t">
+<area shape="rect" id="node2" href="$structavr__irq__t.html" title="Public IRQ structure. " alt="" coords="130,5,202,32"/>
+<area shape="rect" id="node3" href="$structavr__irq__pool__t.html" title="IRQ Pool structure. " alt="" coords="5,109,108,136"/>
+<area shape="rect" id="node4" href="$structavr__irq__hook__t.html" title="avr_irq_hook_t" alt="" coords="133,109,239,136"/>
+<area shape="rect" id="node5" href="$structavr__regbit__t.html" title="This &#39;structure&#39; is a packed representation of an IO register &#39;bit&#39; (or consecutive bits)..." alt="" coords="337,5,427,32"/>
+</map>

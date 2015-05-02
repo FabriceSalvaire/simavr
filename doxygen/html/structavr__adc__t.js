@@ -1,0 +1,28 @@
+var structavr__adc__t =
+[
+    [ "adate", "structavr__adc__t.html#afc8f94d6c10cb995eda8c9e597d3ce2f", null ],
+    [ "adc", "structavr__adc__t.html#a395a8af038f0270f79cc9137d264d4e5", null ],
+    [ "adc_values", "structavr__adc__t.html#a459fb1f8b089b3c86a7bb34d1630fcbe", null ],
+    [ "aden", "structavr__adc__t.html#a867271e6691c743f8e7aad098ff39455", null ],
+    [ "adlar", "structavr__adc__t.html#a2edb208836a6393df6e03b6b38363169", null ],
+    [ "adps", "structavr__adc__t.html#adc675e1215837beeeb448457199048cf", null ],
+    [ "adsc", "structavr__adc__t.html#ae93ceb9f3d2934e184bb4073aab54016", null ],
+    [ "adts", "structavr__adc__t.html#a0d2df63c9f8b3f0752aebe14447c7bef", null ],
+    [ "adts_mode", "structavr__adc__t.html#a4704bd1b5755ed2353ffaa40c2ac5c26", null ],
+    [ "adts_op", "structavr__adc__t.html#ae142638895fab1663f79c2dffada847b", null ],
+    [ "bin", "structavr__adc__t.html#ab7b5b7f2a8c0b9229ffef1b1264bcdf9", null ],
+    [ "first", "structavr__adc__t.html#a9adf446779e879aebb0d9396a78f0be6", null ],
+    [ "io", "structavr__adc__t.html#a9134059040c4e52e60cddfc50b76e120", null ],
+    [ "ipr", "structavr__adc__t.html#acd394e122c150500123877896b7b98e3", null ],
+    [ "mux", "structavr__adc__t.html#a5629f139a65c90b43e1afd9619fde3af", null ],
+    [ "muxmode", "structavr__adc__t.html#a3c6aa40f8f31eaba0f01b4d579efe0ff", null ],
+    [ "r_adch", "structavr__adc__t.html#ab7598115652442b459d3e3b29fbec0fe", null ],
+    [ "r_adcl", "structavr__adc__t.html#a111f3881c9890e5b437881a8d5c9a2c5", null ],
+    [ "r_adcsra", "structavr__adc__t.html#abea97e7c5d3e328426bcf5279eff847c", null ],
+    [ "r_adcsrb", "structavr__adc__t.html#abccb5302b2bc1dfd584a926195e08ba4", null ],
+    [ "r_admux", "structavr__adc__t.html#a80dd67358af285af869d6bee911f8336", null ],
+    [ "read_status", "structavr__adc__t.html#a9426a117d23d630b8c6d1762a42067bb", null ],
+    [ "ref", "structavr__adc__t.html#ab0913f363eaed2fb6baf7943bb4688d2", null ],
+    [ "ref_values", "structavr__adc__t.html#a2e8d8db8ae828839242be4ea5e76099a", null ],
+    [ "temp", "structavr__adc__t.html#a36142ddde297ed1d5577c81230997301", null ]
+];

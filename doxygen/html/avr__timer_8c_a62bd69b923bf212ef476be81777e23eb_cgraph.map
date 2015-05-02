@@ -1,0 +1,4 @@
+<map id="avr_timer_comp_on_tov" name="avr_timer_comp_on_tov">
+<area shape="rect" id="node2" href="$group__sim__regbit.html#ga607125cf0af29de0b96eb07b3f7b902b" title="avr_regbit_get" alt="" coords="215,5,319,32"/>
+<area shape="rect" id="node3" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="Raise an IRQ. I.e. call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39;..." alt="" coords="219,56,315,83"/>
+</map>

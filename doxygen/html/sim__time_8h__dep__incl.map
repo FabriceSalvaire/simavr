@@ -1,0 +1,7 @@
+<map id="simavr/include/sim_time.h" name="simavr/include/sim_time.h">
+<area shape="rect" id="node2" href="$avr__adc_8c.html" title="simavr/source/avr_adc.c" alt="" coords="5,102,171,129"/>
+<area shape="rect" id="node3" href="$avr__timer_8c.html" title="simavr/source/avr_timer.c" alt="" coords="195,102,368,129"/>
+<area shape="rect" id="node4" href="$sim__avr_8c.html" title="simavr/source/sim_avr.c" alt="" coords="392,102,557,129"/>
+<area shape="rect" id="node5" href="$sim__cycle__timers_8c.html" title="simavr/source/sim_cycle\l_timers.c" alt="" coords="582,95,749,136"/>
+<area shape="rect" id="node6" href="$sim__vcd__file_8c.html" title="simavr/source/sim_vcd\l_file.c" alt="" coords="773,95,931,136"/>
+</map>

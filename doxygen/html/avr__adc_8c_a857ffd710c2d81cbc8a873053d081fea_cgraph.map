@@ -1,0 +1,51 @@
+<map id="avr_adc_read_h" name="avr_adc_read_h">
+<area shape="rect" id="node2" href="$avr__adc_8c.html#aa3e413e5546b8c89b1338f6033cb45c7" title="avr_adc_read_l" alt="" coords="168,1331,279,1358"/>
+<area shape="rect" id="node3" href="$group__sim__avr.html#ga54c74c348d29309eba5920c69b8fad35" title="avr_core_watch_read" alt="" coords="327,1281,473,1307"/>
+<area shape="rect" id="node43" href="$group__sim__regbit.html#ga607125cf0af29de0b96eb07b3f7b902b" title="avr_regbit_get" alt="" coords="1563,1341,1667,1367"/>
+<area shape="rect" id="node50" href="$group__sim__regbit.html#ga1a019b3e6035ce74b71991a5aa894306" title="This reads the bits for an array of avr_regbit_t, make up a &quot;byte&quot; with them. " alt="" coords="330,1331,470,1358"/>
+<area shape="rect" id="node4" href="$group__sim__core.html#gafb171aa77f23670c5662cb285bdcaa3c" title="Stack pointer access. " alt="" coords="1780,986,1873,1013"/>
+<area shape="rect" id="node5" href="$sim__core_8c.html#a40ea67d05f2a85d45c6a51223f0d4947" title="Read the instruction in flash memory at given pc. " alt="" coords="1753,341,1900,367"/>
+<area shape="rect" id="node6" href="$sim__core_8c.html#abd2089910a233d944503e553526ce649" title="crash" alt="" coords="589,1255,644,1282"/>
+<area shape="rect" id="node48" href="$group__sim__gdb.html#ga3a9bc8b00634b79a8854981ac66a4063" title="Called from sim_core.c. " alt="" coords="521,1357,712,1383"/>
+<area shape="rect" id="node7" href="$group__sim__avr.html#ga41fa6410b6832751264cc8898ce8c981" title="Called when the core has detected a crash somehow. " alt="" coords="771,1255,901,1282"/>
+<area shape="rect" id="node8" href="$group__sim__gdb.html#gaaee0c4dc854693c9c444665a099bc59d" title="Initialise GDB. " alt="" coords="960,1306,1052,1333"/>
+<area shape="rect" id="node9" href="$group__sim__network.html#ga7fcc7182cbadb5b3c97435612ac874d8" title="network_init" alt="" coords="1135,1281,1227,1307"/>
+<area shape="rect" id="node10" href="$group__sim__avr.html#gaf3423fc886b29e62d8206dacbf7c3eb5" title="avr_callback_run_gdb" alt="" coords="1107,1331,1255,1358"/>
+<area shape="rect" id="node45" href="$group__sim__avr.html#gaa1d5062766f4b90f98c13e58ba515042" title="These are callbacks for the two &#39;main&#39; behaviour in simavr. " alt="" coords="1100,1534,1261,1561"/>
+<area shape="rect" id="node11" href="$group__sim__gdb.html#ga4a8a8c9374ad68c67fea5342f6479827" title="Call from the main AVR decoder thread. " alt="" coords="1327,1534,1459,1561"/>
+<area shape="rect" id="node17" href="$group__sim__core.html#ga80ca0a5234d7095e2491e4ca5022a69b" title="Instruction decoder, run ONE instruction. " alt="" coords="1346,733,1439,759"/>
+<area shape="rect" id="node39" href="$group__sim__cycle__timers.html#gad5101b3d431c3673ab719245a7293512" title="avr_cycle_timer_process" alt="" coords="1309,1458,1476,1485"/>
+<area shape="rect" id="node42" href="$group__sim__interrupts.html#ga18ab3a4a7f58c7ada873c2347532d92c" title="Called by the core at each cycle to check whether an interrupt is pending. " alt="" coords="1317,1265,1468,1291"/>
+<area shape="rect" id="node12" href="$sim__gdb_8c.html#a4cfa8d75194b380cc5d37dbf6eaee992" title="Returns the index of the watchpoint if found, &#45;1 otherwise. " alt="" coords="1558,1509,1671,1535"/>
+<area shape="rect" id="node13" href="$sim__gdb_8c.html#a61ce207f922e17375e28754451422aee" title="gdb_send_quick_status" alt="" coords="1535,1610,1694,1637"/>
+<area shape="rect" id="node15" href="$sim__gdb_8c.html#a2579e845a74fdb5883bedd34832334ee" title="gdb_network_handler" alt="" coords="1542,1559,1687,1586"/>
+<area shape="rect" id="node14" href="$sim__gdb_8c.html#afa8c609036ad6e9e3ea66dbc14f8279e" title="gdb_send_reply" alt="" coords="1770,1686,1883,1713"/>
+<area shape="rect" id="node16" href="$sim__gdb_8c.html#a27eb819f5e1162a2eb3308c15e44c09d" title="gdb_watch_clear" alt="" coords="1767,1559,1887,1586"/>
+<area shape="rect" id="node18" href="$sim__core_8c.html#ad907e32f2c5c5c5f8e648e76a5adc0b2" title="avr_regname" alt="" coords="1566,210,1663,237"/>
+<area shape="rect" id="node19" href="$sim__core_8c.html#a8c81e7fc9ce836f9afdcb87df1b2b241" title="_avr_flags_sub_Rzns" alt="" coords="1541,261,1689,287"/>
+<area shape="rect" id="node20" href="$sim__core_8c.html#a2b7572c52203ddbee339db995d80dea1" title="_avr_set_r" alt="" coords="1948,733,2031,759"/>
+<area shape="rect" id="node21" href="$sim__core_8c.html#abf68f007f70e80c73dc3250062ddf796" title="_avr_flags_add_zns" alt="" coords="1545,581,1684,607"/>
+<area shape="rect" id="node22" href="$sim__core_8c.html#a1fe1438d46450d8a9432c55bcd119f57" title="_avr_flags_zns" alt="" coords="1771,707,1882,734"/>
+<area shape="rect" id="node23" href="$sim__core_8c.html#a1d891f31381a97bb5dad99dab046bddf" title="Called when an invalid opcode is decoded. " alt="" coords="1545,530,1685,557"/>
+<area shape="rect" id="node24" href="$sim__core_8c.html#aaaaeed9dc6c276bffc4f670135a8d3f8" title="_avr_flags_sub_zns" alt="" coords="1545,733,1684,759"/>
+<area shape="rect" id="node25" href="$sim__core_8c.html#a47750ad481552d7c5f950b3eab70031a" title="_avr_is_instruction\l_32_bits" alt="" coords="1549,363,1680,404"/>
+<area shape="rect" id="node26" href="$sim__core_8c.html#ad5fabf6cd5d17f264fda0f6ef5bae940" title="_avr_flags_znv0s" alt="" coords="1553,783,1677,810"/>
+<area shape="rect" id="node27" href="$sim__core_8c.html#acdfe907350abfc801b6f5290efd1c8b1" title="Set any address to a value; split between registers and SRAM. " alt="" coords="1776,1062,1877,1089"/>
+<area shape="rect" id="node28" href="$sim__core_8c.html#ae37b5fd120362e40334eeff22ce34dbd" title="Get a value from SRAM. " alt="" coords="1776,555,1877,582"/>
+<area shape="rect" id="node29" href="$group__sim__core.html#ga8642b12864292e7a0dfccffdb15d7516" title="clear interrupt_state if disabling interrupts. " alt="" coords="1566,1138,1663,1165"/>
+<area shape="rect" id="node30" href="$group__sim__interrupts.html#ga55b3229b07450edea9f2530fc496a3d5" title="Return non&#45;zero if the AVR core has any pending interrupts. " alt="" coords="1524,1239,1705,1266"/>
+<area shape="rect" id="node31" href="$group__sim__io.html#ga3a93a5e3c3b49cf1a04ef8b4d9ee3b73" title="Call every IO modules until one responds to this. " alt="" coords="1579,885,1650,911"/>
+<area shape="rect" id="node32" href="$group__sim__core.html#ga7d3ad3fb3f0d56d27082e1beefd41bc4" title="_avr_push_addr" alt="" coords="1557,1189,1672,1215"/>
+<area shape="rect" id="node33" href="$sim__core_8c.html#ac1edce19fd3428d921ada9369c8333c6" title="_avr_pop_addr" alt="" coords="1561,631,1668,658"/>
+<area shape="rect" id="node34" href="$sim__core_8c.html#a4e1c143af985f05451caaa419338a397" title="_avr_pop8" alt="" coords="1573,834,1656,861"/>
+<area shape="rect" id="node35" href="$sim__core_8c.html#a2feac145f120d09c376bdf34a7e47359" title="Stack push accessors. " alt="" coords="1570,1037,1659,1063"/>
+<area shape="rect" id="node36" href="$sim__core_8c.html#ad2ee56b77ae39fc68d7dc6d26ad06248" title="_avr_flags_zcnvs" alt="" coords="1553,935,1677,962"/>
+<area shape="rect" id="node37" href="$sim__core_8c.html#a99ce600e42a27c17716c8b8d9c19c3a8" title="_avr_flags_zcvs" alt="" coords="1556,109,1673,135"/>
+<area shape="rect" id="node38" href="$sim__core_8c.html#a068db958a2fc1846e9822159b098429f" title="_avr_flags_zns16" alt="" coords="1553,159,1677,186"/>
+<area shape="rect" id="node40" href="$sim__cycle__timers_8c.html#a1cf6099f6187998f314ff9f5e1a295e4" title="avr_cycle_timer_return\l_sleep_run_cycles_limited" alt="" coords="1527,1392,1702,1433"/>
+<area shape="rect" id="node41" href="$sim__cycle__timers_8c.html#a7a6e02a792cc73e158a2a5578a9d3abd" title="avr_cycle_timer_insert" alt="" coords="1538,1458,1691,1485"/>
+<area shape="rect" id="node44" href="$group__sim__interrupts.html#ga9ba4d7f64cb7429446ea485448e17807" title="Clear the &quot;pending&quot; status of an interrupt. " alt="" coords="1550,1290,1679,1317"/>
+<area shape="rect" id="node46" href="$group__sim__avr.html#gaa2ba0de4d0a8f68e851aa80e2f745d4c" title="Accumulates sleep requests (and returns a sleep time of 0) until a minimum count of requested sleep m..." alt="" coords="1310,1605,1475,1631"/>
+<area shape="rect" id="node47" href="$group__sim__time.html#ga10bffc0225a5eaca0cf79cdb82d325fc" title="Converts back a number of cycles to usecs (for usleep) " alt="" coords="1545,1661,1684,1687"/>
+<area shape="rect" id="node49" href="$sim__gdb_8c.html#a06ddf7e732ff9fcc389bc0bacca84fe9" title="Contrary to gdb_watch_find, this actually checks the address against a watched memory range..." alt="" coords="760,1357,912,1383"/>
+</map>

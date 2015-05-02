@@ -1,0 +1,8 @@
+<map id="_avr_irq_pool_remove" name="_avr_irq_pool_remove">
+<area shape="rect" id="node2" href="$group__sim__irq.html#ga7114a332b5fefeeb3dedbd7f11575536" title="Free allocated IRQs. " alt="" coords="203,31,293,57"/>
+<area shape="rect" id="node3" href="$sim__io_8c.html#aca3dff623ecabf0e1b694959611873eb" title="avr_deallocate_io" alt="" coords="341,31,464,57"/>
+<area shape="rect" id="node4" href="$group__sim__io.html#ga5f50f574988d429bdc07b7358c6cfaf4" title="Terminates all IOs and remove from them from the io chain. " alt="" coords="512,31,643,57"/>
+<area shape="rect" id="node5" href="$group__sim__avr.html#ga0f0fc39b8130ef83ef768686dfd1959e" title="Finish any pending operations. " alt="" coords="691,31,792,57"/>
+<area shape="rect" id="node6" href="$run__avr_8c.html#a1eaa6002be5f73ad0802d990bea3be8f" title="sig_int" alt="" coords="840,5,900,32"/>
+<area shape="rect" id="node7" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="948,31,999,57"/>
+</map>

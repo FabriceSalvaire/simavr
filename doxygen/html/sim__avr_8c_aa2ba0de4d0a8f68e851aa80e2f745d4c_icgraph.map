@@ -1,0 +1,11 @@
+<map id="avr_pending_sleep_usec" name="avr_pending_sleep_usec">
+<area shape="rect" id="node2" href="$sim__avr_8c.html#aa1d5062766f4b90f98c13e58ba515042" title="These are callbacks for the two &#39;main&#39; behaviour in simavr. " alt="" coords="219,31,380,57"/>
+<area shape="rect" id="node9" href="$sim__avr_8c.html#a8f5fa15f4603ed6442955ca0dedcace8" title="avr_callback_sleep_raw" alt="" coords="219,81,380,108"/>
+<area shape="rect" id="node3" href="$sim__gdb_8c.html#aaee0c4dc854693c9c444665a099bc59d" title="avr_gdb_init" alt="" coords="428,31,520,57"/>
+<area shape="rect" id="node4" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="608,81,659,108"/>
+<area shape="rect" id="node5" href="$sim__avr_8c.html#a41fa6410b6832751264cc8898ce8c981" title="Called when the core has detected a crash somehow. " alt="" coords="568,31,699,57"/>
+<area shape="rect" id="node6" href="$sim__core_8c.html#abd2089910a233d944503e553526ce649" title="crash" alt="" coords="747,31,801,57"/>
+<area shape="rect" id="node7" href="$sim__core_8c.html#a6bb6e950ca849414923b3ea37dc9ed36" title="These are accessors for avr&#45;&gt;data but allows watchpoints to be set for gdb IO modules use that to set..." alt="" coords="849,5,999,32"/>
+<area shape="rect" id="node8" href="$sim__core_8c.html#a54c74c348d29309eba5920c69b8fad35" title="avr_core_watch_read" alt="" coords="851,56,997,83"/>
+<area shape="rect" id="node10" href="$sim__avr_8c.html#a0f62b71791203a3c7fdcfe228d1b0f5a" title="Initializes a new AVR instance. Will call the IO registers init(), and then reset() ..." alt="" coords="442,81,506,108"/>
+</map>

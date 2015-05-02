@@ -1,0 +1,5 @@
+<map id="avr_set_console_register" name="avr_set_console_register">
+<area shape="rect" id="node2" href="$group__sim__io.html#ga9fc8ac70dea4e1989eefe7a8e5f5e4ad" title="Register a callback for when the IO register is written. callback has to set the memory itself..." alt="" coords="224,5,367,32"/>
+<area shape="rect" id="node4" href="$sim__avr_8c.html#aeddeed68e70f1046f0a4dde376fcb97e" title="_avr_io_console_write" alt="" coords="220,56,371,83"/>
+<area shape="rect" id="node3" href="$sim__io_8c.html#a73250b42a7b0b28fbfc852d9c65eca5f" title="_avr_io_mux_write" alt="" coords="419,5,549,32"/>
+</map>

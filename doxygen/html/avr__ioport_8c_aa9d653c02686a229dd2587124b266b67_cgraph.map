@@ -1,0 +1,3 @@
+<map id="avr_ioport_update_irqs" name="avr_ioport_update_irqs">
+<area shape="rect" id="node2" href="$group__sim__irq.html#ga0a252051ba25d2471f96b4833985077b" title="Raise an IRQ. I.e. call their &#39;hooks&#39;, and raise any chained IRQs, and set the new &#39;value&#39;..." alt="" coords="207,5,303,32"/>
+</map>

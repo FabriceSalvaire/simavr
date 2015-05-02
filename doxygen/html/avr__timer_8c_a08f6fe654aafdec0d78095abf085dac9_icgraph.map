@@ -1,0 +1,29 @@
+<map id="avr_timer_comp" name="avr_timer_comp">
+<area shape="rect" id="node2" href="$avr__timer_8c.html#a68c5a56dc62b2033371c63e0a59e7b83" title="avr_timer_compa" alt="" coords="168,327,291,353"/>
+<area shape="rect" id="node27" href="$avr__timer_8c.html#aa2ffad9d5b6bc6e0d8f06c5c3d744604" title="avr_timer_compb" alt="" coords="168,377,291,404"/>
+<area shape="rect" id="node28" href="$avr__timer_8c.html#a78e55cc2ca5d8c04b8f2469d25b8a32c" title="avr_timer_compc" alt="" coords="168,251,291,277"/>
+<area shape="rect" id="node3" href="$avr__timer_8c.html#a6f923ed410cf704804070fb6bdf578d8" title="avr_timer_tov" alt="" coords="339,377,440,404"/>
+<area shape="rect" id="node4" href="$avr__timer_8c.html#adea1733dbf9df546d454c65a09911168" title="avr_timer_cancel_all\l_cycle_timers" alt="" coords="489,243,630,285"/>
+<area shape="rect" id="node24" href="$avr__timer_8c.html#a49c96f60c1ead6a58ecc06a9e7d8ada4" title="avr_timer_write" alt="" coords="886,411,997,437"/>
+<area shape="rect" id="node5" href="$avr__timer_8c.html#a03b12680dc930ded571e6a2c94eca2b0" title="Write TCNT. " alt="" coords="682,309,822,336"/>
+<area shape="rect" id="node26" href="$avr__timer_8c.html#a9ed5e69617bbb1205f57aa00456a8f6f" title="Configure a timer. " alt="" coords="488,360,631,387"/>
+<area shape="rect" id="node22" href="$avr__timer_8c.html#aad27bb63066131159ea46c9e2b5dc426" title="avr_timer_reconfigure" alt="" coords="679,360,825,387"/>
+<area shape="rect" id="node25" href="$avr__timer_8c.html#a44b06436b7762bc0576e1fb87b962f51" title="avr_timer_reset" alt="" coords="696,251,808,277"/>
+<area shape="rect" id="node6" href="$group__avr__timer.html#ga109f7e761984eec89ba3209d34c237f7" title="avr_timer_init" alt="" coords="1057,360,1157,387"/>
+<area shape="rect" id="node7" href="$sim__90usb162_8c.html#a94281f1e6275e36f8c3f74cf45af1094" title="usb162_init" alt="" coords="1211,5,1299,32"/>
+<area shape="rect" id="node8" href="$sim__mega128_8c.html#aa75db9154ff7da86ea2d0529eb5681ac" title="m128_init" alt="" coords="1216,56,1295,83"/>
+<area shape="rect" id="node9" href="$sim__mega1280_8c.html#a27f0cfb99d0fb08696933148a30b2a0d" title="m1280_init" alt="" coords="1213,107,1298,133"/>
+<area shape="rect" id="node10" href="$sim__mega1281_8c.html#ae0732161cc4e02dd81cf0fde0d0e727b" title="m1281_init" alt="" coords="1213,157,1298,184"/>
+<area shape="rect" id="node11" href="$sim__mega128rfa1_8c.html#a760d33397450f6992a799be5b96cedf8" title="m128rfa1_init" alt="" coords="1205,208,1305,235"/>
+<area shape="rect" id="node12" href="$sim__mega128rfr2_8c.html#ac621b083db4bd04c6d416e326d02d58d" title="m128rfr2_init" alt="" coords="1207,259,1304,285"/>
+<area shape="rect" id="node13" href="$sim__mega169_8c.html#a744d6860d2b5bbc4cea804aabd531493" title="m169p_init" alt="" coords="1213,309,1298,336"/>
+<area shape="rect" id="node14" href="$sim__mega2560_8c.html#a61aa264c3e77b1d99556dc040bfe47ed" title="m2560_init" alt="" coords="1213,360,1298,387"/>
+<area shape="rect" id="node15" href="$sim__megax_8h.html#a66f2ee34f5c100623a0f5aa91b9b48a1" title="mx_init" alt="" coords="1223,411,1287,437"/>
+<area shape="rect" id="node16" href="$sim__megax4_8h.html#a43ff8cef3fa2e05282aa063284231e03" title="mx4_init" alt="" coords="1220,461,1291,488"/>
+<area shape="rect" id="node17" href="$sim__megax8_8h.html#a193fe7e4188d32f956e6e47ba7a6b593" title="mx8_init" alt="" coords="1220,512,1291,539"/>
+<area shape="rect" id="node18" href="$sim__megaxm1_8h.html#a62fd6eb6657d3685eaff349434bff721" title="mxm1_init" alt="" coords="1214,563,1297,589"/>
+<area shape="rect" id="node19" href="$sim__tiny13_8c.html#ad25a2fcdaeb68a7f43aeda7f115104fd" title="init" alt="" coords="1236,613,1275,640"/>
+<area shape="rect" id="node20" href="$sim__tinyx4_8h.html#a79f175ec4edeffef69e1a9b0d2902165" title="tx4_init" alt="" coords="1223,664,1287,691"/>
+<area shape="rect" id="node21" href="$sim__tinyx5_8h.html#ab429b18dc2641017d6052543035238e2" title="tx5_init" alt="" coords="1223,715,1287,741"/>
+<area shape="rect" id="node23" href="$avr__timer_8c.html#a5d023bbf33536cf9f6fab7e934eaa024" title="avr_timer_write_ocr" alt="" coords="873,360,1009,387"/>
+</map>

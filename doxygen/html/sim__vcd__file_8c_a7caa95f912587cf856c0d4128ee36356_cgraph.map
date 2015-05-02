@@ -1,0 +1,5 @@
+<map id="_avr_vcd_timer" name="_avr_vcd_timer">
+<area shape="rect" id="node2" href="$sim__vcd__file_8c.html#a488b5dc1bb57082ed519a2dde8bf9547" title="avr_vcd_flush_log" alt="" coords="164,31,291,57"/>
+<area shape="rect" id="node3" href="$group__sim__time.html#ga202230bca458e26736d215093625d469" title="Converts back a number of cycles to nsecs. " alt="" coords="355,5,493,32"/>
+<area shape="rect" id="node4" href="$sim__vcd__file_8c.html#ab74d496f2244c5c6611c459cbfd239a5" title="_avr_vcd_get_signal_text" alt="" coords="339,56,509,83"/>
+</map>

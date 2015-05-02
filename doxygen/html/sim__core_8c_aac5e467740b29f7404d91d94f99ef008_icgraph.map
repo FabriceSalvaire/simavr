@@ -1,0 +1,16 @@
+<map id="_avr_sp_set" name="_avr_sp_set">
+<area shape="rect" id="node2" href="$sim__avr_8c.html#ab2cd3266800c9dd2be9461d5a680ab5e" title="Resets the AVR, and the IO modules. " alt="" coords="347,5,423,32"/>
+<area shape="rect" id="node5" href="$sim__core_8c.html#a7d3ad3fb3f0d56d27082e1beefd41bc4" title="_avr_push_addr" alt="" coords="147,56,261,83"/>
+<area shape="rect" id="node15" href="$sim__core_8c.html#ac1edce19fd3428d921ada9369c8333c6" title="_avr_pop_addr" alt="" coords="151,107,257,133"/>
+<area shape="rect" id="node3" href="$sim__avr_8c.html#a0f62b71791203a3c7fdcfe228d1b0f5a" title="Initializes a new AVR instance. Will call the IO registers init(), and then reset() ..." alt="" coords="718,56,782,83"/>
+<area shape="rect" id="node4" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="884,56,935,83"/>
+<area shape="rect" id="node6" href="$sim__core_8c.html#a80ca0a5234d7095e2491e4ca5022a69b" title="Instruction decoder, run ONE instruction. " alt="" coords="338,107,431,133"/>
+<area shape="rect" id="node14" href="$sim__interrupts_8c.html#a9f7ebd8881dcceb7145a4012fc99cc74" title="called by the core at each cycle to check whether an interrupt is pending " alt="" coords="309,56,460,83"/>
+<area shape="rect" id="node7" href="$sim__avr_8c.html#af3423fc886b29e62d8206dacbf7c3eb5" title="avr_callback_run_gdb" alt="" coords="508,107,656,133"/>
+<area shape="rect" id="node13" href="$sim__avr_8c.html#ab516b7c5410cec79a63207ad43a611aa" title="avr_callback_run_raw" alt="" coords="508,56,656,83"/>
+<area shape="rect" id="node8" href="$group__sim__gdb.html#gaaee0c4dc854693c9c444665a099bc59d" title="avr_gdb_init" alt="" coords="704,107,796,133"/>
+<area shape="rect" id="node9" href="$sim__avr_8c.html#a41fa6410b6832751264cc8898ce8c981" title="Called when the core has detected a crash somehow. " alt="" coords="844,107,975,133"/>
+<area shape="rect" id="node10" href="$sim__core_8c.html#abd2089910a233d944503e553526ce649" title="crash" alt="" coords="1023,132,1077,159"/>
+<area shape="rect" id="node11" href="$sim__core_8c.html#a6bb6e950ca849414923b3ea37dc9ed36" title="These are accessors for avr&#45;&gt;data but allows watchpoints to be set for gdb IO modules use that to set..." alt="" coords="1125,107,1275,133"/>
+<area shape="rect" id="node12" href="$sim__core_8c.html#a54c74c348d29309eba5920c69b8fad35" title="avr_core_watch_read" alt="" coords="1127,157,1273,184"/>
+</map>

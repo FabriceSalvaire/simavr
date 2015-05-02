@@ -1,0 +1,7 @@
+<map id="avr_bitbang_write_bit" name="avr_bitbang_write_bit">
+<area shape="rect" id="node2" href="$avr__bitbang_8c.html#a9e9c676a40a5b7c5142728f0e13a7999" title="process clock edges (both: positive and negative edges) " alt="" coords="199,31,347,57"/>
+<area shape="rect" id="node4" href="$group__avr__bitbang.html#ga333dc5109dfdfe6ef58550d123f5ed10" title="start bitbang transfer " alt="" coords="592,31,715,57"/>
+<area shape="rect" id="node3" href="$avr__bitbang_8c.html#a501013cd68650d548465cadd2d8a3e27" title="avr_bitbang_clk_timer" alt="" coords="395,31,544,57"/>
+<area shape="rect" id="node6" href="$avr__bitbang_8c.html#abc26e7d7ed9d7296478d30aa7d9e53e1" title="avr_bitbang_clk_hook" alt="" coords="395,81,543,108"/>
+<area shape="rect" id="node5" href="$group__avr__bitbang.html#ga313a21069910cdee13a6de44edc8fc93" title="stop bitbang transfer " alt="" coords="593,81,714,108"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="avr_callback_sleep_gdb" name="avr_callback_sleep_gdb">
+<area shape="rect" id="node2" href="$sim__gdb_8c.html#aaee0c4dc854693c9c444665a099bc59d" title="avr_gdb_init" alt="" coords="215,31,307,57"/>
+<area shape="rect" id="node3" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="395,5,445,32"/>
+<area shape="rect" id="node4" href="$sim__avr_8c.html#a41fa6410b6832751264cc8898ce8c981" title="Called when the core has detected a crash somehow. " alt="" coords="355,56,485,83"/>
+<area shape="rect" id="node5" href="$sim__core_8c.html#abd2089910a233d944503e553526ce649" title="crash" alt="" coords="533,56,588,83"/>
+<area shape="rect" id="node6" href="$sim__core_8c.html#a6bb6e950ca849414923b3ea37dc9ed36" title="These are accessors for avr&#45;&gt;data but allows watchpoints to be set for gdb IO modules use that to set..." alt="" coords="636,31,785,57"/>
+<area shape="rect" id="node7" href="$sim__core_8c.html#a54c74c348d29309eba5920c69b8fad35" title="avr_core_watch_read" alt="" coords="637,81,784,108"/>
+</map>

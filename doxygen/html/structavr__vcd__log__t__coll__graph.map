@@ -1,0 +1,6 @@
+<map id="avr_vcd_log_t" name="avr_vcd_log_t">
+<area shape="rect" id="node2" href="$structavr__vcd__signal__t.html" title="This structure registers IRQ change hooks to various &quot;source&quot; IRQs and dumps their values (if changed..." alt="" coords="5,109,125,136"/>
+<area shape="rect" id="node3" href="$structavr__irq__t.html" title="Public IRQ structure. " alt="" coords="167,5,239,32"/>
+<area shape="rect" id="node4" href="$structavr__irq__pool__t.html" title="IRQ Pool structure. " alt="" coords="150,109,253,136"/>
+<area shape="rect" id="node5" href="$structavr__irq__hook__t.html" title="avr_irq_hook_t" alt="" coords="277,109,384,136"/>
+</map>

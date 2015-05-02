@@ -1,0 +1,6 @@
+<map id="avr_vcd_start" name="avr_vcd_start">
+<area shape="rect" id="node2" href="$sim__vcd__file_8c.html#a42637e57552524ce9b620fe19ba96d12" title="avr_vcd_stop" alt="" coords="187,5,287,32"/>
+<area shape="rect" id="node4" href="$sim__cycle__timers_8h.html#ab10f8f0e0e7e2f560bd83bae06bcb5c1" title="register for calling &#39;timer&#39; in &#39;when&#39; cycles " alt="" coords="155,56,319,83"/>
+<area shape="rect" id="node3" href="$sim__cycle__timers_8h.html#a3ab10b0853c7668ce29907d1577392c8" title="cancel a previously set timer " alt="" coords="367,5,525,32"/>
+<area shape="rect" id="node5" href="$sim__cycle__timers_8c.html#a948bb750792293b81800230b42f9a4b8" title="cancel a previously set timer " alt="" coords="367,56,525,83"/>
+</map>

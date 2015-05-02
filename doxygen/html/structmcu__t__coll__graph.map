@@ -1,0 +1,37 @@
+<map id="mcu_t" name="mcu_t">
+<area shape="rect" id="node2" href="$structavr__twi__t.html" title="avr_twi_t" alt="" coords="445,1211,520,1237"/>
+<area shape="rect" id="node3" href="$structavr__io__t.html" title="IO module base struct Modules uses that as their first member in their own struct. " alt="" coords="214,743,282,769"/>
+<area shape="rect" id="node7" href="$structavr__t.html" title="Main AVR instance. " alt="" coords="713,289,763,316"/>
+<area shape="rect" id="node20" href="$structavr__uart__t.html" title="avr_uart_t" alt="" coords="443,1355,523,1381"/>
+<area shape="rect" id="node21" href="$structavr__eeprom__t.html" title="avr_eeprom_t" alt="" coords="432,1541,533,1568"/>
+<area shape="rect" id="node22" href="$structavr__extint__t.html" title="This module is just a &quot;relay&quot; for the pin change IRQ in the IO port module. " alt="" coords="437,1137,528,1164"/>
+<area shape="rect" id="node23" href="$structavr__watchdog__t.html" title="avr_watchdog_t" alt="" coords="955,641,1070,668"/>
+<area shape="rect" id="node24" href="$structavr__usb__t.html" title="avr_usb_t" alt="" coords="699,1060,777,1087"/>
+<area shape="rect" id="node28" href="$structavr__adc__t.html" title="avr_adc_t" alt="" coords="443,484,522,511"/>
+<area shape="rect" id="node30" href="$structavr__ioport__t.html" title="Definition for an IO port. " alt="" coords="437,817,528,844"/>
+<area shape="rect" id="node31" href="$structavr__spi__t.html" title="avr_spi_t" alt="" coords="445,1620,520,1647"/>
+<area shape="rect" id="node32" href="$structavr__flash__t.html" title="Handles self&#45;programming subsystem if the core supports it. " alt="" coords="439,1680,526,1707"/>
+<area shape="rect" id="node33" href="$structavr__timer__t.html" title="avr_timer_t" alt="" coords="439,1928,526,1955"/>
+<area shape="rect" id="node36" href="$structavr__lin__t.html" title="avr_lin_t" alt="" coords="703,1388,773,1415"/>
+<area shape="rect" id="node4" href="$structavr__irq__t.html" title="Public IRQ structure. " alt="" coords="15,244,87,271"/>
+<area shape="rect" id="node5" href="$structavr__irq__pool__t.html" title="IRQ Pool structure. " alt="" coords="197,277,299,304"/>
+<area shape="rect" id="node6" href="$structavr__irq__hook__t.html" title="avr_irq_hook_t" alt="" coords="195,44,301,71"/>
+<area shape="rect" id="node13" href="$structavr__int__vector__t.html" title="interrupt vector for the IO modules " alt="" coords="191,1160,305,1187"/>
+<area shape="rect" id="node16" href="$structavr__vcd__signal__t.html" title="This structure registers IRQ change hooks to various &quot;source&quot; IRQs and dumps their values (if changed..." alt="" coords="423,113,543,140"/>
+<area shape="rect" id="node9" href="$structavr__cycle__timer__slot__t.html" title="Each timer instance contains the absolute cycle number they are hoping to run at, a function pointer ..." alt="" coords="936,321,1089,348"/>
+<area shape="rect" id="node15" href="$structavr__vcd__t.html" title="avr_vcd_t" alt="" coords="973,109,1052,136"/>
+<area shape="rect" id="node18" href="$structavr__gdb__t.html" title="avr_gdb_t" alt="" coords="973,372,1052,399"/>
+<area shape="rect" id="node8" href="$structavr__cycle__timer__pool__t.html" title="Timer pool contains a pool of timer slots available, they all start queued into the &#39;free&#39; qeueue..." alt="" coords="1203,263,1359,289"/>
+<area shape="rect" id="node10" href="$structavr__trace__data__t.html" title="This is only ever used if CONFIG_SIMAVR_TRACE is defined. " alt="" coords="423,176,542,203"/>
+<area shape="rect" id="node11" href="$structavr__symbol__t.html" title="Symbol loaded from the .elf file. " alt="" coords="198,176,298,203"/>
+<area shape="rect" id="node12" href="$structavr__int__table__t.html" title="Interrupt vectors, and their enable/clear registers. " alt="" coords="429,868,536,895"/>
+<area shape="rect" id="node25" href="$structusb__internal__state.html" title="usb_internal_state" alt="" coords="419,992,547,1019"/>
+<area shape="rect" id="node34" href="$structavr__timer__comp__t.html" title="avr_timer_comp_t" alt="" coords="675,1928,801,1955"/>
+<area shape="rect" id="node14" href="$structavr__regbit__t.html" title="This &#39;structure&#39; is a packed representation of an IO register &#39;bit&#39; (or consecutive bits)..." alt="" coords="5,1667,96,1693"/>
+<area shape="rect" id="node17" href="$structavr__vcd__log__t.html" title="avr_vcd_log_t" alt="" coords="687,113,789,140"/>
+<area shape="rect" id="node19" href="$structavr__gdb__watchpoints__t.html" title="avr_gdb_watchpoints_t" alt="" coords="660,407,816,433"/>
+<area shape="rect" id="node26" href="$struct__epstate.html" title="_epstate" alt="" coords="212,867,284,893"/>
+<area shape="rect" id="node27" href="$union__ueintx.html" title="_ueintx" alt="" coords="19,483,83,509"/>
+<area shape="rect" id="node29" href="$structavr__adc__mux__t.html" title="avr_adc_mux_t" alt="" coords="193,328,303,355"/>
+<area shape="rect" id="node35" href="$structavr__timer__wgm__t.html" title="avr_timer_wgm_t" alt="" coords="187,2084,309,2111"/>
+</map>

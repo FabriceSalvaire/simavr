@@ -1,0 +1,7 @@
+<map id="avr_terminate" name="avr_terminate">
+<area shape="rect" id="node2" href="$group__sim__gdb.html#gac7dd5bca74f6cc19b96265ed348759ba" title="avr_deinit_gdb" alt="" coords="167,5,273,32"/>
+<area shape="rect" id="node3" href="$group__sim__vcd__file.html#gad925e6de0fcca8e98aa4cb6f9e673bdf" title="avr_vcd_close" alt="" coords="167,56,273,83"/>
+<area shape="rect" id="node6" href="$sim__io_8h.html#a5f50f574988d429bdc07b7358c6cfaf4" title="Terminates all IOs and remove from them from the io chain. " alt="" coords="155,107,285,133"/>
+<area shape="rect" id="node4" href="$group__sim__vcd__file.html#ga42637e57552524ce9b620fe19ba96d12" title="Stops recording signal values into the file. " alt="" coords="333,56,433,83"/>
+<area shape="rect" id="node5" href="$sim__cycle__timers_8h.html#a3ab10b0853c7668ce29907d1577392c8" title="cancel a previously set timer " alt="" coords="481,56,640,83"/>
+</map>

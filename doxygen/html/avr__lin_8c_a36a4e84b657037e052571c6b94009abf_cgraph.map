@@ -1,0 +1,10 @@
+<map id="avr_lin_init" name="avr_lin_init">
+<area shape="rect" id="node2" href="$avr__uart_8h.html#ad9e028ea2f9beda8ca0366852704697b" title="avr_uart_init" alt="" coords="137,120,231,147"/>
+<area shape="rect" id="node8" href="$sim__io_8h.html#a9fc8ac70dea4e1989eefe7a8e5f5e4ad" title="Register a callback for when the IO register is written. callback has to set the memory itself..." alt="" coords="279,208,421,235"/>
+<area shape="rect" id="node3" href="$sim__io_8h.html#ac32f09e926e9152291bd758f5860cd4e" title="Registers an IO module, so it&#39;s run(), reset() etc are called. " alt="" coords="297,5,403,32"/>
+<area shape="rect" id="node4" href="$sim__interrupts_8h.html#a7f84bf7cd40ade6cec2dd865cc5468a9" title="register an interrupt vector. It&#39;s only needed if you want to use the &quot;r_raised&quot; flags ..." alt="" coords="283,56,417,83"/>
+<area shape="rect" id="node5" href="$sim__io_8h.html#adf58f2274a9630198a6ff7f77ebc882a" title="Sets an IO module &quot;official&quot; IRQs and the ioctl used to get to them. " alt="" coords="299,107,401,133"/>
+<area shape="rect" id="node9" href="$sim__io_8h.html#aefd66e86a2ea71d10f94616a64e49add" title="Register a callback for when IO register &quot;addr&quot; is read. " alt="" coords="281,157,419,184"/>
+<area shape="rect" id="node6" href="$group__sim__irq.html#gab643092a04e04aca6c4e9eb08db4b81f" title="allocates &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment ..." alt="" coords="469,107,564,133"/>
+<area shape="rect" id="node7" href="$group__sim__irq.html#ga258c5ad75c46ff8180430d7ace63771f" title="init &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment " alt="" coords="612,107,697,133"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ep_fifo_cpu_readbyte" name="ep_fifo_cpu_readbyte">
+<area shape="rect" id="node2" href="$avr__usb_8c.html#abb420bc10e14cfe3dc4c2f732065884e" title="ep_fifo_empty" alt="" coords="200,5,304,32"/>
+<area shape="rect" id="node3" href="$avr__usb_8c.html#a9dd151d8980f4e7dfd643042fd8f1c07" title="ep_fifo_count" alt="" coords="202,56,302,83"/>
+</map>

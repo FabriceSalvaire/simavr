@@ -1,0 +1,4 @@
+<map id="avr_gdb_handle_watchpoints" name="avr_gdb_handle_watchpoints">
+<area shape="rect" id="node2" href="$sim__core_8c.html#a6bb6e950ca849414923b3ea37dc9ed36" title="These are accessors for avr&#45;&gt;data but allows watchpoints to be set for gdb IO modules use that to set..." alt="" coords="244,5,393,32"/>
+<area shape="rect" id="node3" href="$sim__core_8c.html#a54c74c348d29309eba5920c69b8fad35" title="avr_core_watch_read" alt="" coords="245,56,392,83"/>
+</map>

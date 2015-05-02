@@ -1,0 +1,19 @@
+<map id="avr_twi_t" name="avr_twi_t">
+<area shape="rect" id="node2" href="$structavr__io__t.html" title="IO module base struct Modules uses that as their first member in their own struct. " alt="" coords="210,479,278,505"/>
+<area shape="rect" id="node6" href="$structavr__t.html" title="Main AVR instance. " alt="" coords="689,413,739,440"/>
+<area shape="rect" id="node3" href="$structavr__irq__t.html" title="Public IRQ structure. " alt="" coords="15,428,87,455"/>
+<area shape="rect" id="node4" href="$structavr__irq__pool__t.html" title="IRQ Pool structure. " alt="" coords="193,389,295,416"/>
+<area shape="rect" id="node5" href="$structavr__irq__hook__t.html" title="avr_irq_hook_t" alt="" coords="191,327,297,353"/>
+<area shape="rect" id="node12" href="$structavr__int__vector__t.html" title="interrupt vector for the IO modules " alt="" coords="187,229,301,256"/>
+<area shape="rect" id="node15" href="$structavr__vcd__signal__t.html" title="This structure registers IRQ change hooks to various &quot;source&quot; IRQs and dumps their values (if changed..." alt="" coords="403,592,523,619"/>
+<area shape="rect" id="node8" href="$structavr__cycle__timer__slot__t.html" title="Each timer instance contains the absolute cycle number they are hoping to run at, a function pointer ..." alt="" coords="912,508,1065,535"/>
+<area shape="rect" id="node14" href="$structavr__vcd__t.html" title="avr_vcd_t" alt="" coords="949,568,1028,595"/>
+<area shape="rect" id="node17" href="$structavr__gdb__t.html" title="avr_gdb_t" alt="" coords="949,319,1028,345"/>
+<area shape="rect" id="node7" href="$structavr__cycle__timer__pool__t.html" title="Timer pool contains a pool of timer slots available, they all start queued into the &#39;free&#39; qeueue..." alt="" coords="1179,449,1335,476"/>
+<area shape="rect" id="node9" href="$structavr__trace__data__t.html" title="This is only ever used if CONFIG_SIMAVR_TRACE is defined. " alt="" coords="403,80,522,107"/>
+<area shape="rect" id="node10" href="$structavr__symbol__t.html" title="Symbol loaded from the .elf file. " alt="" coords="194,5,294,32"/>
+<area shape="rect" id="node11" href="$structavr__int__table__t.html" title="Interrupt vectors, and their enable/clear registers. " alt="" coords="409,283,516,309"/>
+<area shape="rect" id="node13" href="$structavr__regbit__t.html" title="This &#39;structure&#39; is a packed representation of an IO register &#39;bit&#39; (or consecutive bits)..." alt="" coords="5,185,96,212"/>
+<area shape="rect" id="node16" href="$structavr__vcd__log__t.html" title="avr_vcd_log_t" alt="" coords="663,639,765,665"/>
+<area shape="rect" id="node18" href="$structavr__gdb__watchpoints__t.html" title="avr_gdb_watchpoints_t" alt="" coords="636,273,792,300"/>
+</map>

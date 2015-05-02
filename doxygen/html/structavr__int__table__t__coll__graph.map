@@ -1,0 +1,7 @@
+<map id="avr_int_table_t" name="avr_int_table_t">
+<area shape="rect" id="node2" href="$structavr__int__vector__t.html" title="interrupt vector for the IO modules " alt="" coords="317,109,431,136"/>
+<area shape="rect" id="node3" href="$structavr__irq__t.html" title="Public IRQ structure. " alt="" coords="130,5,202,32"/>
+<area shape="rect" id="node4" href="$structavr__irq__pool__t.html" title="IRQ Pool structure. " alt="" coords="5,109,108,136"/>
+<area shape="rect" id="node5" href="$structavr__irq__hook__t.html" title="avr_irq_hook_t" alt="" coords="133,109,239,136"/>
+<area shape="rect" id="node6" href="$structavr__regbit__t.html" title="This &#39;structure&#39; is a packed representation of an IO register &#39;bit&#39; (or consecutive bits)..." alt="" coords="329,5,419,32"/>
+</map>

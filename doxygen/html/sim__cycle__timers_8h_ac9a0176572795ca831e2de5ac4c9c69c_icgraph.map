@@ -1,0 +1,5 @@
+<map id="avr_cycle_timer_reset" name="avr_cycle_timer_reset">
+<area shape="rect" id="node2" href="$sim__avr_8c.html#ab2cd3266800c9dd2be9461d5a680ab5e" title="Resets the AVR, and the IO modules. " alt="" coords="204,5,280,32"/>
+<area shape="rect" id="node3" href="$sim__avr_8c.html#a0f62b71791203a3c7fdcfe228d1b0f5a" title="Initializes a new AVR instance. Will call the IO registers init(), and then reset() ..." alt="" coords="328,5,392,32"/>
+<area shape="rect" id="node4" href="$run__avr_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="440,5,491,32"/>
+</map>

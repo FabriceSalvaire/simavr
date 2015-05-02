@@ -1,0 +1,4 @@
+<map id="avr_usb_ep_read" name="avr_usb_ep_read">
+<area shape="rect" id="node2" href="$avr__usb_8c.html#a5add6e531e13b0b59432b0bec07f7300" title="get_epstate" alt="" coords="194,5,285,32"/>
+<area shape="rect" id="node3" href="$avr__usb_8c.html#aa903243fb9383d0e9b8d7f08d6d3a730" title="current_ep_to_cpu" alt="" coords="175,56,304,83"/>
+</map>

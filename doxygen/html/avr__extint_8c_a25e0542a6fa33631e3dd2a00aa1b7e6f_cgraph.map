@@ -1,0 +1,7 @@
+<map id="avr_extint_init" name="avr_extint_init">
+<area shape="rect" id="node2" href="$sim__io_8h.html#ac32f09e926e9152291bd758f5860cd4e" title="Registers an IO module, so it&#39;s run(), reset() etc are called. " alt="" coords="169,5,276,32"/>
+<area shape="rect" id="node3" href="$sim__interrupts_8h.html#a7f84bf7cd40ade6cec2dd865cc5468a9" title="register an interrupt vector. It&#39;s only needed if you want to use the &quot;r_raised&quot; flags ..." alt="" coords="156,56,289,83"/>
+<area shape="rect" id="node4" href="$sim__io_8h.html#adf58f2274a9630198a6ff7f77ebc882a" title="Sets an IO module &quot;official&quot; IRQs and the ioctl used to get to them. " alt="" coords="171,107,274,133"/>
+<area shape="rect" id="node5" href="$group__sim__irq.html#gab643092a04e04aca6c4e9eb08db4b81f" title="allocates &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment ..." alt="" coords="337,107,432,133"/>
+<area shape="rect" id="node6" href="$group__sim__irq.html#ga258c5ad75c46ff8180430d7ace63771f" title="init &#39;count&#39; IRQs, initializes their &quot;irq&quot; starting from &#39;base&#39; and increment " alt="" coords="480,107,565,133"/>
+</map>
