@@ -17,6 +17,11 @@
  *  <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_io IO
+ * @{
+ */
+
 #ifndef __SIM_IO_H__
 #define __SIM_IO_H__
 
@@ -27,17 +32,13 @@ extern "C"
 {
 #endif
 
-  /**
-   * used by the ioports to implement their own features see avr_eeprom.* for an example, and
-   * avr_ioctl().
-   */
+/// Used by the ioports to implement their own features see avr_eeprom.* for an example, and
+/// avr_ioctl().
 #define AVR_IOCTL_DEF(_a,_b,_c,_d)			\
   (((_a) << 24)|((_b) << 16)|((_c) << 8)|((_d)))
 
-  /**
-   * IO module base struct
-   * Modules uses that as their first member in their own struct
-   */
+  /// IO module base struct
+  /// Modules uses that as their first member in their own struct
   typedef struct avr_io_t
   {
     struct avr_io_t *next;
@@ -62,16 +63,14 @@ extern "C"
    * IO modules helper functions
    */
 
-  /** \brief Registers an IO module, so it's run(), reset() etc are called
-   *
-   * this is called by the AVR core init functions, you /could/ register an external one after
-   * instantiation, for whatever purpose...
-   */
+  /// Registers an IO module, so it's run(), reset() etc are called
+  ///
+  /// This is called by the AVR core init functions, you /could/ register an external one after
+  /// instantiation, for whatever purpose...
   void avr_register_io (avr_t * avr, avr_io_t * io);
-  /** \brief Sets an IO module "official" IRQs and the ioctl used to get to them.
-   *
-   * if 'irqs' is NULL, * 'count' will be allocated
-   */
+  /// Sets an IO module "official" IRQs and the ioctl used to get to them.
+  ///
+  /// If 'irqs' is NULL, * 'count' will be allocated
   avr_irq_t *avr_io_setirqs (avr_io_t * io, uint32_t ctl, int count, avr_irq_t * irqs);
 
   /// Register a callback for when IO register "addr" is read
@@ -85,14 +84,13 @@ extern "C"
 
 #define AVR_IOMEM_IRQ_ALL 8
 
-  /** \brief Get the IRQ for an absolute IO address
-   *
-   * This allows any code to hook an IRQ in any io address, for example tracing changes of values
-   * into a register
-   * Note that the values do not "magically" change, they change only when the AVR code attempt to
-   * read and write at that address
-   * the "index" is a bit number, or ALL bits if index == 8
-   */
+  /// Get the IRQ for an absolute IO address
+  ///
+  /// This allows any code to hook an IRQ in any io address, for example tracing changes of values
+  /// into a register
+  /// Note that the values do not "magically" change, they change only when the AVR code attempt to
+  /// read and write at that address
+  /// the "index" is a bit number, or ALL bits if index == 8
   avr_irq_t *avr_iomem_getirq (avr_t * avr,
                                avr_io_addr_t addr,
                                const char *name /* Optional, if NULL, "ioXXXX" will be used */ ,
@@ -106,3 +104,4 @@ extern "C"
 #endif
 
 #endif /* __SIM_IO_H__ */
+/// @} end of sim_io group

@@ -17,6 +17,11 @@
  *  <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_spi SPI
+ * @{
+ */
+
 #ifndef __AVR_SPI_H__
 #define __AVR_SPI_H__
 
@@ -82,3 +87,4 @@ extern "C"
 #endif
 
 #endif /*__AVR_SPI_H__*/
+/// @} end of avr_spi group

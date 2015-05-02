@@ -17,6 +17,11 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_gdb GDB
+ * @{
+ */
+
 #ifndef __SIM_GDB_H__
 #define __SIM_GDB_H__
 
@@ -25,8 +30,8 @@ extern "C"
 {
 #endif
 
-  /* Watchpoint types.
-     See GDB User Manual, Appendix E.2 */
+  /// Watchpoint types.
+  /// See GDB User Manual, Appendix E.2
   enum avr_gdb_watch_type
     {
       AVR_GDB_BREAK_SOFT = 1 << 0,
@@ -37,13 +42,11 @@ extern "C"
       AVR_GDB_WATCH_ACCESS = AVR_GDB_WATCH_WRITE | AVR_GDB_WATCH_READ,
     };
 
+  /// Initialise GDB
   int avr_gdb_init (avr_t * avr);
-
   void avr_deinit_gdb (avr_t * avr);
-
-  /// call from the main AVR decoder thread
+  /// Call from the main AVR decoder thread
   int avr_gdb_processor (avr_t * avr, int sleep);
-
   /// Called from sim_core.c
   void avr_gdb_handle_watchpoints (avr_t * g, uint16_t addr, enum avr_gdb_watch_type type);
 
@@ -51,4 +54,5 @@ extern "C"
 };
 #endif
 
-#endif
+#endif /* __SIM_GDB_H__ */
+/// @} end of sim_gdb group

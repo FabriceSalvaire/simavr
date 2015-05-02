@@ -19,6 +19,11 @@
  *   <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_usb USB
+ * @{
+ */
+
 #ifndef __AVR_USB_H__
 #define __AVR_USB_H__
 
@@ -62,7 +67,6 @@ extern "C"
     avr_io_addr_t r_usbcon;   ///< every usb reg is an offset of this.
     avr_io_addr_t r_pllcsr;
 
-
     uint8_t usb_com_vect;
     uint8_t usb_gen_vect;
 
@@ -76,3 +80,4 @@ extern "C"
 #endif
 
 #endif /*__AVR_USB_H__*/
+/// @} end of avr_usb group

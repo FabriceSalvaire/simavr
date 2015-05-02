@@ -1,5 +1,6 @@
 /*
  *  fido_declare.h
+ *
  *  Copyright (C) 2003-2012 Michel Pollet <buserror@gmail.com>
  * 
  *  This library is free software; you can redistribute it and/or modify it under the terms of the GNU
@@ -16,9 +17,11 @@
  */
 
 /**
- * FIFO helpers, aka circular buffers
+ * @defgroup fifo_declare FIFO helpers, aka circular buffers
+ * @{
  *
  * these macros define accessories for FIFOs of any name, type and any (power of two) size
+ *
  */
 
 #ifndef __FIFO_DECLARE__
@@ -184,3 +187,4 @@ extern "C"
 #endif
 
 #endif
+/// @} end of fifo_declare group

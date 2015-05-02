@@ -17,6 +17,11 @@
  *  <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_twi TWI
+ * @{
+ */
+
 #ifndef __AVR_TWI_H__
 #define __AVR_TWI_H__
 
@@ -109,3 +114,4 @@ extern "C"
 #endif
 
 #endif /*__AVR_TWI_H__*/
+/// @} end of avr_twi group

@@ -17,6 +17,11 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_hex Hex Firmware
+ * @{
+ */
+
 #ifndef __SIM_HEX_H___
 #define __SIM_HEX_H___
 
@@ -27,29 +32,27 @@ extern "C"
 {
 #endif
 
-  /// parses a hex text string 'src' of at max 'maxlen' characters, decodes it into 'buffer'
+  /// Parses a hex text string 'src' of at max 'maxlen' characters, decodes it into 'buffer'
   int read_hex_string (const char *src, uint8_t * buffer, int maxlen);
 
-  /// a .hex file chunk (base address + size)
+  /// A .hex file chunk (base address + size)
   typedef struct ihex_chunk_t
   {
-    uint32_t baseaddr;    // offset it started at in the .hex file
-    uint8_t *data;    // read data
-    uint32_t size;    // read data size
+    uint32_t baseaddr;   ///< offset it started at in the .hex file
+    uint8_t *data;   ///< read data
+    uint32_t size;   ///< read data size
   } ihex_chunk_t, *ihex_chunk_p;
 
-  /**
-   * Read a .hex file, detects the various different chunks in it from their starting addresses and
-   * allocate an array of ihex_chunk_t returned in 'chunks'.
-   * Returns the number of chunks found, or -1 if an error occurs.
-   */
+  /// Read a .hex file, detects the various different chunks in it from their starting addresses and
+  /// allocate an array of ihex_chunk_t returned in 'chunks'.  Returns the number of chunks found,
+  /// or -1 if an error occurs.
   int read_ihex_chunks (const char *fname, ihex_chunk_p * chunks);
 
-  /// reads IHEX file 'fname', puts it's decoded size in *'dsize' and returns
+  /// Reads IHEX file 'fname', puts it's decoded size in *'dsize' and returns
   /// a newly allocated buffer with the binary data (or NULL, if error)
   uint8_t *read_ihex_file (const char *fname, uint32_t * dsize, uint32_t * start);
 
-  /// hex dump from pointer 'b' for 'l' bytes with string prefix 'w'
+  /// Hex dump from pointer 'b' for 'l' bytes with string prefix 'w'
   void hdump (const char *w, uint8_t * b, size_t l);
 
 #ifdef __cplusplus
@@ -57,3 +60,4 @@ extern "C"
 #endif
 
 #endif /* __SIM_HEX_H___ */
+/// @} end of sim_hex group

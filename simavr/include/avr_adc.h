@@ -17,6 +17,20 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_adc ADC
+ * @{
+ *
+ * simavr ADC allows external code to feed real voltages to the simulator, and the simulator uses
+ * it's 'real' reference voltage to do the right thing and return the 'proper' 10 bits ADC value to
+ * the AVR firmware.
+ *
+ * To send values to the ADC, register your code to wait for the ADC_IRQ_OUT_TRIGGER irq, and at
+ * that point send any of the ADC_IRQ_ADC* with Millivolts as value.
+ *
+ * External trigger is not done yet.
+ */
+
 #ifndef __AVR_ADC_H___
 #define __AVR_ADC_H___
 
@@ -26,20 +40,6 @@ extern "C"
 #endif
 
 #include "sim_avr.h"
-
-  /**
-   * @defgroup avr_adc ADC
-   * @{
-   *
-   * simavr ADC allows external code to feed real voltages to the simulator, and the simulator uses
-   * it's 'real' reference voltage to do the right thing and return the 'proper' 10 bits ADC value
-   * to the AVR firmware.
-   *
-   * To send values to the ADC, register your code to wait for the ADC_IRQ_OUT_TRIGGER irq, and at
-   * that point send any of the ADC_IRQ_ADC* with Millivolts as value.
-   *
-   * External trigger is not done yet.
-   */
 
   enum
     {
@@ -57,9 +57,7 @@ extern "C"
   /// Get the internal IRQ corresponding to the INT
 #define AVR_IOCTL_ADC_GETIRQ AVR_IOCTL_DEF('a','d','c',' ')
 
-  /**
-   * Definition of a ADC mux mode.
-   */
+  /// Definition of a ADC mux mode.
   enum
     {
       ADC_MUX_NONE = 0,   ///> Nothing. return 0
@@ -183,4 +181,4 @@ extern "C"
 #endif
 
 #endif /* __AVR_ADC_H___ */
-/// @} end of avr_avc group
+/// @} end of avr_adc group

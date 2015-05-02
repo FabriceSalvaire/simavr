@@ -17,6 +17,11 @@
  *  <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_eeprom EEPROM
+ * @{
+ */
+
 #ifndef __AVR_EEPROM_H__
 #define __AVR_EEPROM_H__
 
@@ -60,10 +65,8 @@ extern "C"
 #define AVR_IOCTL_EEPROM_GET AVR_IOCTL_DEF('e','e','g','p')
 #define AVR_IOCTL_EEPROM_SET AVR_IOCTL_DEF('e','e','s','p')
 
-  /**
-   * the eeprom block seems to be very similar across AVRs, so here is a macro to declare a
-   * "typical" one in a core.
-   */
+/// The eeprom block seems to be very similar across AVRs, so here is a macro to declare a "typical"
+/// one in a core.
 #define AVR_EEPROM_DECLARE(_vector)                                     \
   .eeprom = {                                                           \
     .size = E2END+1,                                                    \
@@ -81,9 +84,7 @@ extern "C"
     },                                                                  \
   }
 
-  /**
-   * no EEPM registers in atmega128
-   */
+ /// no EEPM registers in atmega128
 #define AVR_EEPROM_DECLARE_NOEEPM(_vector)      \
   .eeprom = {                                   \
     .size = E2END+1,				\
@@ -101,10 +102,8 @@ extern "C"
     },                                          \
   }
 
-  /**
-   * macro definition without a high address bit register, which is not implemented in some tiny
-   * AVRs.
-   */
+/// macro definition without a high address bit register, which is not implemented in some tiny
+/// AVRs.
 #define AVR_EEPROM_DECLARE_8BIT(_vector)                                \
   .eeprom = {                                                           \
   .size = E2END+1,                                                      \
@@ -126,3 +125,4 @@ extern "C"
 #endif
 
 #endif /* __AVR_EEPROM_H__ */
+/// @} end of avr_eeprom group

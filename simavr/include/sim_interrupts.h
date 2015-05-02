@@ -17,6 +17,11 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_interrupts Interrupts
+ * @{
+ */
+
 #ifndef __SIM_INTERRUPTS_H__
 #define __SIM_INTERRUPTS_H__
 
@@ -42,7 +47,7 @@ extern "C"
     /// by the hardware when executing the interrupt routine (see TWINT)
   } avr_int_vector_t;
 
-  /// interrupt vectors, and their enable/clear registers
+  /// Interrupt vectors, and their enable/clear registers
   typedef struct avr_int_table_t
   {
     avr_int_vector_t *vector[64];
@@ -55,31 +60,31 @@ extern "C"
    * Interrupt Helper Functions
    */
 
-  /// register an interrupt vector. It's only needed if you want to use the "r_raised" flags
+  /// Register an interrupt vector. It's only needed if you want to use the "r_raised" flags
   void avr_register_vector (struct avr_t *avr, avr_int_vector_t * vector);
-  /// raise an interrupt (if enabled). The interrupt is latched and will be called later
+  /// Raise an interrupt (if enabled). The interrupt is latched and will be called later
   /// return non-zero if the interrupt was raised and is now pending
   int avr_raise_interrupt (struct avr_t *avr, avr_int_vector_t * vector);
-  /// return non-zero if the AVR core has any pending interrupts
+  /// Return non-zero if the AVR core has any pending interrupts
   int avr_has_pending_interrupts (struct avr_t *avr);
-  /// return nonzero if a specific interrupt vector is pending
+  /// Return nonzero if a specific interrupt vector is pending
   int avr_is_interrupt_pending (struct avr_t *avr, avr_int_vector_t * vector);
-  /// clear the "pending" status of an interrupt
+  /// Clear the "pending" status of an interrupt
   void avr_clear_interrupt (struct avr_t *avr, avr_int_vector_t * vector);
-  /// called by the core at each cycle to check whether an interrupt is pending
+  /// Called by the core at each cycle to check whether an interrupt is pending
   void avr_service_interrupts (struct avr_t *avr);
 
-  /// clear the interrupt (inc pending) if "raised" flag is 1
+  /// Clear the interrupt (inc pending) if "raised" flag is 1
   int avr_clear_interrupt_if (struct avr_t *avr, avr_int_vector_t * vector, uint8_t old);
 
-  /// return the IRQ that is raised when the vector is enabled and called/cleared
+  /// Return the IRQ that is raised when the vector is enabled and called/cleared
   /// this allows tracing of pending interrupts
   avr_irq_t *avr_get_interrupt_irq (struct avr_t *avr, uint8_t v);
 
   /// Initializes the interrupt table
   void avr_interrupt_init (struct avr_t *avr);
 
-  /// reset the interrupt table and the fifo
+  /// Reset the interrupt table and the fifo
   void avr_interrupt_reset (struct avr_t *avr);
 
 #ifdef __cplusplus
@@ -87,3 +92,4 @@ extern "C"
 #endif
 
 #endif /* __SIM_INTERRUPTS_H__ */
+/// @} end of sim_interrupts group

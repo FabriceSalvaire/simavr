@@ -17,6 +17,11 @@
  *  <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_watchdog Watchdog
+ * @{
+ */
+
 #ifndef __AVR_WATCHDOG_H___
 #define __AVR_WATCHDOG_H___
 
@@ -93,3 +98,4 @@ extern "C"
 #endif
 
 #endif /* __AVR_WATCHDOG_H___ */
+/// @} end of avr_watchdog group

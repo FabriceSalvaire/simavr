@@ -17,6 +17,11 @@
  *  <http://www.gnu.org/licenses/>.
 */
 
+/**
+ * @defgroup avr_flash Flash
+ * @{
+ */
+
 #ifndef __AVR_FLASH_H___
 #define __AVR_FLASH_H___
 
@@ -87,3 +92,4 @@ extern "C"
 #endif
 
 #endif /* __AVR_FLASH_H___ */
+/// @} end of avr_flash group

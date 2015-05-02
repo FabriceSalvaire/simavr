@@ -17,6 +17,11 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_network Network
+ * @{
+ */
+
 #ifndef __SIM_NETWORK_H__
 #define __SIM_NETWORK_H__
 
@@ -33,12 +38,15 @@ extern "C"
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
-#define send(sockfd, buf, len, flags)				\
+#define send(sockfd, buf, len, flags) \
   (ssize_t)send( (sockfd), (const char *)(buf), (len), (flags))
-#define setsockopt(sockfd, level, optname, optval, optlen)		\
+
+#define setsockopt(sockfd, level, optname, optval, optlen) \
   setsockopt( (sockfd), (level), (optname), (void *)(optval), (optlen))
-#define recv(sockfd, buf, len, flags)				\
+
+#define recv(sockfd, buf, len, flags) \
   (ssize_t)recv( (sockfd), (char *)(buf), (len), (flags))
+
 #define sleep(x) Sleep((x)*1000)
 
   static inline int network_init ()
@@ -47,8 +55,8 @@ extern "C"
     WSADATA wsaData;
     if (WSAStartup (MAKEWORD (2, 2), &wsaData))
       return -1;
-
-    return 0;
+    else
+      return 0;
   }
 
   static inline void network_release ()
@@ -59,7 +67,7 @@ extern "C"
 
 #else
 
-  // native Linux
+  // Native Linux
 
 #include <netinet/in.h>
 #include <netinet/tcp.h>
@@ -86,3 +94,4 @@ extern "C"
 #endif
 
 #endif /*__SIM_NETWORK_H__*/
+/// @} end of sim_network group

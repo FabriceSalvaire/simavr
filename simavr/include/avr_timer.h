@@ -17,6 +17,11 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_timer Timer
+ * @{
+ */
+
 #ifndef __AVR_TIMER_H__
 #define __AVR_TIMER_H__
 
@@ -24,11 +29,6 @@
 extern "C"
 {
 #endif
-
-  /**
-   * @defgroup avr_timer Timer
-   * @{
-   */
   
 #include "sim_avr.h"
 

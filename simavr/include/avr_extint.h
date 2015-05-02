@@ -20,6 +20,11 @@
  *  <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_extint Extern Interrupt
+ * @{
+ */
+
 #ifndef __AVR_EXTINT_H__
 #define __AVR_EXTINT_H__
 
@@ -124,3 +129,4 @@ extern "C"
 #endif
 
 #endif /*__AVR_EXTINT_H__*/
+/// @} end of avr_extint group

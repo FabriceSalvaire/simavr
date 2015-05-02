@@ -17,6 +17,17 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_regbit Register Bit
+ * @{
+ *
+ * These accessors are inlined and are used to perform the operations on avr_regbit_t
+ * definitions. This is the "official" way to access bits into registers The small footprint costs
+ * brings much better versatility for functions/bits that are not always defined in the same place
+ * on real AVR cores
+ *
+ */
+
 #ifndef __SIM_REGBIT_H__
 #define __SIM_REGBIT_H__
 
@@ -30,16 +41,7 @@ extern "C"
 #define ARRAY_SIZE(_aa) \
   (sizeof(_aa) / sizeof((_aa)[0]))
 
-  /*
-   * These accessors are inlined and are used to perform the operations on avr_regbit_t
-   * definitions. This is the "official" way to access bits into registers The small footprint costs
-   * brings much better versatility for functions/bits that are not always defined in the same place
-   * on real AVR cores
-   */
-
-  /**
-   * set/get/clear io register bits in one operation
-   */
+  /// Set/get/clear io register bits in one operation
   static inline uint8_t avr_regbit_set (avr_t * avr, avr_regbit_t rb)
   {
     uint16_t a = rb.reg;
@@ -64,9 +66,7 @@ extern "C"
     return (avr->data[a] >> rb.bit) & rb.mask;
   }
 
-  /**
-   * Set the 'raw' bits, if 'v' is the unshifted value of the bits
-   */
+  /// Set the 'raw' bits, if 'v' is the unshifted value of the bits
   static inline uint8_t avr_regbit_setto_raw (avr_t * avr, avr_regbit_t rb, uint8_t v)
   {
     uint16_t a = rb.reg;
@@ -88,10 +88,8 @@ extern "C"
     return (avr->data[a] >> rb.bit) & rb.mask;
   }
 
-  /**
-   * Using regbit from value eliminates some of the set to test then clear register operations.
-   * makes cheking register bits before setting easier.
-   */
+  /// Using regbit from value eliminates some of the set to test then clear register operations.
+  /// makes cheking register bits before setting easier.
   static inline uint8_t avr_regbit_from_value (avr_t * avr, avr_regbit_t rb, uint8_t value)
   {
     uint16_t a = rb.reg;
@@ -100,15 +98,13 @@ extern "C"
     return (value >> rb.bit) & rb.mask;
   }
 
-  /**
-   * Return the bit(s) 'in position' instead of zero based
-   */
+  /// Return the bit(s) 'in position' instead of zero based
   static inline uint8_t avr_regbit_get_raw (avr_t * avr, avr_regbit_t rb)
   {
     uint16_t a = rb.reg;
     if (!a)
       return 0;
-    //uint8_t m = rb.mask << rb.bit;
+    // uint8_t m = rb.mask << rb.bit;
     return (avr->data[a]) & (rb.mask << rb.bit);
   }
 
@@ -120,11 +116,9 @@ extern "C"
     return avr->data[a];
   }
 
-  /**
-   * This reads the bits for an array of avr_regbit_t, make up a "byte" with them.
-   * This allows reading bits like CS0, CS1, CS2 etc even if they are not in the same physical IO
-   * register.
-   */
+  /// This reads the bits for an array of avr_regbit_t, make up a "byte" with them.
+  /// This allows reading bits like CS0, CS1, CS2 etc even if they are not in the same physical IO
+  /// register.
   static inline uint8_t avr_regbit_get_array (avr_t * avr, avr_regbit_t * rb, int count)
   {
     uint8_t res = 0;
@@ -139,9 +133,7 @@ extern "C"
     return res;
   }
 
-  /**
-   * Does the reverse of avr_regbit_get_array
-   */
+  /// Does the reverse of avr_regbit_get_array
   static inline void avr_regbit_set_array_from_value (avr_t * avr,
                                                       avr_regbit_t * rb,
                                                       uint8_t count, uint8_t value)
@@ -157,7 +149,8 @@ extern "C"
 
 #define AVR_IO_REGBIT(_io, _bit) \
   { . reg = (_io), .bit = (_bit), .mask = 1 }
-#define AVR_IO_REGBITS(_io, _bit, _mask) \
+
+#define AVR_IO_REGBITS(_io, _bit, _mask)		\
   { . reg = (_io), .bit = (_bit), .mask = (_mask) }
 
 #ifdef __cplusplus
@@ -165,3 +158,4 @@ extern "C"
 #endif
 
 #endif /* __SIM_REGBIT_H__ */
+/// @} end of sim_regbit group

@@ -17,6 +17,14 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_elf ELF Support
+ * @{
+ *
+ * An ELF file corresponds to the output of the AVR GCC linker.
+ *
+ */
+
 #ifndef __SIM_ELF_H__
 #define __SIM_ELF_H__
 
@@ -43,7 +51,7 @@ extern "C"
     uint32_t frequency;
     uint32_t vcc, avcc, aref;
 
-    char tracename[128];    // trace filename
+    char tracename[128];    ///< trace filename
     uint32_t traceperiod;
     int tracecount;
     struct
@@ -63,7 +71,7 @@ extern "C"
     uint16_t command_register_addr;
     uint16_t console_register_addr;
 
-    uint32_t flashbase;    ///< base address
+    uint32_t flashbase;   ///< base address
     uint8_t *flash;
     uint32_t flashsize;
     uint32_t datasize;
@@ -78,7 +86,9 @@ extern "C"
 #endif
   } elf_firmware_t;
 
+  /// Read an ELF firmware
   int elf_read_firmware (const char *file, elf_firmware_t * firmware);
+  /// Load the firmware to the AVR instance
   void avr_load_firmware (avr_t * avr, elf_firmware_t * firmware);
 
 #ifdef __cplusplus
@@ -86,3 +96,4 @@ extern "C"
 #endif
 
 #endif /*__SIM_ELF_H__*/
+/// @} end of sim_elf group

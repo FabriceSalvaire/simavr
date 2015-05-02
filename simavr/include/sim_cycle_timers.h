@@ -17,7 +17,10 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-/*
+/**
+ * @defgroup sim_cycle_timers Cycle Timers
+ * @{
+ *
  * Cycle timers are callbacks that will be called when "when" cycle is reached these timers are one
  * shots, then get cleared if the timer function returns zero, they get reset if the callback
  * function returns a new cycle number
@@ -94,3 +97,4 @@ extern "C"
 #endif
 
 #endif /* __SIM_CYCLE_TIMERS_H___ */
+/// @} end of sim_cycle_timers group

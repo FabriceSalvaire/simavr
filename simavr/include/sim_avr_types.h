@@ -17,6 +17,11 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_avr_types AVR Types
+ * @{
+ */
+
 #ifndef __SIM_AVR_TYPES_H___
 #define __SIM_AVR_TYPES_H___
 
@@ -44,7 +49,7 @@ extern "C"
     uint32_t reg:9, bit:3, mask:8;
   } avr_regbit_t;
 
-  // printf() conversion specifier for avr_cycle_count_t
+/// printf() conversion specifier for avr_cycle_count_t
 #define PRI_avr_cycle_count PRIu64
 
   struct avr_t;
@@ -54,3 +59,4 @@ extern "C"
 #endif
 
 #endif /* __SIM_AVR_TYPES_H___ */
+/// @} end of sim_avr_types group

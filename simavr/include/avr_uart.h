@@ -17,6 +17,11 @@
  *  <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_uart UART
+ * @{
+ */
+
 #ifndef __AVR_UART_H__
 #define __AVR_UART_H__
 
@@ -127,3 +132,4 @@ extern "C"
 #endif
 
 #endif /*__AVR_UART_H__*/
+/// @} end of avr_uart group

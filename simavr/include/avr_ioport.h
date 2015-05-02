@@ -17,6 +17,11 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_ioport IO Port
+ * @{
+ */
+
 #ifndef __AVR_IOPORT_H__
 #define __AVR_IOPORT_H__
 
@@ -71,10 +76,7 @@ extern "C"
   /// add port name (uppercase) to get the port state
 #define AVR_IOCTL_IOPORT_GETSTATE(_name) AVR_IOCTL_DEF('i','o','s',(_name))
 
-  /**
-    * ioctl used to set default port state when set as input.
-    *
-    */
+  /// ioctl used to set default port state when set as input.
   typedef struct avr_ioport_external_t
   {
     unsigned long name:7, mask:8, value:8;
@@ -83,9 +85,7 @@ extern "C"
   /// add port name (uppercase) to set default input pin IRQ values
 #define AVR_IOCTL_IOPORT_SET_EXTERNAL(_name) AVR_IOCTL_DEF('i','o','p',(_name))
 
-  /**
-   * pin structure
-   */
+  /// pin structure
   typedef struct avr_iopin_t
   {
     uint16_t port:8;    ///< port e.g. 'B'
@@ -93,9 +93,7 @@ extern "C"
   } avr_iopin_t;
 #define AVR_IOPIN(_port, _pin) { .port = _port, .pin = _pin }
 
-  /**
-   * Definition for an IO port
-   */
+  /// Definition for an IO port
   typedef struct avr_ioport_t
   {
     avr_io_t io;
@@ -128,3 +126,4 @@ extern "C"
 #endif
 
 #endif /* __AVR_IOPORT_H__ */
+/// @} end of avr_ioport group

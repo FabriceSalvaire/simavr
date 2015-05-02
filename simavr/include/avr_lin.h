@@ -18,6 +18,11 @@
  *  <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup avr_lin LIN
+ * @{
+ */
+
 #ifndef __AVR_LIN_H__
 #define __AVR_LIN_H__
 
@@ -50,3 +55,4 @@ extern "C"
 #endif
 
 #endif /* __AVR_LIN_H__ */
+/// @} end of avr_lin group

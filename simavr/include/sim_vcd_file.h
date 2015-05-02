@@ -1,8 +1,6 @@
 /*
  * sim_vcd_file.c
  *
- * Implements a Value Change Dump file outout to generate traces & curves and display them in gtkwave.
- *
  * Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
  *
  * This file is part of simavr.
@@ -19,6 +17,15 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_vcd_file Value Change Dump
+ * @{
+ *
+ * Implements a Value Change Dump file output to generate traces and display them in a wave viewer
+ * like gtkwave @url http://gtkwave.sourceforge.net.
+ *
+ */
+
 #ifndef __SIM_VCD_FILE_H__
 #define __SIM_VCD_FILE_H__
 
@@ -30,16 +37,10 @@ extern "C"
 {
 #endif
 
-  /**
-   * @defgroup sim_vcd Value Change dump module for simavr.
-   * @{
-   * 
-   * This structure registers IRQ change hooks to various "source" IRQs and dumps their values
-   * (if changed) at certain intervals into the VCD file
-   */
-
 #define AVR_VCD_MAX_SIGNALS 32
 
+  /// This structure registers IRQ change hooks to various "source" IRQs and dumps their values (if
+  /// changed) at certain intervals into the VCD file
   typedef struct avr_vcd_signal_t
   {
     avr_irq_t irq;    ///< receiving IRQ
@@ -76,20 +77,19 @@ extern "C"
   } avr_vcd_t;
 
   /// Initializes a new VCD trace file, and returns zero if all is well
-  int avr_vcd_init (struct avr_t *avr, const char *filename,    // filename to write
-                    avr_vcd_t * vcd,    // vcd struct to initialize
-                    uint32_t period);    /< file flushing period is in usec
-  // Close a vcd file
+  int avr_vcd_init (struct avr_t *avr, const char *filename,   // filename to write
+                    avr_vcd_t * vcd,   // vcd struct to initialize
+                    uint32_t period);   // file flushing period is in usec
+  /// Close a vcd file
   void avr_vcd_close (avr_vcd_t * vcd);
 
-  /// @brief Add a trace signal to the vcd file.
-  ///
+  /// Add a trace signal to the vcd file.
   /// Must be called before avr_vcd_start()
   int avr_vcd_add_signal (avr_vcd_t * vcd, avr_irq_t * signal_irq, int signal_bit_size, const char *name);
 
   /// Starts recording the signal value into the file
   int avr_vcd_start (avr_vcd_t * vcd);
-  /// stops recording signal values into the file
+  /// Stops recording signal values into the file
   int avr_vcd_stop (avr_vcd_t * vcd);
 
 #ifdef __cplusplus
@@ -97,4 +97,4 @@ extern "C"
 #endif
 
 #endif /* __SIM_VCD_FILE_H__ */
-/// @} end of sim_vcd group
+/// @} end of sim_vcd_file group
