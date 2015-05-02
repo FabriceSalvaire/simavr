@@ -2,12 +2,16 @@ This repository provides a modified version of the AVR simulator `simavr
 <https://github.com/buserror/simavr>`_ mainly written by Michel Pollet and released under the GPL 3
 license.
 
+Main motivations was to help to understand how it works and then extend and use it.
+
 This repository features:
 
-* a CMake build
-* a reorganisation of the file hierarchy
-* a reindentation of the code to get rid of tabs and coding homogenisation
-* additional featured examples
+* a CMake build (which is also able to compile firmwares)
+* a reorganisation of the file hierarchy (e.g. broken parts was hidden in sub-directories)
+* a reindentation of the code to get rid of tabs and to homogenise coding standards
+* Doxygenation of the comments so as to generate an API documentation
+* additional featured examples to show the simulator in action
+* a Python binding using cffi
 
 The original README was renamed README-simavr.md to avoid clash with this one.
 
