@@ -12,7 +12,8 @@ This repository features:
 * Doxygenation of the comments so as to generate an API documentation
 * additional featured examples to show the simulator in action
 * a Python binding using cffi
-
+* data on AVR instructions and registers extracted semi-automatically from datasheets.
+  
 The original README was renamed README-simavr.md to avoid clash with this one.
 
 TODO: wipe this repository and rebuild a clean one so as to facilitate cherry picking
