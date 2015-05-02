@@ -1,21 +1,21 @@
 /*
-  avr_ioport.c
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+ *  avr_ioport.c
+ * 
+ *  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ * 
+ *  This file is part of simavr.
+ * 
+ *  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ *  General Public License as published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ * 
+ *  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ *  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ *  Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ *  <http://www.gnu.org/licenses/>.
+ */
 
 #include <stdio.h>
 
@@ -27,13 +27,15 @@ static uint8_t
 avr_ioport_read (struct avr_t *avr, avr_io_addr_t addr, void *param)
 {
   avr_ioport_t *p = (avr_ioport_t *) param;
-  uint8_t ddr = avr->data[p->r_ddr];
-  uint8_t v = (avr->data[p->r_pin] & ~ddr) | (avr->data[p->r_port] & ddr);
-  avr->data[addr] = v;
+
+  uint8_t *sram = avr->data;
+  uint8_t ddr = sram[p->r_ddr];
+  uint8_t v = (sram[p->r_pin] & ~ddr) | (sram[p->r_port] & ddr);
+  sram[addr] = v;
   // made to trigger potential watchpoints
   v = avr_core_watch_read (avr, addr);
   avr_raise_irq (p->io.irq + IOPORT_IRQ_REG_PIN, v);
-  D (if (avr->data[addr] != v) printf ("** PIN%c(%02x) = %02x\r\n", p->name, addr, v););
+  D (if (sram[addr] != v) printf ("** PIN%c(%02x) = %02x\r\n", p->name, addr, v););
 
   return v;
 }
@@ -42,19 +44,19 @@ static void
 avr_ioport_update_irqs (avr_ioport_t * p)
 {
   avr_t *avr = p->io.avr;
-  uint8_t ddr = avr->data[p->r_ddr];
+  uint8_t *sram = avr->data;
+  uint8_t ddr = sram[p->r_ddr];
   // Set the PORT value if the pin is marked as output
   // otherwise, if there is an 'external' pullup, set it
-  // otherwise, if the PORT pin was 1 to indicate an
-  // internal pullup, set that.
+  // otherwise, if the PORT pin was 1 to indicate an internal pullup, set that.
   for (int i = 0; i < 8; i++)
     if (ddr & (1 << i))
-      avr_raise_irq (p->io.irq + i, (avr->data[p->r_port] >> i) & 1);
+      avr_raise_irq (p->io.irq + i, (sram[p->r_port] >> i) & 1);
     else if (p->external.pull_mask & (1 << i))
       avr_raise_irq (p->io.irq + i, (p->external.pull_value >> i) & 1);
-    else if ((avr->data[p->r_port] >> i) & 1)
+    else if ((sram[p->r_port] >> i) & 1)
       avr_raise_irq (p->io.irq + i, 1);
-  uint8_t pin = (avr->data[p->r_pin] & ~ddr) | (avr->data[p->r_port] & ddr);
+  uint8_t pin = (sram[p->r_pin] & ~ddr) | (sram[p->r_port] & ddr);
   pin = (pin & ~p->external.pull_mask) | p->external.pull_value;
   avr_raise_irq (p->io.irq + IOPORT_IRQ_PIN_ALL, pin);
 }
@@ -64,7 +66,7 @@ avr_ioport_write (struct avr_t *avr, avr_io_addr_t addr, uint8_t v, void *param)
 {
   avr_ioport_t *p = (avr_ioport_t *) param;
 
-  D (if (avr->data[addr] != v) printf ("** PORT%c(%02x) = %02x\r\n", p->name, addr, v););
+  D (if (sram[addr] != v) printf ("** PORT%c(%02x) = %02x\r\n", p->name, addr, v););
   avr_core_watch_write (avr, addr, v);
   avr_raise_irq (p->io.irq + IOPORT_IRQ_REG_PORT, v);
   avr_ioport_update_irqs (p);
@@ -79,7 +81,8 @@ avr_ioport_pin_write (struct avr_t *avr, avr_io_addr_t addr, uint8_t v, void *pa
 {
   avr_ioport_t *p = (avr_ioport_t *) param;
 
-  avr_ioport_write (avr, p->r_port, avr->data[p->r_port] ^ v, param);
+  uint8_t *sram = avr->data;
+  avr_ioport_write (avr, p->r_port, sram[p->r_port] ^ v, param);
 }
 
 /*
@@ -92,7 +95,7 @@ avr_ioport_ddr_write (struct avr_t *avr, avr_io_addr_t addr, uint8_t v, void *pa
 {
   avr_ioport_t *p = (avr_ioport_t *) param;
 
-  D (if (avr->data[addr] != v) printf ("** DDR%c(%02x) = %02x\r\n", p->name, addr, v););
+  D (if (sram[addr] != v) printf ("** DDR%c(%02x) = %02x\r\n", p->name, addr, v););
   avr_raise_irq (p->io.irq + IOPORT_IRQ_DIRECTION_ALL, v);
   avr_core_watch_write (avr, addr, v);
 
@@ -108,23 +111,25 @@ void
 avr_ioport_irq_notify (struct avr_irq_t *irq, uint32_t value, void *param)
 {
   avr_ioport_t *p = (avr_ioport_t *) param;
+
   avr_t *avr = p->io.avr;
+  uint8_t *sram = avr->data;
 
   int output = value & AVR_IOPORT_OUTPUT;
   value &= 0xff;
   uint8_t mask = 1 << irq->irq;
   // set the real PIN bit. ddr doesn't matter here as it's masked when read.
-  avr->data[p->r_pin] &= ~mask;
+  sram[p->r_pin] &= ~mask;
   if (value)
-    avr->data[p->r_pin] |= mask;
+    sram[p->r_pin] |= mask;
 
   if (output)   // if the IRQ was marked as Output, also do the IO write
-    avr_ioport_write (avr, p->r_port, (avr->data[p->r_port] & ~mask) | (value ? mask : 0), p);
+    avr_ioport_write (avr, p->r_port, (sram[p->r_port] & ~mask) | (value ? mask : 0), p);
 
   if (p->r_pcint)
     {
       // if the pcint bit is on, try to raise it
-      int raise = avr->data[p->r_pcint] & mask;
+      int raise = sram[p->r_pcint] & mask;
       if (raise)
         avr_raise_interrupt (avr, &p->pcint);
     }
@@ -142,7 +147,9 @@ static int
 avr_ioport_ioctl (struct avr_io_t *port, uint32_t ctl, void *io_param)
 {
   avr_ioport_t *p = (avr_ioport_t *) port;
+
   avr_t *avr = p->io.avr;
+  uint8_t *sram = avr->data;
   int res = -1;
 
   // all IOCTls require some sort of valid parameter, bail if not
@@ -183,9 +190,9 @@ avr_ioport_ioctl (struct avr_io_t *port, uint32_t ctl, void *io_param)
           {
             avr_ioport_state_t state = {
               .name = p->name,
-              .port = avr->data[p->r_port],
-              .ddr = avr->data[p->r_ddr],
-              .pin = avr->data[p->r_pin],
+              .port = sram[p->r_port],
+              .ddr = sram[p->r_ddr],
+              .pin = sram[p->r_pin],
             };
             if (io_param)
               *((avr_ioport_state_t *) io_param) = state;

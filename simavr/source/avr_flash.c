@@ -1,21 +1,21 @@
 /*
-  avr_flash.c
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+ *  avr_flash.c
+ * 
+ *  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ * 
+ *  This file is part of simavr.
+ * 
+ *  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ *  General Public License as published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ * 
+ *  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ *  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ *  Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ *  <http://www.gnu.org/licenses/>.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,7 +39,7 @@ avr_flash_write (avr_t * avr, avr_io_addr_t addr, uint8_t v, void *param)
 
   avr_core_watch_write (avr, addr, v);
 
-  //      printf("** avr_flash_write %02x\n", v);
+  // printf("** avr_flash_write %02x\n", v);
 
   if (avr_regbit_get (avr, p->selfprgen))
     avr_cycle_timer_register (avr, 4, avr_progen_clear, p);   // 4 cycles is very little!
@@ -69,7 +69,7 @@ avr_flash_ioctl (struct avr_io_t *port, uint32_t ctl, void *io_param)
     z |= avr->data[avr->rampz] << 16;
   uint16_t r01 = avr->data[0] | (avr->data[1] << 8);
 
-  //      printf("AVR_IOCTL_FLASH_SPM %02x Z:%04x R01:%04x\n", avr->data[p->r_spm], z,r01);
+  // printf("AVR_IOCTL_FLASH_SPM %02x Z:%04x R01:%04x\n", avr->data[p->r_spm], z,r01);
   if (avr_regbit_get (avr, p->selfprgen))
     {
       avr_cycle_timer_cancel (avr, avr_progen_clear, p);
@@ -77,8 +77,8 @@ avr_flash_ioctl (struct avr_io_t *port, uint32_t ctl, void *io_param)
       if (avr_regbit_get (avr, p->pgers))
         {
           z &= ~1;
-          AVR_LOG (avr, LOG_TRACE, "FLASH: Erasing page %04x (%d)\n", (z / p->spm_pagesize),
-                   p->spm_pagesize);
+          AVR_LOG (avr, LOG_TRACE, "FLASH: Erasing page %04x (%d)\n",
+		   (z / p->spm_pagesize), p->spm_pagesize);
           for (int i = 0; i < p->spm_pagesize; i++)
             avr->flash[z++] = 0xff;
         }

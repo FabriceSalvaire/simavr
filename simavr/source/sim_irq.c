@@ -131,6 +131,7 @@ avr_irq_register_notify (avr_irq_t * irq, avr_irq_notify_t notify, void *param)
   if (!irq || !notify)
     return;
 
+  // Check if the notification is already there
   avr_irq_hook_t *hook = irq->hook;
   while (hook)
     {
@@ -214,6 +215,7 @@ avr_connect_irq (avr_irq_t * src, avr_irq_t * dst)
       return;
     }
 
+  // Check if the connection is already there
   avr_irq_hook_t *hook = src->hook;
   while (hook)
     {
