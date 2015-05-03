@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. simavr - a lean and mean Atmel AVR simulator for linux &mdash; SimAVR 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="SimAVR 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="2. From Gitorious Wiki" href="gitorious-index.html"/>
+        <link rel="prev" title="Overview" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> SimAVR</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">1. simavr - a lean and mean Atmel AVR simulator for linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#supported-ios">1.1. Supported IOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#emulated-cores-very-easy-to-add-new-ones">1.2. Emulated Cores (very easy to add new ones!)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extras">1.3. Extras:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation-and-further-information">1.4. Documentation And Further Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing">1.5. Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vcd-support-built-in-logic-analyzer">1.6. VCD Support &#8211; built in logic analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">1.7. Example:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hd44780-lcd-board-demo">1.8. HD44780 LCD Board Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gitorious-index.html">2. From Gitorious Wiki</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gitorious-main.html">2.1. simavr - 8 Bit AVR simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitorious-tips.html">2.2. Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitorious-get-started.html">2.3. Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitorious-links.html">2.4. Links</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">SimAVR</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>1. simavr - a lean and mean Atmel AVR simulator for linux</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/github-main.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="simavr-a-lean-and-mean-atmel-avr-simulator-for-linux">
+<h1>1. simavr - a lean and mean Atmel AVR simulator for linux<a class="headerlink" href="#simavr-a-lean-and-mean-atmel-avr-simulator-for-linux" title="Permalink to this headline">¶</a></h1>
+<p><em>simavr</em> is a new AVR simulator for linux, or any platform that uses avr-gcc. It uses avr-gcc&#8217;s own
+register definition to simplify creating new targets for supported AVR devices. The core was made to
+be small and compact, and hackable so allow quick prototyping of an AVR project. The AVR core is now
+stable for use with parts with &lt;= 128KB flash, and with preliminary support for the bigger
+parts. The simulator loads ELF files directly, and there is even a way to specify simulation
+parameters directly in the emulated code using an .elf section. You can also load multipart HEX
+files.</p>
+<div class="section" id="supported-ios">
+<h2>1.1. Supported IOs<a class="headerlink" href="#supported-ios" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><em>eeprom</em></li>
+<li><em>watchdog</em></li>
+<li><em>IO ports</em> (including pin interrupts)</li>
+<li><em>Timers</em>, 8 &amp;16 (Normal, CTC and Fast PWM, the overflow interrupt too)</li>
+<li>The <em>UART</em>, including tx &amp; rx interrupts (there is a loopback/local echo test mode too)</li>
+<li><em>SPI</em>, master/slave including the interrupt</li>
+<li><em>i2c</em> Master &amp; Slave</li>
+<li>External <em>Interrupts</em>, INT0 and so on.</li>
+<li><em>ADC</em></li>
+<li>Self-programming (ie bootloaders!)</li>
+</ul>
+</div>
+<div class="section" id="emulated-cores-very-easy-to-add-new-ones">
+<h2>1.2. Emulated Cores (very easy to add new ones!)<a class="headerlink" href="#emulated-cores-very-easy-to-add-new-ones" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>ATMega2560</li>
+<li>AT90USB162 (with USB!)</li>
+<li>ATMega1281</li>
+<li>ATMega1280</li>
+<li>ATMega128</li>
+<li>ATMega128rf1</li>
+<li>ATMega16M1</li>
+<li>ATMega169</li>
+<li>ATMega162</li>
+<li>ATMega164/324/644</li>
+<li>ATMega48/88/168/328</li>
+<li>ATMega8/16/32</li>
+<li>ATTiny25/45/85</li>
+<li>ATTIny44/84</li>
+<li>ATTiny2313/2313v</li>
+<li>ATTiny13/13a</li>
+</ul>
+</div>
+<div class="section" id="extras">
+<h2>1.3. Extras:<a class="headerlink" href="#extras" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>fully working <em>gdb</em> support including some pretty cool “passive modes”.</li>
+<li>There is also very easy support for “VCD” (Value Change Dump) that can be visualized graphically
+as “waveforms” with tools like <em>gtkwave</em> (see below).</li>
+<li>There are a few examples of real life firmwares running on simavr, including OpenGL rendering of
+the display …</li>
+<li>There is support for <em>Arduino</em>, but no IDE integration</li>
+</ul>
+</div>
+<div class="section" id="documentation-and-further-information">
+<h2>1.4. Documentation And Further Information<a class="headerlink" href="#documentation-and-further-information" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Manual / Developer Guide: <a class="reference external" href="https://github.com/buserror-uk/simavr/blob/master/doc/manual/manual.pdf?raw=true">https://github.com/buserror-uk/simavr/blob/master/doc/manual/manual.pdf?raw=true</a></li>
+<li>Examples: <a class="reference external" href="https://github.com/buserror-uk/simavr/tree/master/examples">https://github.com/buserror-uk/simavr/tree/master/examples</a></li>
+<li>Mailing List: <a class="reference external" href="http://groups.google.com/group/simavr">http://groups.google.com/group/simavr</a></li>
+<li>IRC: <em>#simavr</em> on Freenode</li>
+</ul>
+</div>
+<div class="section" id="contributing">
+<h2>1.5. Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>Patches are always welcome! Please submit your changes via Github pull requests.</p>
+</div>
+<div class="section" id="vcd-support-built-in-logic-analyzer">
+<h2>1.6. VCD Support &#8211; built in logic analyzer<a class="headerlink" href="#vcd-support-built-in-logic-analyzer" title="Permalink to this headline">¶</a></h2>
+<p><em>simavr</em> can output most of its pins, firmware variables, interrupts and a few other things as
+signals to be dumped into a file that can be plotted using gtkwave for further, precise analysis.</p>
+<p>A firmware can contain instructions for <em>simavr</em> to know what to trace, and the file is
+automatically generated.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>const struct avr_mmcu_vcd_trace_t _mytrace[]  _MMCU_ = {
+    { AVR_MCU_VCD_SYMBOL(&quot;UDR0&quot;), .what = (void*)&amp;UDR0, },
+    { AVR_MCU_VCD_SYMBOL(&quot;UDRE0&quot;), .mask = (1 &lt;&lt; UDRE0), .what = (void*)&amp;UCSR0A, },
+};
+</pre></div>
+</div>
+<p>Will tell <em>simavr</em> to generate a trace everytime the UDR0 register changes and everytime the
+interrupt is raised (in UCSR0A). The <em>MMCU</em> tag tells gcc that it needs compiling, but it won&#8217;t be
+linked in your program, so it takes literally zero bytes, this is a code section that is private to
+<em>simavr</em>, it&#8217;s free!</p>
+<p>A program running with these instructions and writing to the serial port will generate a file that
+will display:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./simavr/run_avr tests/atmega88_example.axf
+AVR_MMCU_TAG_VCD_TRACE 00c6:00 - UDR0
+AVR_MMCU_TAG_VCD_TRACE 00c0:20 - UDRE0
+Loaded 1780 .text
+Loaded 114 .data
+Loaded 4 .eeprom
+Starting atmega88 - flashend 1fff ramend 04ff e2end 01ff
+atmega88 init
+avr_eeprom_ioctl: AVR_IOCTL_EEPROM_SET Loaded 4 at offset 0
+Creating VCD trace file &#39;gtkwave_trace.vcd&#39;
+Read from eeprom 0xdeadbeef -- should be 0xdeadbeef..
+Read from eeprom 0xcafef00d -- should be 0xcafef00d..
+simavr: sleeping with interrupts off, quitting gracefully
+</pre></div>
+</div>
+<p>And when the file is loaded in gtkwave, you see:
+![gtkwave](<a class="reference external" href="https://github.com/buserror-uk/simavr/raw/master/doc/img/gtkwave1.png">https://github.com/buserror-uk/simavr/raw/master/doc/img/gtkwave1.png</a>)</p>
+<p>You get a very precise timing breakdown of any change that you add to the trace, down to the AVR
+cycle.</p>
+</div>
+<div class="section" id="example">
+<h2>1.7. Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p><em>simavr</em> is really made to be the center for emulating your own AVR projects, not just a debugger,
+but also the emulating the peripherals you will use in your firmware, so you can test and develop
+offline, and now and then try it on the hardware.</p>
+<p>You can also use <em>simavr</em> to do test units on your shipping firmware to validate it before you ship
+a new version, to prevent regressions or mistakes.</p>
+<p><em>simavr</em> has a few &#8216;complete projects/ that demonstrate this, most of them were made using real
+hardware at some point, and the firmware binary is <em>exactly</em> the one that ran on the hardware. The
+key here is to emulate the <em>parts</em> or peripherals that are hooked to the AVR. Of course, you don&#8217;t
+have to emulate the full hardware, you just need to generate the proper stimulus so that the AVR is
+fooled.</p>
+</div>
+<div class="section" id="hd44780-lcd-board-demo">
+<h2>1.8. HD44780 LCD Board Demo<a class="headerlink" href="#hd44780-lcd-board-demo" title="Permalink to this headline">¶</a></h2>
+<p>![lcd](<a class="reference external" href="https://github.com/buserror-uk/simavr/raw/master/doc/img/hd44780.png">https://github.com/buserror-uk/simavr/raw/master/doc/img/hd44780.png</a>)</p>
+<p>This example board hooks up an Atmega48 to an emulated HD44780 LCD and display a running counter in
+the &#8216;lcd&#8217;. Everything is emulated, the firmware runs exactly like this on a real hardware.</p>
+<p>![lcd-gtkwave](<a class="reference external" href="https://github.com/buserror-uk/simavr/raw/master/doc/img/hd44780-wave.png">https://github.com/buserror-uk/simavr/raw/master/doc/img/hd44780-wave.png</a>)</p>
+<p>And this is a gtkwave trace of what the firmware is doing. You can zoom in, measure, etc in gtkwave,
+select trades to see etc.</p>
+<p>Quite a few other examples are available!</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gitorious-index.html" class="btn btn-neutral float-right" title="2. From Gitorious Wiki">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Overview"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Michel Pollet.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

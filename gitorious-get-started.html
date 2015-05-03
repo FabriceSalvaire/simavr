@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.3. Get Started &mdash; SimAVR 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="SimAVR 1.0.0 documentation" href="index.html"/>
+        <link rel="up" title="2. From Gitorious Wiki" href="gitorious-index.html"/>
+        <link rel="next" title="2.4. Links" href="gitorious-links.html"/>
+        <link rel="prev" title="2.2. Tips" href="gitorious-tips.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> SimAVR</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="github-main.html">1. simavr - a lean and mean Atmel AVR simulator for linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="github-main.html#supported-ios">1.1. Supported IOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-main.html#emulated-cores-very-easy-to-add-new-ones">1.2. Emulated Cores (very easy to add new ones!)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-main.html#extras">1.3. Extras:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-main.html#documentation-and-further-information">1.4. Documentation And Further Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-main.html#contributing">1.5. Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-main.html#vcd-support-built-in-logic-analyzer">1.6. VCD Support &#8211; built in logic analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-main.html#example">1.7. Example:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-main.html#hd44780-lcd-board-demo">1.8. HD44780 LCD Board Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="gitorious-index.html">2. From Gitorious Wiki</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gitorious-main.html">2.1. simavr - 8 Bit AVR simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitorious-tips.html">2.2. Tips</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">2.3. Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitorious-links.html">2.4. Links</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">SimAVR</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="gitorious-index.html">2. From Gitorious Wiki</a> &raquo;</li>
+      
+    <li>2.3. Get Started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/gitorious-get-started.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="get-started">
+<h1>2.3. Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="linux">
+<h2>2.3.1. Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<p>This instructions are for Ubuntu 10.10 / Debian / Fedora, but it should be easy to adapt them to
+other systems.</p>
+<div class="section" id="prepare-system">
+<h3>2.3.1.1. Prepare System<a class="headerlink" href="#prepare-system" title="Permalink to this headline">¶</a></h3>
+<p>You need to setup your development environment, but since you are interested in an AVR simulator,
+you should have done this already ;-)</p>
+<ul class="simple">
+<li>gcc</li>
+<li>make</li>
+<li>gcc-avr</li>
+<li>avr-libc</li>
+</ul>
+<p>Ubuntu 10.10 / Debian:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install gcc make
+sudo apt-get install gcc-avr avr-libc
+</pre></div>
+</div>
+<p>To build the simulator you also need the ELF package:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install libelf-dev
+</pre></div>
+</div>
+<p>And the Open GL Utility Toolkit for the GUI examples:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install freeglut3 freeglut3-dev
+</pre></div>
+</div>
+<p>Fedora:</p>
+<div class="highlight-python"><div class="highlight"><pre>yum install elfutils-libelf-devel gcc make avr-binutils avr-gcc avr-gdb avr-libc
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-simavr">
+<h3>2.3.1.2. Install simavr<a class="headerlink" href="#install-simavr" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">download</p>
+<p>First of all you need to get the simavr sources.  direct download link:
+<a class="reference external" href="http://gitorious.org/simavr/simavr/archive-tarball/master">http://gitorious.org/simavr/simavr/archive-tarball/master</a>
+Or clone it with GIT.</p>
+</li>
+<li><p class="first">extract</p>
+<p>copy the package to your development directory and unpack it:</p>
+<div class="highlight-python"><div class="highlight"><pre>tar xfvz simavr-simavr-master.tar.gz
+</pre></div>
+</div>
+</li>
+<li><p class="first">build simavr:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd simavr-simavr
+make all
+</pre></div>
+</div>
+</li>
+<li><p class="first">test your installation:</p>
+<div class="highlight-python"><div class="highlight"><pre>make -C tests run_tests
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="run-your-avr-firmware">
+<h3>2.3.1.3. Run Your AVR Firmware<a class="headerlink" href="#run-your-avr-firmware" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>./simavr/run_avr firmware.afx
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python"><div class="highlight"><pre>./simavr/run_avr -m atmega88 - f 8000000 firmware.hex
+</pre></div>
+</div>
+<p>e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>./simavr/run_avr ./tests/atmega88_example.axf
+</pre></div>
+</div>
+</div>
+<div class="section" id="debug-with-gdb">
+<h3>2.3.1.4. Debug with GDB<a class="headerlink" href="#debug-with-gdb" title="Permalink to this headline">¶</a></h3>
+<p>TBD</p>
+</div>
+</div>
+<div class="section" id="windows">
+<h2>2.3.2. Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p>Since simavr was written for Linux it’s a bit tricky, but still possible to run it under Windows.</p>
+<div class="section" id="id1">
+<h3>2.3.2.1. Prepare System<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>You need to setup WinAVR and Cygwin.</p>
+<p><em>WinAVR</em>
+If you have not already, install WinAVR. (This tutorial supposes you are using WinAVR-20100110.)
+<a class="reference external" href="http://winavr.sourceforge.net">http://winavr.sourceforge.net</a></p>
+<p><em>Cygwin</em>
+Get setup.exe from the Cygwin homepage: (Cygwin 1.7 or later)
+<a class="reference external" href="http://www.cygwin.com">http://www.cygwin.com</a></p>
+<p>run the setup and select the following packages:</p>
+<ul class="simple">
+<li>binutils</li>
+<li>gcc</li>
+<li>gcc-core</li>
+<li>gdb (optional)</li>
+<li>libelf0-devel</li>
+<li>make</li>
+<li>libglut-devel</li>
+<li>freeglut</li>
+<li>x-start-menue-icons (if you want to test the graphical examples)</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>2.3.2.2. Install simavr<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">First of all you need to get the simavr sources</p>
+<p>direct download link:
+<a class="reference external" href="http://gitorious.org/simavr/simavr/archive-tarball/master">http://gitorious.org/simavr/simavr/archive-tarball/master</a>
+and copy the package to your development directory
+Or clone it with GIT.</p>
+</li>
+<li><p class="first">extract</p>
+<p>open the <em>Cygwin shell</em> (start Cygwin)
+Switch to the directory you have copied simavr.
+Be aware that this is a Linux like command shell, so files are case-sensitive and there are no drive
+letters. Windows drive letters will become <cite>/cygdrive/_driveletter_</cite> e.g. <cite>X: &#8211;&gt; /cygdrive/X/...</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /cygdrive/X/my_development_directory
+tar xfvz simavr-simavr-master.tar.gz
+cd simavr-simavr
+</pre></div>
+</div>
+</li>
+<li><p class="first">prepare simavr</p>
+<p>Open _Makefile.common_ in your simavr directory with your favorite text editor.
+Search for <cite>AVR_ROOT := /usr/lib/avr</cite> change this and the following lines to:</p>
+<div class="highlight-python"><div class="highlight"><pre>AVR_ROOT := ${AVR32_HOME}
+AVR_INC := ${shell echo ${AVR32_HOME} | sed &#39;s/\(.\):/\/cygdrive\/\1\//&#39;}/avr
+AVR := ${AVR_ROOT}/bin/avr-
+#CFLAGS +=  -fPIC
+</pre></div>
+</div>
+<p>Search for the following block:</p>
+<div class="highlight-python"><div class="highlight"><pre>AVR_ROOT := /usr/lib/avr
+AVR_INC := ${AVR_ROOT}
+AVR := avr-
+CFLAGS +=  -fPIC
+endif
+</pre></div>
+</div>
+<p>change it to:</p>
+<div class="highlight-python"><div class="highlight"><pre>ifneq ($(AVR32_HOME),)
+# use WinAVR
+AVR_ROOT := ${AVR32_HOME}
+AVR_INC := ${shell echo ${AVR_ROOT} | sed &#39;s/\(.\):/\/cygdrive\/\1\//&#39;}/avr
+AVR := ${shell echo ${AVR_ROOT} | sed &#39;s/\(.\):/\/cygdrive\/\1\//&#39;}/bin/avr-
+else
+AVR_ROOT := /usr/lib/avr
+AVR_INC := ${AVR_ROOT}
+AVR := avr-
+CFLAGS +=  -fPIC
+endif
+endif
+</pre></div>
+</div>
+<p>If you have problems reading _Makefile.common_ because your editor is not able to handle UNIX texts,
+you can use <cite>unix2dos Makefile.common</cite> in the Cygwin shell.</p>
+<p>Open <em>tests/Makefile</em> and change <cite>libsimavr.so</cite> to <cite>libsimavr.a</cite> for the test_% target:</p>
+<div class="highlight-python"><div class="highlight"><pre>test_%: ${OBJ}/test_%.o ${OBJ}/tests.o ${simavr}/simavr/${OBJ}/libsimavr.a
+</pre></div>
+</div>
+<p>In the header file: <em>simavrsimsim_core.h</em> find the declaration of <cite>_avr_sp_get()</cite> and add an inline:</p>
+<div class="highlight-python"><div class="highlight"><pre>inline uint16_t _avr_sp_get(avr_t * avr);
+</pre></div>
+</div>
+<p>in <em>simavrsimsim_io.c</em> you need to add a (int) type-cast in line 199:</p>
+<div class="highlight-python"><div class="highlight"><pre>while (!isalpha((int)*kind))
+</pre></div>
+</div>
+<p>Alternatively, you can download from another repository which is already &#8220;Cygwin ready&#8221;, but may be
+some releases behind the main repository.
+<a class="reference external" href="https://gitorious.org/simavr/orcas-simavr/archive-tarball/master">https://gitorious.org/simavr/orcas-simavr/archive-tarball/master</a>
+Or clone it with GIT.</p>
+</li>
+<li><p class="first">build simavr</p>
+<p>Make sure that the <cite>AVR32_HOME</cite> environment variable is set to your WinAVR directory:
+Open a Cygwin shell and enter:</p>
+<div class="highlight-python"><div class="highlight"><pre>echo $AVR32_HOME
+</pre></div>
+</div>
+<p>You should get something like:</p>
+<div class="highlight-python"><div class="highlight"><pre>C:\WinAVR-20100110
+</pre></div>
+</div>
+<p>If not, set the environment Variable in your Windows settings and restart the Cygwin shell.</p>
+<p>Switch to the simavr directory in the <em>Cygwin shell</em>.
+Now you can build the simulator:</p>
+<div class="highlight-python"><div class="highlight"><pre>make all
+</pre></div>
+</div>
+<p>If you get an error message:
+<cite>This application has requested the Runtime to terminate in an unusual way.</cite>
+Try to reinstall Cygwin.</p>
+</li>
+<li><p class="first">test your installation</p>
+<p>in the <em>Cygwin shell</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd tests
+./run_tests
+cd ..
+</pre></div>
+</div>
+<p>If you get an <cite>Permission denied</cite> error, the executable-flag of run_tests might not be set
+correctly. Fix it with:</p>
+<div class="highlight-python"><div class="highlight"><pre>chmod a+x run_tests
+</pre></div>
+</div>
+</li>
+<li><p class="first">OpenGL – graphics with Cygwin</p>
+<p>Start a Cygwin X Window:
+From the Windows Start menu select: <em>Cygwin-X -&gt; XWin Server</em>
+This may take some Section</p>
+<p>onds and a new <em>X Shell</em> should appear. In the Windows icon tray there is a
+new symbol: a big <em>X</em> for Cygwins X server. If no new window with an <em>X Shell</em> opens, the X
+server is probably already running: right click on the <em>X</em> in
+the <em>system tray -&gt; Applications -&gt; xterm</em>
+In the <em>X Shell</em> switch to the <cite>simavrexamplesboard_ledramp</cite> directory and call:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /cygdrive/X/my_development_directory
+cd simavr-simavr/examples/board_ledramp
+./ obj-i686-pc-cygwin/ledramp.elf
+</pre></div>
+</div>
+<p>A new window with a LED ramp will open. Click this window do give it the focus. Now you can use the
+keys as prompted: &#8216;SPACE&#8217;, &#8216;q&#8217;, ...</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>2.3.2.3. Run Your AVR Firmware<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Compile your AVR program just as you would do for a real hardware (AVR Eclipse Plugin, AVR Studio, ...).
+Then open a <em>Cygwin Shell</em> and run your firmware with simavr:</p>
+<div class="highlight-python"><div class="highlight"><pre>./simavr/run_avr firmware.afx
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-python"><div class="highlight"><pre>./simavr/run_avr -m atmega88 - f 8000000 firmware.hex
+</pre></div>
+</div>
+<p>e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>./simavr/run_avr ./tests/atmega88_example.axf
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>2.3.2.4. Debug with GDB<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>TBD</p>
+</div>
+</div>
+<div class="section" id="virtual-pcb-with-simavr">
+<h2>2.3.3. Virtual PCB with simavr<a class="headerlink" href="#virtual-pcb-with-simavr" title="Permalink to this headline">¶</a></h2>
+<p>One of the great thinks of simavr is, that you can build up your virtual board around the AVR.  See
+the examples directory on how to build your own virtual periphery devices and how to connect them to
+the AVR with IRQ callbacks.</p>
+<p>The main interface between simavr and virtual periphery are callback functions.</p>
+<div class="section" id="avr-irq-register-notify">
+<h3>2.3.3.1. avr_irq_register_notify()<a class="headerlink" href="#avr-irq-register-notify" title="Permalink to this headline">¶</a></h3>
+<p>You can register a callback function with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">avr_irq_register_notify</span><span class="p">(</span> <span class="n">avr_io_getirq</span><span class="p">(</span><span class="n">avr</span><span class="p">,</span> <span class="n">AVR_IOCTL_IOPORT_GETIRQ</span><span class="p">(</span><span class="s">&#39;B&#39;</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">my_pin_hook</span><span class="p">,</span> <span class="n">my_params</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>avr_io_getirq(avr, AVR_IOCTL_IOPORT_GETIRQ(&#8216;B&#8217;), 0)
+gets the corresponding IRQ for port B pin 0</li>
+<li>my_pin_hook
+is the callback function that should be called when the IRQ has been triggered</li>
+<li>my_params
+is a pointer which is passed to the callback function, this can be a pointer to some structure or,
+using some C tweaks, an integer.</li>
+</ul>
+<p>e.g.:</p>
+<div class="highlight-python"><div class="highlight"><pre>for (i = 0; i &lt; 8; i++)
+   avr_irq_register_notify(
+     avr_io_getirq(avr, AVR_IOCTL_IOPORT_GETIRQ(&#39;B&#39;), i),
+     pin_changed_hook,
+     (void*)i);
+</pre></div>
+</div>
+</div>
+<div class="section" id="avr-connect-irq">
+<h3>2.3.3.2. avr_connect_irq()<a class="headerlink" href="#avr-connect-irq" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gitorious-links.html" class="btn btn-neutral float-right" title="2.4. Links">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gitorious-tips.html" class="btn btn-neutral" title="2.2. Tips"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Michel Pollet.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
