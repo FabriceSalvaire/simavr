@@ -33,27 +33,27 @@ extern "C"
 #include "sim_avr.h"
 
   enum
-  {
-    IOPORT_IRQ_PIN0 = 0, IOPORT_IRQ_PIN1, IOPORT_IRQ_PIN2, IOPORT_IRQ_PIN3,
-    IOPORT_IRQ_PIN4, IOPORT_IRQ_PIN5, IOPORT_IRQ_PIN6, IOPORT_IRQ_PIN7,
-    IOPORT_IRQ_PIN_ALL,
-    IOPORT_IRQ_DIRECTION_ALL,
-    IOPORT_IRQ_REG_PORT,
-    IOPORT_IRQ_REG_PIN,
-    IOPORT_IRQ_COUNT
-  };
+    {
+      IOPORT_IRQ_PIN0 = 0, IOPORT_IRQ_PIN1, IOPORT_IRQ_PIN2, IOPORT_IRQ_PIN3,
+      IOPORT_IRQ_PIN4, IOPORT_IRQ_PIN5, IOPORT_IRQ_PIN6, IOPORT_IRQ_PIN7,
+      IOPORT_IRQ_PIN_ALL,
+      IOPORT_IRQ_DIRECTION_ALL,
+      IOPORT_IRQ_REG_PORT,
+      IOPORT_IRQ_REG_PIN,
+      IOPORT_IRQ_COUNT
+    };
 
 #define AVR_IOPORT_OUTPUT 0x100
 
-/// add port name (uppercase) to get the real IRQ
+  /// add port name (uppercase) to get the real IRQ
 #define AVR_IOCTL_IOPORT_GETIRQ(_name) AVR_IOCTL_DEF('i','o','g',(_name))
 
   /// this ioctl takes a avr_regbit_t, compares the register address to PORT/PIN/DDR and return the
   /// corresponding IRQ(s) if it matches
   typedef struct avr_ioport_getirq_t
   {
-    avr_regbit_t bit;    ///< bit wanted
-    avr_irq_t *irq[8];    ///< result, terminated by NULL if < 8
+    avr_regbit_t bit;   ///< bit wanted
+    avr_irq_t *irq[8];   ///< result, terminated by NULL if < 8
   } avr_ioport_getirq_t;
 
 #define AVR_IOCTL_IOPORT_GETIRQ_REGBIT AVR_IOCTL_DEF('i','o','g','r')
@@ -88,8 +88,8 @@ extern "C"
   /// pin structure
   typedef struct avr_iopin_t
   {
-    uint16_t port:8;    ///< port e.g. 'B'
-    uint16_t pin:8;    ///< pin number
+    uint16_t port:8;   ///< port e.g. 'B'
+    uint16_t pin:8;   ///< pin number
   } avr_iopin_t;
 #define AVR_IOPIN(_port, _pin) { .port = _port, .pin = _pin }
 
@@ -102,8 +102,8 @@ extern "C"
     avr_io_addr_t r_ddr;
     avr_io_addr_t r_pin;
 
-    avr_int_vector_t pcint;    ///< PCINT vector
-    avr_io_addr_t r_pcint;    ///< pcint 8 pins mask
+    avr_int_vector_t pcint;   ///< PCINT vector
+    avr_io_addr_t r_pcint;   ///< pcint 8 pins mask
 
     /// this represent the default IRQ value when the port is set as input.
     /// If the mask is not set, no output value is sent on the output IRQ. If the mask is set, the
@@ -116,10 +116,10 @@ extern "C"
 
   void avr_ioport_init (avr_t * avr, avr_ioport_t * port);
 
-#define AVR_IOPORT_DECLARE(_lname, _cname, _uname) \
- .port ## _lname = { \
-  .name = _cname, .r_port = PORT ## _uname, .r_ddr = DDR ## _uname, .r_pin = PIN ## _uname, \
- }
+#define AVR_IOPORT_DECLARE(_lname, _cname, _uname)			\
+  .port ## _lname = {							\
+    .name = _cname, .r_port = PORT ## _uname, .r_ddr = DDR ## _uname, .r_pin = PIN ## _uname, \
+  }
 
 #ifdef __cplusplus
 };
