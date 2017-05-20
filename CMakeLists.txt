@@ -61,7 +61,19 @@ set(CMAKE_VERBOSE_MAKEFILE TRUE)
 # Compiler Options
 #
 
-set(CMAKE_C_FLAGS "-Wall -fPIC --std=gnu99 -MMD -O2") # -g
+# -Wpedantic: Issue all the warnings demanded by strict ISO C 
+# -Wall: This enables all the warnings about constructions that some users consider questionable
+# -Wextra: This enables some extra warning flags that are not enabled by -Wall
+
+set(C_FLAGS_WARNING
+  -Wall
+  -Wextra
+  -Wno-unused-parameter
+  )
+set(C_FLAGS_STANDARD --std=c99 -Wpedantic)
+set(C_FLAGS_ERROR -fdiagnostics-color) # colourise GCC output
+
+set(CMAKE_C_FLAGS "${C_FLAGS_WARNING} ${C_FLAGS_STANDARD} ${C_FLAGS_ERROR} -O3") # -g
 
 # if(CMAKE_SYSTEM_NAME MATCHES "Linux")
 # endif(CMAKE_SYSTEM_NAME MATCHES "Linux")
@@ -71,19 +83,98 @@ set(CMAKE_C_FLAGS "-Wall -fPIC --std=gnu99 -MMD -O2") # -g
 # Find Libraries
 #
 
+# find_package()
+# find_library()
+
+####################################################################################################
+
+# AVR GCC Compiler Flags
+# 
+# -gdwarf-version: Produce debugging information in DWARF format
+# 
+# Use short types
+#   -funsigned-char
+#   -funsigned-bitfields
+#   -fpack-struct
+#   -fshort-enums
+# 
+# Set the cost of inline calls
+#   --param inline-call-cost=2
+#   -finline-limit=3
+#   -fno-inline-small-functions
+# 
+#   Prevents or limits the compiler from automatically inlining small functions automatically for
+#   speed. Doing so will usually make the program faster, but if the routine is used a lot you'll
+#   end up with a larger FLASH usage.
+# 
+# Don't include unused function and data
+#   -ffunction-sections
+#   -fdata-sections
+#   
+#   Generally used with --gc-sections. This causes each function to be placed into a separate
+#   internal memory section, which --gc-sections can then discard if the section (function) is
+#   unreferenced. Those two together will only help if you have a bunch of unused functions in your
+#   code, such as when you are using a library compiled with the option and linked statically.
+#   
+#   Note that if you have any "naked" functions in the placed in an .initN or .finiN section, you
+#   should also mark the function with a "used" attribute to prevent it's being optimised
+#   out. (Thanks to David Boone.)
+# 
+# Compile a freestanding program
+#   -ffreestanding and void main() __attribute__ ((noreturn));
+# 
+#   Tell the compiler your main function is not returning. This saves some bytes on the stack.
+# 
+# Linker Relaxation
+#    -Wl,--relax
+# 
+#    Almost always a win. Note that this is a linker flag that is passed to the linker using the -Wl
+#    flag.  Enables linker relaxations. By default, the linker links functions will a full CALL
+#    statement, which is wasteful if two functions are near each other. Relaxations will do more in
+#    the future, but currently (AFAIK) just replace CALL statements with RCALL where possible to
+#    save a few bytes.
+# 
+# Call Prologues/Epilogues
+#   -mcall-prologues
+# 
+#   Your application must be large enough for this to be a win. Take a close look at the code size
+#   before and after to make sure that this will actually decrease your code size.
+# 
+# Whole Program Optimisation
+#   --combine-fwhole-program
+# 
+#   Using these two flags will turn on whole program optimisation, but can only be done on C code
+#   (which is typical for an AVR). The catch is that you have to modify your Makefile to have it
+#   execute only a single command-line call to avr-gcc with *all* of your C files and all compiler
+#   and linker flags. GCC will then combine, compile, and link all the code into the final ELF file,
+#   but this also allows it to do whole program optimisation.
+# 
+# Loop optimisation
+#   -fno-tree-scev-cprop
+# 
+#   It will vectorise the outer loop when multiple loops are nested for a size benefit.
+# 
+# Wide types
+#   -fno-split-wide-types
+# 
+#   When using a type that occupies multiple registers, such as long long on a 32-bit system, split
+#   the registers apart and allocate them independently. This normally generates better code for
+#   those types, but may make debugging more difficult. The option -fno-split-wide-types will stop
+#   this.
+ 
 find_program(AVR_GCC avr-gcc)
 find_path(AVR_INCLUDE_DIRECTORY avr/version.h /usr/avr/include/)
 set(AVR_GCC_CFLAGS
-  -Wall -gdwarf-2 -Os -std=gnu99
   -DF_CPU=8000000
+  -Wall
+  -std=c99
+  -gdwarf-2
+  -Os
   -fno-inline-small-functions
   -ffunction-sections -fdata-sections
   -Wl,--relax,--gc-sections
   -Wl,--undefined=_mmcu,--section-start=.mmcu=0x910000
   )
-
-# find_package()
-# find_library()
   
 ####################################################################################################
 #
