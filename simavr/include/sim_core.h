@@ -17,22 +17,17 @@
  * <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @defgroup sim_core Core Simulation
+ * @{
+ */
+
 #ifndef __SIM_CORE_H__
 #define __SIM_CORE_H__
 
 #ifdef __cplusplus
 extern "C"
 {
-#endif
-
-#ifdef NO_COLOR
-#define FONT_GREEN
-#define FONT_RED
-#define FONT_DEFAULT
-#else
-#define FONT_GREEN  "\e[32m"
-#define FONT_RED  "\e[31m"
-#define FONT_DEFAULT "\e[0m"
 #endif
 
   /// Instruction decoder, run ONE instruction
@@ -57,10 +52,12 @@ extern "C"
   void avr_dump_state (avr_t * avr);
 
 #define DUMP_REG() {							\
-    for (int i = 0; i < 32; i++) printf("%s=%02x%c", avr_regname(i), avr->data[i],i==15?'\n':' '); \
+    for (int i = 0; i < 32; i++)					\
+      printf("%s=%02x%c", avr_regname(i), avr->data[i],i==15?'\n':' ');	\
     printf("\n");							\
-    uint16_t y = avr->data[R_YL] | (avr->data[R_YH]<<8);		\
-    for (int i = 0; i < 20; i++) printf("Y+%02d=%02x ", i, avr->data[y+i]); \
+    uint16_t y = avr->data[R_YL] | (avr->data[R_YH] << 8);		\
+    for (int i = 0; i < 20; i++)					\
+      printf("Y+%02d=%02x ", i, avr->data[y+i]);			\
     printf("\n");							\
   }
 
@@ -70,7 +67,8 @@ extern "C"
     int pci = i-1;							\
     printf(FONT_RED "*** %04x: %-25s sp %04x\n" FONT_DEFAULT,		\
 	   avr->trace_data->stack_frame[pci].pc,			\
-	   avr->trace_data->codeline ? avr->trace_data->codeline[avr->trace_data->stack_frame[pci].pc>>1]->symbol : "unknown", \
+	   avr->trace_data->codeline ?					\
+	   avr->trace_data->codeline[avr->trace_data->stack_frame[pci].pc>>1]->symbol : "unknown", \
 	   avr->trace_data->stack_frame[pci].sp);			\
   }
 #else
@@ -90,20 +88,19 @@ extern "C"
 #define READ_SREG_INTO(avr, dst) {		\
     dst = 0;					\
     for (int i = 0; i < 8; i++)			\
-      if (avr->sreg[i] > 1) {			\
+      if (avr->sreg[i] > 1)			\
 	printf("** Invalid SREG!!\n");		\
-      } else if (avr->sreg[i])			\
+      else if (avr->sreg[i])			\
 	dst |= (1 << i);			\
   }
 
+  /**
+   * clear interrupt_state if disabling interrupts.
+   * set wait if enabling interrupts.
+   * no change if interrupt flag does not change.
+   */
   static inline void avr_sreg_set (avr_t * avr, uint8_t flag, uint8_t ival)
   {
-    /* 
-     * clear interrupt_state if disabling interrupts.
-     * set wait if enabling interrupts.
-     * no change if interrupt flag does not change.
-     */
-
     if (flag == S_I)
       {
         if (ival)
@@ -131,3 +128,4 @@ extern "C"
 #endif
 
 #endif /*__SIM_CORE_H__*/
+/// @} end of sim_core group

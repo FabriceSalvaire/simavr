@@ -150,7 +150,7 @@ extern "C"
 #define AVR_IO_REGBIT(_io, _bit) \
   { . reg = (_io), .bit = (_bit), .mask = 1 }
 
-#define AVR_IO_REGBITS(_io, _bit, _mask)		\
+#define AVR_IO_REGBITS(_io, _bit, _mask) \
   { . reg = (_io), .bit = (_bit), .mask = (_mask) }
 
 #ifdef __cplusplus

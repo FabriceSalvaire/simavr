@@ -32,9 +32,9 @@ extern "C"
 {
 #endif
 
-/// Used by the ioports to implement their own features see avr_eeprom.* for an example, and
-/// avr_ioctl().
-#define AVR_IOCTL_DEF(_a,_b,_c,_d)			\
+  /// Used by the ioports to implement their own features
+  /// see avr_eeprom.* for an example, and avr_ioctl().
+#define AVR_IOCTL_DEF(_a, _b, _c ,_d) \
   (((_a) << 24)|((_b) << 16)|((_c) << 8)|((_d)))
 
   /// IO module base struct
@@ -42,14 +42,14 @@ extern "C"
   typedef struct avr_io_t
   {
     struct avr_io_t *next;
-    avr_t *avr;    ///< avr we are attached to
-    const char *kind;    ///< pretty name, for debug
+    avr_t *avr;   ///< avr we are attached to
+    const char *kind;   ///< pretty name, for debug
 
-    const char **irq_names;    ///< IRQ names
+    const char **irq_names;   ///< IRQ names
 
-    uint32_t irq_ioctl_get;    ///< used to get irqs from this module
-    int irq_count;    ///< number of (optional) irqs
-    struct avr_irq_t *irq;    ///< optional external IRQs
+    uint32_t irq_ioctl_get;   ///< used to get irqs from this module
+    int irq_count;   ///< number of (optional) irqs
+    struct avr_irq_t *irq;   ///< optional external IRQs
 
     /// Called at reset time
     void (*reset) (struct avr_io_t * io);
@@ -93,7 +93,7 @@ extern "C"
   /// the "index" is a bit number, or ALL bits if index == 8
   avr_irq_t *avr_iomem_getirq (avr_t * avr,
                                avr_io_addr_t addr,
-                               const char *name /* Optional, if NULL, "ioXXXX" will be used */ ,
+                               const char *name,   // Optional, if NULL, "ioXXXX" will be used
                                int index);
 
   /// Terminates all IOs and remove from them from the io chain

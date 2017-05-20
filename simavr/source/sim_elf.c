@@ -214,15 +214,15 @@ elf_parse_mmcu_section (elf_firmware_t * firmware, uint8_t * src, uint32_t size)
           break;
         case AVR_MMCU_TAG_VCD_FILENAME:
           strcpy (firmware->tracename, (char *) src);
-	  break;
+          break;
         case AVR_MMCU_TAG_VCD_PERIOD:
-	  firmware->traceperiod = src[0] | (src[1] << 8) | (src[2] << 16) | (src[3] << 24);
+          firmware->traceperiod = src[0] | (src[1] << 8) | (src[2] << 16) | (src[3] << 24);
           break;
         case AVR_MMCU_TAG_SIMAVR_COMMAND:
-	  firmware->command_register_addr = src[0] | (src[1] << 8);
+          firmware->command_register_addr = src[0] | (src[1] << 8);
           break;
         case AVR_MMCU_TAG_SIMAVR_CONSOLE:
-	  firmware->console_register_addr = src[0] | (src[1] << 8);
+          firmware->console_register_addr = src[0] | (src[1] << 8);
           break;
         }
       size -= next;
@@ -233,8 +233,8 @@ elf_parse_mmcu_section (elf_firmware_t * firmware, uint8_t * src, uint32_t size)
 int
 elf_read_firmware (const char *file, elf_firmware_t * firmware)
 {
-  Elf32_Ehdr elf_header;        /* ELF header */
-  Elf *elf = NULL;      /* Our Elf pointer for libelf */
+  Elf32_Ehdr elf_header;   // ELF header
+  Elf *elf = NULL;   // Our Elf pointer for libelf
   int fd;   // File Descriptor
 
   if ((fd = open (file, O_RDONLY | O_BINARY)) == -1 ||
@@ -246,7 +246,7 @@ elf_read_firmware (const char *file, elf_firmware_t * firmware)
       return -1;
     }
 
-  Elf_Data *data_data = NULL, *data_text = NULL, *data_ee = NULL;       /* Data Descriptor */
+  Elf_Data *data_data = NULL, *data_text = NULL, *data_ee = NULL;   // Data Descriptor
 
   memset (firmware, 0, sizeof (*firmware));
 #if ELF_SYMBOLS
@@ -254,23 +254,23 @@ elf_read_firmware (const char *file, elf_firmware_t * firmware)
   firmware->symbol = NULL;
 #endif
 
-  /* this is actually mandatory !! otherwise elf_begin() fails */
+  // this is actually mandatory !! otherwise elf_begin() fails
   if (elf_version (EV_CURRENT) == EV_NONE)
     {
-      /* library out of date - recover from error */
+      // library out of date - recover from error
     }
   // Iterate through section headers again this time well stop when we find symbols
   elf = elf_begin (fd, ELF_C_READ, NULL);
-  //printf("Loading elf %s : %p\n", file, elf);
+  // printf("Loading elf %s : %p\n", file, elf);
 
-  Elf_Scn *scn = NULL;  /* Section Descriptor */
+  Elf_Scn *scn = NULL;   // Section Descriptor
 
   while ((scn = elf_nextscn (elf, scn)) != NULL)
     {
-      GElf_Shdr shdr;   /* Section Header */
+      GElf_Shdr shdr;   // Section Header
       gelf_getshdr (scn, &shdr);
       char *name = elf_strptr (elf, elf_header.e_shstrndx, shdr.sh_name);
-      //      printf("Walking elf section '%s'\n", name);
+      // printf("Walking elf section '%s'\n", name);
 
       if (!strcmp (name, ".text"))
         data_text = elf_getdata (scn, NULL);
@@ -341,6 +341,7 @@ elf_read_firmware (const char *file, elf_firmware_t * firmware)
         }
 #endif
     }
+
   uint32_t offset = 0;
   firmware->flashsize = (data_text ? data_text->d_size : 0) + (data_data ? data_data->d_size : 0);
   firmware->flash = malloc (firmware->flashsize);
@@ -369,6 +370,7 @@ elf_read_firmware (const char *file, elf_firmware_t * firmware)
       AVR_LOG (NULL, LOG_TRACE, "Loaded %u .eeprom\n", (unsigned int) data_ee->d_size);
       firmware->eesize = data_ee->d_size;
     }
+
   // hdump("flash", avr->flash, offset);
   elf_end (elf);
   close (fd);

@@ -32,6 +32,19 @@ extern "C"
 
 #include "sim_avr.h"
 
+#define AVR_IOPORT_OUTPUT 0x100
+
+  /// Add port name (uppercase) to get the real IRQ
+#define AVR_IOCTL_IOPORT_GETIRQ(_name) AVR_IOCTL_DEF('i', 'o', 'g', (_name))
+
+#define AVR_IOCTL_IOPORT_GETIRQ_REGBIT AVR_IOCTL_DEF('i', 'o', 'g', 'r')
+
+  /// Add port name (uppercase) to get the port state
+#define AVR_IOCTL_IOPORT_GETSTATE(_name) AVR_IOCTL_DEF('i', 'o', 's', (_name))
+
+  /// Add port name (uppercase) to set default input pin IRQ values
+#define AVR_IOCTL_IOPORT_SET_EXTERNAL(_name) AVR_IOCTL_DEF('i','o','p',(_name))
+  
   enum
     {
       IOPORT_IRQ_PIN0 = 0, IOPORT_IRQ_PIN1, IOPORT_IRQ_PIN2, IOPORT_IRQ_PIN3,
@@ -43,64 +56,52 @@ extern "C"
       IOPORT_IRQ_COUNT
     };
 
-#define AVR_IOPORT_OUTPUT 0x100
-
-  /// add port name (uppercase) to get the real IRQ
-#define AVR_IOCTL_IOPORT_GETIRQ(_name) AVR_IOCTL_DEF('i','o','g',(_name))
-
-  /// this ioctl takes a avr_regbit_t, compares the register address to PORT/PIN/DDR and return the
+  /// This ioctl takes a avr_regbit_t, compares the register address to PORT/PIN/DDR and return the
   /// corresponding IRQ(s) if it matches
   typedef struct avr_ioport_getirq_t
   {
     avr_regbit_t bit;   ///< bit wanted
     avr_irq_t *irq[8];   ///< result, terminated by NULL if < 8
   } avr_ioport_getirq_t;
-
-#define AVR_IOCTL_IOPORT_GETIRQ_REGBIT AVR_IOCTL_DEF('i','o','g','r')
-
-  /**
-   * ioctl used to get a port state.
-   *
-   * for (int i = 'A'; i <= 'F'; i++) {
-   *  avr_ioport_state_t state;
-   *  if (avr_ioctl(AVR_IOCTL_IOPORT_GETSTATE(i), &state) == 0)
-   *   printf("PORT%c %02x DDR %02x PIN %02x\n",
-   *    state.name, state.port, state.ddr, state.pin);
-   * }
-   */
+  
+  /// Ioctl used to get a port state.
+  ///
+  /// @code
+  /// for (int i = 'A'; i <= 'F'; i++) {
+  ///   avr_ioport_state_t state;
+  ///   if (avr_ioctl(AVR_IOCTL_IOPORT_GETSTATE(i), &state) == 0)
+  ///     printf("PORT%c %02x DDR %02x PIN %02x\n",
+  ///            state.name, state.port, state.ddr, state.pin);
+  /// }
+  /// @endcode
   typedef struct avr_ioport_state_t
   {
     unsigned long name:7, port:8, ddr:8, pin:8;
   } avr_ioport_state_t;
 
-  /// add port name (uppercase) to get the port state
-#define AVR_IOCTL_IOPORT_GETSTATE(_name) AVR_IOCTL_DEF('i','o','s',(_name))
-
-  /// ioctl used to set default port state when set as input.
+  /// Ioctl used to set default port state when set as input.
   typedef struct avr_ioport_external_t
   {
     unsigned long name:7, mask:8, value:8;
   } avr_ioport_external_t;
 
-  /// add port name (uppercase) to set default input pin IRQ values
-#define AVR_IOCTL_IOPORT_SET_EXTERNAL(_name) AVR_IOCTL_DEF('i','o','p',(_name))
-
-  /// pin structure
+  /// Pin structure
   typedef struct avr_iopin_t
   {
     uint16_t port:8;   ///< port e.g. 'B'
     uint16_t pin:8;   ///< pin number
   } avr_iopin_t;
+
 #define AVR_IOPIN(_port, _pin) { .port = _port, .pin = _pin }
 
   /// Definition for an IO port
   typedef struct avr_ioport_t
   {
     avr_io_t io;
-    char name;
-    avr_io_addr_t r_port;
-    avr_io_addr_t r_ddr;
-    avr_io_addr_t r_pin;
+    char name;   ///< port's name
+    avr_io_addr_t r_port;   ///< pull-up resistor is activated if bit is set
+    avr_io_addr_t r_ddr;   ///< select the pin direction (bit is set for output)
+    avr_io_addr_t r_pin;   ///< toggle the value of the port
 
     avr_int_vector_t pcint;   ///< PCINT vector
     avr_io_addr_t r_pcint;   ///< pcint 8 pins mask
@@ -114,13 +115,23 @@ extern "C"
     } external;
   } avr_ioport_t;
 
-  void avr_ioport_init (avr_t * avr, avr_ioport_t * port);
-
-#define AVR_IOPORT_DECLARE(_lname, _cname, _uname)			\
-  .port ## _lname = {							\
-    .name = _cname, .r_port = PORT ## _uname, .r_ddr = DDR ## _uname, .r_pin = PIN ## _uname, \
+  /// Used to declace a IO port in a mcu definition
+  ///
+  /// example:
+  /// @code
+  /// AVR_IOPORT_DECLARE(a, 'A', A)
+  /// @endcode
+#define AVR_IOPORT_DECLARE(_lname, _cname, _uname)      \
+  .port ## _lname = {                                   \
+    .name = _cname,                                     \
+    .r_port = PORT ## _uname,                           \
+    .r_ddr = DDR ## _uname,                             \
+    .r_pin = PIN ## _uname,                             \
   }
 
+  /// Initialise a IO port in a mcu constructor
+  void avr_ioport_init (avr_t * avr, avr_ioport_t * port);
+  
 #ifdef __cplusplus
 };
 #endif

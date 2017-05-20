@@ -1,21 +1,27 @@
 /*
-  sim_gdb.c
+ *  sim_gdb.c
+ * 
+ *  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ * 
+ *  This file is part of simavr.
+ * 
+ *  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ *  General Public License as published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ * 
+ *  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ *  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ *  Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ *  <http://www.gnu.org/licenses/>.
+ */
 
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
+/*
+ * This code uses the GDB Remote Serial Protocol
+ * See GDB Manual Appendix E
+ *   http://sourceware.org/gdb/onlinedocs/gdb/Remote-Protocol.html
+ */
 
 #include <errno.h>
 #include <pthread.h>
@@ -58,9 +64,7 @@ typedef struct avr_gdb_t
   avr_gdb_watchpoints_t watchpoints;
 } avr_gdb_t;
 
-/**
- * Returns the index of the watchpoint if found, -1 otherwise.
- */
+/// Returns the index of the watchpoint if found, -1 otherwise.
 static int
 gdb_watch_find (const avr_gdb_watchpoints_t * w, uint32_t addr)
 {
@@ -73,10 +77,7 @@ gdb_watch_find (const avr_gdb_watchpoints_t * w, uint32_t addr)
   return -1;
 }
 
-/**
- * Contrary to gdb_watch_find, this actually checks the address against
- * a watched memory _range_.
- */
+/// Contrary to gdb_watch_find, this actually checks the address against a watched memory _range_.
 static int
 gdb_watch_find_range (const avr_gdb_watchpoints_t * w, uint32_t addr)
 {
@@ -89,14 +90,12 @@ gdb_watch_find_range (const avr_gdb_watchpoints_t * w, uint32_t addr)
   return -1;
 }
 
-/**
- * Returns -1 on error, 0 otherwise.
- */
+/// Returns -1 on error, 0 otherwise.
 static int
 gdb_watch_add_or_update (avr_gdb_watchpoints_t * w,
                          enum avr_gdb_watch_type kind, uint32_t addr, uint32_t size)
 {
-  /* If the watchpoint exists, update it. */
+  // If the watchpoint exists, update it.
   int i = gdb_watch_find (w, addr);
   if (i != -1)
     {
@@ -105,22 +104,22 @@ gdb_watch_add_or_update (avr_gdb_watchpoints_t * w,
       return 0;
     }
 
-  /* Otherwise add it. */
+  // Otherwise add it.
   if (w->len == WATCH_LIMIT)
     return -1;
  
-  /* Find the insertion point. */
+  // Find the insertion point.
   for (i = 0; i < w->len; i++)
     if (w->points[i].addr > addr)
       break;
  
   w->len++;
 
-  /* Make space for new element, moving old ones from the end. */
+  // Make space for new element, moving old ones from the end.
   for (int j = w->len; j > i; j--)
     w->points[j] = w->points[j - 1];
  
-  /* Insert it. */
+  // Insert it.
   w->points[i].kind = kind;
   w->points[i].addr = addr;
   w->points[i].size = size;
@@ -128,9 +127,7 @@ gdb_watch_add_or_update (avr_gdb_watchpoints_t * w,
   return 0;
 }
 
-/**
- * Returns -1 on error or if the specified point does not exist, 0 otherwise.
- */
+/// Returns -1 on error or if the specified point does not exist, 0 otherwise.
 static int
 gdb_watch_rm (avr_gdb_watchpoints_t * w, enum avr_gdb_watch_type kind, uint32_t addr)
 {
@@ -258,18 +255,14 @@ gdb_handle_command (avr_gdb_t * g, char *cmd)
     case 'q':
       if (strncmp (cmd, "Supported", 9) == 0)
         {
-          /* If GDB asked what features we support, report back
-           * the features we support, which is just memory layout
-           * information for now.
-           */
+          // If GDB asked what features we support, report back the features we support, which is
+          // just memory layout information for now.
           gdb_send_reply (g, "qXfer:memory-map:read+");
           break;
         }
       else if (strncmp (cmd, "Attached", 8) == 0)
         {
-          /* Respond that we are attached to an existing process..
-           * ourselves!
-           */
+          // Respond that we are attached to an existing process.. ourselves!
           gdb_send_reply (g, "1");
           break;
         }
@@ -570,10 +563,8 @@ gdb_network_handler (avr_gdb_t * g, uint32_t dosleep)
   return 1;
 }
 
-/**
- * If an applicable watchpoint exists for addr, stop the cpu and send a status report.
- * type is one of AVR_GDB_WATCH_READ, AVR_GDB_WATCH_WRITE depending on the type of access.
- */
+/// If an applicable watchpoint exists for addr, stop the cpu and send a status report.  type is one
+/// of AVR_GDB_WATCH_READ, AVR_GDB_WATCH_WRITE depending on the type of access.
 void
 avr_gdb_handle_watchpoints (avr_t * avr, uint16_t addr, enum avr_gdb_watch_type type)
 {
@@ -586,7 +577,7 @@ avr_gdb_handle_watchpoints (avr_t * avr, uint16_t addr, enum avr_gdb_watch_type 
   int kind = g->watchpoints.points[i].kind;
   if (kind & type)
     {
-      /* Send gdb reply (see GDB user manual appendix E.3). */
+      // Send gdb reply (see GDB user manual appendix E.3).
       char cmd[78];
       sprintf (cmd, "T%02x20:%02x;21:%02x%02x;22:%02x%02x%02x00;%s:%06x;",
                5, g->avr->data[R_SREG],
@@ -621,7 +612,6 @@ avr_gdb_processor (avr_t * avr, int sleep)
   // this also sleeps for a bit
   return gdb_network_handler (g, sleep);
 }
-
 
 int
 avr_gdb_init (avr_t * avr)

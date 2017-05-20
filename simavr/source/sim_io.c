@@ -1,22 +1,21 @@
 /*
-  sim_io.c
-
-  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
-
-  This file is part of simavr.
-
-  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
-  General Public License as published by the Free Software Foundation, either version 3 of the
-  License, or (at your option) any later version.
-
-  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
-  Public License for more details.
-
-  You should have received a copy of the GNU General Public License along with simavr.  If not, see
-  <http://www.gnu.org/licenses/>.
-*/
-
+ *  sim_io.c
+ * 
+ *  Copyright 2008, 2009 Michel Pollet <buserror@gmail.com>
+ * 
+ *  This file is part of simavr.
+ * 
+ *  simavr is free software: you can redistribute it and/or modify it under the terms of the GNU
+ *  General Public License as published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ * 
+ *  simavr is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+ *  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ *  Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License along with simavr.  If not, see
+ *  <http://www.gnu.org/licenses/>.
+ */
 
 #include <ctype.h>
 #include <stdint.h>
@@ -53,16 +52,13 @@ avr_register_io_read (avr_t * avr, avr_io_addr_t addr, avr_io_read_t readp, void
 {
   avr_io_addr_t a = AVR_DATA_TO_IO (addr);
   if (avr->io[a].r.param || avr->io[a].r.c)
-    {
-      if (avr->io[a].r.param != param || avr->io[a].r.c != readp)
-        {
-          AVR_LOG (avr, LOG_ERROR,
-                   "IO: avr_register_io_read(): Already registered, refusing to override.\n");
-          AVR_LOG (avr, LOG_ERROR, "IO: avr_register_io_read(%04x : %p/%p): %p/%p\n", a,
-                   avr->io[a].r.c, avr->io[a].r.param, readp, param);
-          abort ();
-        }
-    }
+    if (avr->io[a].r.param != param || avr->io[a].r.c != readp)
+      {
+	AVR_LOG (avr, LOG_ERROR, "IO: avr_register_io_read(): Already registered, refusing to override.\n");
+	AVR_LOG (avr, LOG_ERROR, "IO: avr_register_io_read(%04x : %p/%p): %p/%p\n", a,
+		 avr->io[a].r.c, avr->io[a].r.param, readp, param);
+	abort ();
+      }
   avr->io[a].r.param = param;
   avr->io[a].r.c = readp;
 }
