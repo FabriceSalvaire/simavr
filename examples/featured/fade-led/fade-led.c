@@ -1,6 +1,9 @@
+#define _GNU_SOURCE
 #include <pthread.h>
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #include "avr_ioport.h"
 #include "sim_avr.h"
@@ -23,12 +26,16 @@ pin_changed_hook (struct avr_irq_t *irq, uint32_t value, void *param)
 static void *
 avr_run_thread (void *oaram)
 {
-  while (1)
+  avr_cycle_count_t cycles = 0;
+  while (cycles < 10000)
     {
       int state = avr_run (avr);
       if (state == cpu_Done || state == cpu_Crashed)
         break;
+      printf("AVR cycle: %u\n", avr->cycle);
+      cycles++;
     }
+  printf("AVR Terminate\n");
   avr_terminate (avr);
   
   return NULL;
@@ -56,7 +63,8 @@ main (int argc, char *argv[])
 
   // Fixme: UART output ?
   avr->log = LOG_TRACE;
-
+  avr->trace = 1;
+  
   // connect all the pins on port B to our callback
   // Fixme: only PWM13
   for (int i = 0; i < 8; i++)
@@ -82,8 +90,9 @@ main (int argc, char *argv[])
   // the AVR run on it's own thread. it even allows for debugging!
   pthread_t run;
   pthread_create (&run, NULL, avr_run_thread, NULL);
-
-  while (1)
+  
+  void *retval = NULL;
+  while (pthread_tryjoin_np (run, &retval))
     {
       switch (getchar())
 	{
@@ -101,6 +110,6 @@ main (int argc, char *argv[])
 	}
       fflush(stdin);
       fflush(stdout);
-      // sleep (10); // s
+      sleep (1); // s
     }
 }

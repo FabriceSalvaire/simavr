@@ -16,12 +16,12 @@ typedef struct potentiometer_t
 {
   avr_irq_t *irq;   // irq list
   struct avr_t *avr;   // keep it around so we can pause it
-  uint adc_mux_number;
+  unsigned int adc_mux_number;
 
   float value; // % of VCC
 } potentiometer_t, *potentiometer_p;
 
-void potentiometer_init (struct avr_t *avr,  potentiometer_p t, uint adc_mux_number, float initial_value);
+void potentiometer_init (struct avr_t *avr,  potentiometer_p t, unsigned int adc_mux_number, float initial_value);
 void potentiometer_set (potentiometer_p t, float value);
 
 #endif /* __POTENTIOMETER_H___ */

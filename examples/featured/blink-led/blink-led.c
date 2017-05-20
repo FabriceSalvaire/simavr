@@ -55,6 +55,7 @@ main (int argc, char *argv[])
   avr_load_firmware (avr, &firmware);
 
   avr->log = LOG_TRACE;
+  avr->trace = 1;
 
   // connect all the pins on port B to our callback
   for (int i = 0; i < 8; i++)

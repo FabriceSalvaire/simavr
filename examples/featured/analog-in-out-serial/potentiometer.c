@@ -45,7 +45,7 @@ static const char *irq_names[IRQ_POTENTIOMETER_COUNT] = {
 };
 
 void
-potentiometer_init (struct avr_t *avr, potentiometer_p p, uint adc_mux_number, float initial_value)
+potentiometer_init (struct avr_t *avr, potentiometer_p p, unsigned int adc_mux_number, float initial_value)
 {
   p->avr = avr;
   p->irq = avr_alloc_irq (&avr->irq_pool, 0, IRQ_POTENTIOMETER_COUNT, irq_names);
